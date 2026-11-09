@@ -13,18 +13,18 @@ export default function WhatsAppButton() {
     <div className="fixed bottom-6 right-6 z-40 flex items-end flex-col gap-2">
       {/* Tooltip speech bubble */}
       {showTooltip && (
-        <div className="relative bg-white text-navy-950 text-xs py-2 px-3.5 rounded-xl shadow-premium border border-slate-200 max-w-xs animate-bounce hidden sm:flex items-center gap-2">
-          <span className="font-semibold text-slate-800">
-            👋 Have questions? <span className="text-green-600 font-bold">Chat with us on WhatsApp!</span>
+        <div className="relative bg-slate-900/95 backdrop-blur-md text-slate-100 text-xs py-2 px-3.5 rounded-xl shadow-xl border border-slate-800 max-w-xs animate-bounce hidden sm:flex items-center gap-2">
+          <span className="font-semibold text-slate-200">
+            👋 Have questions? <span className="text-emerald-400 font-bold">Chat with us on WhatsApp!</span>
           </span>
           <button 
             onClick={() => setShowTooltip(false)} 
-            className="text-slate-400 hover:text-slate-600 p-0.5"
+            className="text-slate-400 hover:text-white p-0.5"
             aria-label="Dismiss tooltip"
           >
             <X className="w-3.5 h-3.5" />
           </button>
-          <div className="absolute -bottom-1.5 right-6 w-3 h-3 bg-white border-r border-b border-slate-200 transform rotate-45"></div>
+          <div className="absolute -bottom-1.5 right-6 w-3 h-3 bg-slate-900 border-r border-b border-slate-800 transform rotate-45"></div>
         </div>
       )}
 

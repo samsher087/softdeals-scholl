@@ -7,6 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
+        brand: {
+          50: '#eef6ff',
+          100: '#d9eaff',
+          200: '#bcdbff',
+          300: '#8ec3ff',
+          400: '#59a0ff',
+          500: '#327cff',
+          600: '#1d5ef7',
+          700: '#1446e4',
+          800: '#1638b8',
+          900: '#183391',
+          950: '#132158',
+        },
         navy: {
           50: '#f0f5fa',
           100: '#e1ecf6',
@@ -52,6 +65,7 @@ export default {
         'premium': '0 10px 30px -5px rgba(10, 25, 47, 0.1)',
         'glow-gold': '0 0 25px -5px rgba(229, 163, 56, 0.4)',
         'glow-sky': '0 0 25px -5px rgba(14, 165, 233, 0.4)',
+        'glow-cyan': '0 0 25px -5px rgba(6, 182, 212, 0.45)',
       },
       animation: {
         'ticker': 'ticker 35s linear infinite',

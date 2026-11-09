@@ -139,12 +139,12 @@ export default function Academics({ onOpenAdmissionModal }) {
     : faculty.filter(f => f.dept === staffDept);
 
   return (
-    <div className="w-full bg-slate-50">
+    <div className="w-full min-h-screen text-slate-100">
       
       {/* Header Banner */}
-      <section className="bg-navy-950 text-white py-16 sm:py-20 relative overflow-hidden">
+      <section className="bg-slate-950/80 border-b border-slate-800/80 text-white py-16 sm:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-gold-400 bg-navy-800 px-3.5 py-1 rounded-full border border-navy-700">
+          <span className="text-xs font-bold uppercase tracking-widest text-cyan-300 bg-cyan-500/15 px-3.5 py-1 rounded-full border border-cyan-400/30">
             CBSE Curriculum & NEP 2020 Aligned
           </span>
           <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight mt-3">
@@ -168,8 +168,8 @@ export default function Academics({ onOpenAdmissionModal }) {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
                   activeTab === tab.id
-                    ? 'bg-gold-500 text-navy-950 shadow-md scale-105'
-                    : 'bg-navy-900 text-slate-300 hover:bg-navy-800 border border-navy-800'
+                    ? 'bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 text-white shadow-lg shadow-cyan-950/60 scale-105'
+                    : 'bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800'
                 }`}
               >
                 {tab.label}
@@ -187,56 +187,56 @@ export default function Academics({ onOpenAdmissionModal }) {
           <div className="space-y-12">
             
             {/* Overview Card */}
-            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
-              <span className="text-xs font-bold text-skyAccent-600 uppercase tracking-widest">Foundations of Learning</span>
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-navy-900 mt-1 mb-4">
+            <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-8 border border-slate-800/90 shadow-xl">
+              <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Foundations of Learning</span>
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mt-1 mb-4">
                 The 5-3-3-4 Curricular Framework
               </h2>
-              <p className="text-slate-600 text-sm leading-relaxed mb-6">
+              <p className="text-slate-300 text-sm leading-relaxed mb-6">
                 St. Xavier's International School strictly adheres to the National Curriculum Framework (NCF) formulated under the National Education Policy (NEP 2020). Our progressive roadmap ensures conceptual clarity, experiential skill application, and holistic student well-being.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-slate-100">
-                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                  <div className="font-bold text-navy-900 text-sm mb-1">Affiliation Details</div>
-                  <div className="text-xs text-slate-600">Central Board of Secondary Education (CBSE), Affiliation No. 2130894. School Code: 70412.</div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-slate-800">
+                <div className="p-4 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                  <div className="font-bold text-cyan-300 text-sm mb-1">Affiliation Details</div>
+                  <div className="text-xs text-slate-400">Central Board of Secondary Education (CBSE), Affiliation No. 2130894. School Code: 70412.</div>
                 </div>
-                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                  <div className="font-bold text-navy-900 text-sm mb-1">Medium of Instruction</div>
-                  <div className="text-xs text-slate-600">English Medium. Second and Third languages include Hindi, Sanskrit, French, and German.</div>
+                <div className="p-4 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                  <div className="font-bold text-cyan-300 text-sm mb-1">Medium of Instruction</div>
+                  <div className="text-xs text-slate-400">English Medium. Second and Third languages include Hindi, Sanskrit, French, and German.</div>
                 </div>
-                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                  <div className="font-bold text-navy-900 text-sm mb-1">Co-Curricular Breadth</div>
-                  <div className="text-xs text-slate-600">Robotics, Artificial Intelligence, Indian Classical Dance, Western Music, Debate & Public Speaking.</div>
+                <div className="p-4 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                  <div className="font-bold text-cyan-300 text-sm mb-1">Co-Curricular Breadth</div>
+                  <div className="text-xs text-slate-400">Robotics, Artificial Intelligence, Indian Classical Dance, Western Music, Debate & Public Speaking.</div>
                 </div>
               </div>
             </div>
 
             {/* Wings Cards */}
             <div className="space-y-6">
-              <h3 className="text-xl font-serif font-bold text-navy-900">Class & Grade Progression</h3>
+              <h3 className="text-xl font-serif font-bold text-white">Class & Grade Progression</h3>
               
               {academicWings.map((wing, i) => (
                 <div 
                   key={i}
-                  className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm hover:border-skyAccent-400 transition-all"
+                  className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 sm:p-7 border border-slate-800/90 shadow-lg hover:border-cyan-500/40 transition-all"
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-100">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-800">
                     <div>
-                      <span className="text-xs font-bold text-skyAccent-600 uppercase tracking-wider">{wing.grades}</span>
-                      <h4 className="text-lg font-bold text-navy-900">{wing.wing}</h4>
+                      <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">{wing.grades}</span>
+                      <h4 className="text-lg font-bold text-white">{wing.wing}</h4>
                     </div>
-                    <span className="text-xs font-bold text-gold-600 bg-gold-50 px-3 py-1 rounded-full border border-gold-200 shrink-0">
+                    <span className="text-xs font-bold text-cyan-300 bg-cyan-500/15 px-3 py-1 rounded-full border border-cyan-400/30 shrink-0">
                       {wing.age}
                     </span>
                   </div>
 
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
                     {wing.focus}
                   </p>
 
-                  <div className="text-xs font-medium text-slate-500 flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                  <div className="text-xs font-medium text-slate-400 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
                     <span>{wing.ratio}</span>
                   </div>
                 </div>
@@ -249,42 +249,42 @@ export default function Academics({ onOpenAdmissionModal }) {
         {/* TAB 2: TIMINGS & BELL SCHEDULE */}
         {activeTab === 'timings' && (
           <div className="space-y-8">
-            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
-              <span className="text-xs font-bold text-gold-600 uppercase tracking-widest">Punctuality & Discipline</span>
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-navy-900 mt-1 mb-3">
+            <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-8 border border-slate-800/90 shadow-xl">
+              <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Punctuality & Discipline</span>
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mt-1 mb-3">
                 Daily School Timings & Bell Schedule
               </h2>
-              <p className="text-slate-600 text-sm mb-6">
+              <p className="text-slate-300 text-sm mb-6">
                 We operate on an 8-period academic cycle interspersed with mindfulness, nutritious refreshment intervals, and physical recreation periods.
               </p>
 
               {/* Table */}
-              <div className="overflow-x-auto rounded-xl border border-slate-200">
+              <div className="overflow-x-auto rounded-xl border border-slate-800">
                 <table className="w-full text-left text-sm">
-                  <thead className="bg-navy-950 text-white text-xs uppercase tracking-wider font-semibold">
+                  <thead className="bg-slate-950 text-cyan-300 text-xs uppercase tracking-wider font-semibold border-b border-slate-800">
                     <tr>
                       <th className="px-5 py-3.5">Academic Session / Bell Period</th>
                       <th className="px-5 py-3.5">Summer Timings (Apr - Oct)</th>
                       <th className="px-5 py-3.5">Winter Timings (Nov - Mar)</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-200 text-slate-700 text-xs sm:text-sm">
+                  <tbody className="divide-y divide-slate-800 text-slate-300 text-xs sm:text-sm">
                     {timings.map((t, idx) => (
-                      <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                        <td className="px-5 py-3 font-semibold text-navy-900 flex items-center gap-2">
-                          <Clock className="w-3.5 h-3.5 text-skyAccent-500" />
+                      <tr key={idx} className={idx % 2 === 0 ? 'bg-slate-900/40' : 'bg-slate-950/40'}>
+                        <td className="px-5 py-3 font-semibold text-white flex items-center gap-2">
+                          <Clock className="w-3.5 h-3.5 text-cyan-400" />
                           {t.period}
                         </td>
-                        <td className="px-5 py-3 font-mono font-medium">{t.summer}</td>
-                        <td className="px-5 py-3 font-mono font-medium">{t.winter}</td>
+                        <td className="px-5 py-3 font-mono font-medium text-slate-300">{t.summer}</td>
+                        <td className="px-5 py-3 font-mono font-medium text-slate-300">{t.winter}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
 
-              <div className="mt-4 p-4 bg-skyAccent-50 rounded-xl border border-skyAccent-200 text-xs text-skyAccent-900">
-                <strong>Important Notice:</strong> School gates close strictly at 07:50 AM in Summer and 08:20 AM in Winter. Late arrivals without prior medical endorsement will require guardian clearance.
+              <div className="mt-4 p-4 bg-cyan-950/30 rounded-xl border border-cyan-800/50 text-xs text-cyan-200">
+                <strong className="text-cyan-300">Important Notice:</strong> School gates close strictly at 07:50 AM in Summer and 08:20 AM in Winter. Late arrivals without prior medical endorsement will require guardian clearance.
               </div>
             </div>
           </div>
@@ -293,25 +293,25 @@ export default function Academics({ onOpenAdmissionModal }) {
         {/* TAB 3: ACADEMIC CALENDAR & HOLIDAYS */}
         {activeTab === 'calendar' && (
           <div className="space-y-8">
-            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+            <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-8 border border-slate-800/90 shadow-xl">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                 <div>
-                  <span className="text-xs font-bold text-skyAccent-600 uppercase tracking-widest">Session 2026-2027</span>
-                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-navy-900 mt-1">
+                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Session 2026-2027</span>
+                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mt-1">
                     Academic Calendar & Holiday List
                   </h2>
                 </div>
 
                 <button
                   onClick={() => alert("Downloading Official St. Xavier's Academic Calendar 2026-27 (PDF).")}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-navy-900 hover:bg-navy-950 text-white font-bold text-xs rounded-xl shadow transition-all shrink-0"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-white font-bold text-xs rounded-xl shadow-lg shadow-cyan-950/60 transition-all shrink-0"
                 >
-                  <Download className="w-4 h-4 text-gold-400" />
+                  <Download className="w-4 h-4 text-cyan-200" />
                   <span>Download Calendar PDF</span>
                 </button>
               </div>
 
-              <p className="text-slate-600 text-sm mb-6">
+              <p className="text-slate-300 text-sm mb-6">
                 The school year runs from April 1, 2026, through March 2027, partitioned into Term 1 (April to September) and Term 2 (October to March).
               </p>
 
@@ -319,15 +319,15 @@ export default function Academics({ onOpenAdmissionModal }) {
                 {holidays.map((h, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-between hover:bg-white transition-colors"
+                    className="p-4 rounded-xl border border-slate-800 bg-slate-950/60 flex items-center justify-between hover:border-cyan-500/40 hover:bg-slate-950/80 transition-all"
                   >
                     <div>
-                      <span className="text-[10px] font-bold text-skyAccent-700 uppercase tracking-wider block">
+                      <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider block">
                         {h.type}
                       </span>
-                      <h4 className="text-sm font-bold text-navy-900">{h.occasion}</h4>
+                      <h4 className="text-sm font-bold text-white">{h.occasion}</h4>
                     </div>
-                    <div className="text-xs font-semibold text-slate-600 bg-white px-3 py-1.5 rounded-lg border border-slate-200">
+                    <div className="text-xs font-semibold text-slate-300 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
                       {h.date}
                     </div>
                   </div>
@@ -341,61 +341,61 @@ export default function Academics({ onOpenAdmissionModal }) {
         {activeTab === 'rules' && (
           <div className="space-y-8">
             {/* Rules */}
-            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
-              <h3 className="text-xl font-serif font-bold text-navy-900 mb-4 flex items-center gap-2">
-                <ShieldAlert className="w-5 h-5 text-gold-500" />
+            <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-8 border border-slate-800/90 shadow-xl">
+              <h3 className="text-xl font-serif font-bold text-white mb-4 flex items-center gap-2">
+                <ShieldAlert className="w-5 h-5 text-cyan-400" />
                 Institutional Code of Conduct & Rules
               </h3>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-600">
-                <div className="space-y-2 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                  <h4 className="font-bold text-navy-900">1. Attendance Criterion</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-300">
+                <div className="space-y-2 p-4 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                  <h4 className="font-bold text-cyan-300">1. Attendance Criterion</h4>
                   <p>Students must maintain a mandatory minimum attendance of 75% across the academic session to be eligible for CBSE board examinations and annual promotion.</p>
                 </div>
-                <div className="space-y-2 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                  <h4 className="font-bold text-navy-900">2. Anti-Bullying Zero Tolerance</h4>
+                <div className="space-y-2 p-4 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                  <h4 className="font-bold text-cyan-300">2. Anti-Bullying Zero Tolerance</h4>
                   <p>The campus is a strictly designated anti-bullying safe zone. Any harassment, online misconduct, or physical intimidation results in immediate disciplinary review.</p>
                 </div>
-                <div className="space-y-2 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                  <h4 className="font-bold text-navy-900">3. Electronic Gadget Regulations</h4>
+                <div className="space-y-2 p-4 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                  <h4 className="font-bold text-cyan-300">3. Electronic Gadget Regulations</h4>
                   <p>Smartphones and personal gaming devices are prohibited during instructional hours. Digital tablets for senior research are permitted under teacher supervision.</p>
                 </div>
-                <div className="space-y-2 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                  <h4 className="font-bold text-navy-900">4. Campus Dignity & Property</h4>
+                <div className="space-y-2 p-4 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                  <h4 className="font-bold text-cyan-300">4. Campus Dignity & Property</h4>
                   <p>Respect for school assets, laboratory apparatus, and library volumes is mandatory. Damage to school equipment must be restored by responsible parties.</p>
                 </div>
               </div>
             </div>
 
             {/* Uniform Details */}
-            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
-              <h3 className="text-xl font-serif font-bold text-navy-900 mb-4 flex items-center gap-2">
-                <Shirt className="w-5 h-5 text-skyAccent-500" />
+            <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-8 border border-slate-800/90 shadow-xl">
+              <h3 className="text-xl font-serif font-bold text-white mb-4 flex items-center gap-2">
+                <Shirt className="w-5 h-5 text-cyan-400" />
                 Official School Uniform Specification
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-5 bg-navy-50 rounded-xl border border-navy-100">
-                  <div className="font-bold text-navy-900 text-sm mb-2">Summer Uniform</div>
-                  <ul className="text-xs text-slate-600 space-y-1.5 list-disc pl-4">
+                <div className="p-5 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                  <div className="font-bold text-cyan-300 text-sm mb-2">Summer Uniform</div>
+                  <ul className="text-xs text-slate-300 space-y-1.5 list-disc pl-4">
                     <li>Boys: Crisp sky blue short-sleeve shirt with embroidered crest, navy blue tailored trousers.</li>
                     <li>Girls: Sky blue pleated shirt with navy blue skirt / divided skirt, school tie & belt.</li>
                     <li>Footwear: Polished black oxford shoes with navy blue ankle socks.</li>
                   </ul>
                 </div>
 
-                <div className="p-5 bg-navy-50 rounded-xl border border-navy-100">
-                  <div className="font-bold text-navy-900 text-sm mb-2">Winter Uniform</div>
-                  <ul className="text-xs text-slate-600 space-y-1.5 list-disc pl-4">
+                <div className="p-5 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                  <div className="font-bold text-cyan-300 text-sm mb-2">Winter Uniform</div>
+                  <ul className="text-xs text-slate-300 space-y-1.5 list-disc pl-4">
                     <li>Navy blue single-breasted blazer with golden school insignia buttons.</li>
-                    <li>Warm V-neck woolen navy pullover with gold neck trim.</li>
+                    <li>Warm V-neck woolen navy pullover with cyan/gold neck trim.</li>
                     <li>Long-sleeve formal shirt and grey woolen trousers/skirts.</li>
                   </ul>
                 </div>
 
-                <div className="p-5 bg-navy-50 rounded-xl border border-navy-100">
-                  <div className="font-bold text-navy-900 text-sm mb-2">House Sports Kit (Wed & Sat)</div>
-                  <ul className="text-xs text-slate-600 space-y-1.5 list-disc pl-4">
+                <div className="p-5 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                  <div className="font-bold text-cyan-300 text-sm mb-2">House Sports Kit (Wed & Sat)</div>
+                  <ul className="text-xs text-slate-300 space-y-1.5 list-disc pl-4">
                     <li>House dry-fit polo jersey (Blue Sapphire, Emerald Green, Ruby Red, Topaz Yellow).</li>
                     <li>White track pants with navy piping.</li>
                     <li>Non-marking sports trainers.</li>
@@ -409,23 +409,25 @@ export default function Academics({ onOpenAdmissionModal }) {
         {/* TAB 5: FACULTY DIRECTORY */}
         {activeTab === 'staff' && (
           <div className="space-y-8">
-            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+            <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-8 border border-slate-800/90 shadow-xl">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                 <div>
-                  <span className="text-xs font-bold text-skyAccent-600 uppercase tracking-widest">Mentors of Excellence</span>
-                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-navy-900 mt-1">
+                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Mentors of Excellence</span>
+                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mt-1">
                     Faculty & Department Directory
                   </h2>
                 </div>
 
                 {/* Filter buttons */}
-                <div className="flex flex-wrap gap-1.5 bg-slate-100 p-1.5 rounded-xl border border-slate-200 text-xs">
+                <div className="flex flex-wrap gap-1.5 bg-slate-950/80 p-1.5 rounded-xl border border-slate-800 text-xs">
                   {['All', 'Science', 'Mathematics', 'Languages', 'Technology', 'Humanities'].map(d => (
                     <button
                       key={d}
                       onClick={() => setStaffDept(d)}
                       className={`px-3 py-1 rounded-lg font-semibold transition-all ${
-                        staffDept === d ? 'bg-navy-900 text-white' : 'text-slate-600 hover:text-navy-900'
+                        staffDept === d 
+                          ? 'bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 text-white shadow-md font-bold' 
+                          : 'text-slate-400 hover:text-white'
                       }`}
                     >
                       {d}
@@ -438,18 +440,18 @@ export default function Academics({ onOpenAdmissionModal }) {
                 {filteredFaculty.map((f, idx) => (
                   <div
                     key={idx}
-                    className="p-5 rounded-xl border border-slate-200 bg-slate-50 flex items-center gap-4 hover:bg-white hover:shadow-md transition-all"
+                    className="p-5 rounded-xl border border-slate-800 bg-slate-950/60 flex items-center gap-4 hover:border-cyan-500/40 hover:bg-slate-950/90 transition-all"
                   >
                     <img
                       src={f.photo}
                       alt={f.name}
-                      className="w-16 h-16 rounded-xl object-cover object-top border-2 border-gold-400 shrink-0"
+                      className="w-16 h-16 rounded-xl object-cover object-top border-2 border-cyan-500/40 shrink-0"
                     />
                     <div>
-                      <span className="text-[10px] font-bold text-skyAccent-600 uppercase">{f.dept}</span>
-                      <h4 className="text-sm font-bold text-navy-900">{f.name}</h4>
-                      <p className="text-xs text-slate-500 font-medium">{f.designation}</p>
-                      <div className="text-[11px] text-slate-400 mt-1">{f.qualification} • {f.experience}</div>
+                      <span className="text-[10px] font-bold text-cyan-400 uppercase">{f.dept}</span>
+                      <h4 className="text-sm font-bold text-white">{f.name}</h4>
+                      <p className="text-xs text-slate-400 font-medium">{f.designation}</p>
+                      <div className="text-[11px] text-slate-500 mt-1">{f.qualification} • {f.experience}</div>
                     </div>
                   </div>
                 ))}

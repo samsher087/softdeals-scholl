@@ -36,7 +36,7 @@ export default function LightboxModal({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center gap-3">
-          <span className="bg-gold-500 text-navy-950 text-xs font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">
+          <span className="bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 text-xs font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">
             {currentItem.category}
           </span>
           <span className="text-sm text-slate-300 font-mono">

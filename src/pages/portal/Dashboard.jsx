@@ -132,26 +132,26 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="w-full bg-slate-100 min-h-screen">
+    <div className="w-full bg-slate-950 text-slate-100 min-h-screen print:bg-white print:text-slate-900">
       
       {/* Top Portal Bar (Screen only) */}
-      <header className="bg-navy-950 text-white border-b border-navy-800 sticky top-0 z-30 no-print">
+      <header className="bg-slate-950/90 backdrop-blur-md text-white border-b border-slate-800 sticky top-0 z-30 no-print">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           
           <div className="flex items-center gap-3">
             <Link to="/" className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-lg bg-navy-900 border border-gold-400 flex items-center justify-center">
-                <GraduationCap className="w-5 h-5 text-gold-400" />
+              <div className="w-9 h-9 rounded-lg bg-slate-900 border border-cyan-400/40 flex items-center justify-center">
+                <GraduationCap className="w-5 h-5 text-cyan-400" />
               </div>
               <div className="hidden sm:block">
                 <span className="font-serif font-bold text-sm block leading-none">ST. XAVIER'S</span>
-                <span className="text-[9px] text-slate-400 tracking-wider uppercase">Portal Dashboard</span>
+                <span className="text-[9px] text-cyan-400 tracking-wider uppercase font-medium">Portal Dashboard</span>
               </div>
             </Link>
 
-            <span className="text-slate-600 hidden sm:inline">|</span>
+            <span className="text-slate-700 hidden sm:inline">|</span>
 
-            <div className="bg-navy-900 px-3 py-1 rounded-full text-xs font-semibold text-slate-300 border border-navy-800 flex items-center gap-1.5">
+            <div className="bg-slate-900 px-3 py-1 rounded-full text-xs font-semibold text-slate-300 border border-slate-800 flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
               <span className="capitalize">{user?.role} Session Active</span>
             </div>
@@ -162,17 +162,17 @@ export default function Dashboard() {
               <img
                 src={student.avatar}
                 alt={user?.name}
-                className="w-8 h-8 rounded-full object-cover border-2 border-gold-400"
+                className="w-8 h-8 rounded-full object-cover border-2 border-cyan-400/60"
               />
               <div className="hidden md:block">
                 <div className="text-xs font-bold text-white">{user?.name}</div>
-                <div className="text-[10px] text-gold-400">{user?.role === 'parent' ? 'Parent Portal' : user?.role === 'admin' ? 'Staff Portal' : `Class ${student.grade}-${student.section}`}</div>
+                <div className="text-[10px] text-cyan-300">{user?.role === 'parent' ? 'Parent Portal' : user?.role === 'admin' ? 'Staff Portal' : `Class ${student.grade}-${student.section}`}</div>
               </div>
             </div>
 
             <button
               onClick={logout}
-              className="p-2 text-slate-400 hover:text-red-400 hover:bg-white/5 rounded-lg transition-colors"
+              className="p-2 text-slate-400 hover:text-red-400 hover:bg-slate-800/60 rounded-lg transition-colors"
               title="Sign Out"
             >
               <LogOut className="w-4 h-4" />
@@ -186,7 +186,7 @@ export default function Dashboard() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
         {/* Navigation Tabs (no-print) */}
-        <div className="no-print bg-white p-2 rounded-2xl border border-slate-200 shadow-sm mb-8 flex flex-wrap gap-1">
+        <div className="no-print bg-slate-900/80 backdrop-blur-xl p-2 rounded-2xl border border-slate-800/90 shadow-xl mb-8 flex flex-wrap gap-1">
           {[
             { id: 'overview', label: 'Overview & Profile', icon: User },
             { id: 'attendance', label: 'Attendance Records', icon: Calendar },
@@ -205,11 +205,11 @@ export default function Dashboard() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                   active
-                    ? 'bg-navy-900 text-white shadow-md'
-                    : 'text-slate-600 hover:text-navy-900 hover:bg-slate-100'
-                } ${tab.highlight && !active ? 'text-skyAccent-700 bg-skyAccent-50' : ''}`}
+                    ? 'bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 text-white shadow-lg shadow-cyan-950/60'
+                    : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                } ${tab.highlight && !active ? 'text-cyan-300 bg-cyan-500/10 border border-cyan-500/20' : ''}`}
               >
-                <Icon className={`w-3.5 h-3.5 ${active ? 'text-gold-400' : 'text-slate-500'}`} />
+                <Icon className={`w-3.5 h-3.5 ${active ? 'text-white' : 'text-cyan-400'}`} />
                 <span>{tab.label}</span>
               </button>
             );
@@ -221,20 +221,20 @@ export default function Dashboard() {
           <div className="space-y-6 animate-fadeIn">
             
             {/* Student ID Banner Card */}
-            <div className="bg-gradient-to-r from-navy-950 via-navy-900 to-skyAccent-950 text-white rounded-3xl p-6 sm:p-8 shadow-premium border border-navy-800 relative overflow-hidden">
+            <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-800/90 relative overflow-hidden">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-6 relative z-10">
                 <img
                   src={student.avatar}
                   alt={student.name}
-                  className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border-4 border-gold-400 shadow-xl shrink-0"
+                  className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border-4 border-cyan-400/60 shadow-xl shrink-0"
                 />
 
                 <div className="flex-1 text-center md:text-left space-y-2">
                   <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
-                    <span className="bg-gold-500 text-navy-950 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                    <span className="bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                       Student Scholar
                     </span>
-                    <span className="text-xs text-skyAccent-300 font-mono">
+                    <span className="text-xs text-cyan-400 font-mono">
                       ID: {student.studentId}
                     </span>
                   </div>
@@ -244,7 +244,7 @@ export default function Dashboard() {
                   </h2>
 
                   <p className="text-xs sm:text-sm text-slate-300">
-                    Grade <strong className="text-white">{student.grade} - Section {student.section}</strong> • Roll Number: <strong className="text-white">{student.rollNo}</strong> • House: <strong className="text-gold-400">{student.house}</strong>
+                    Grade <strong className="text-white">{student.grade} - Section {student.section}</strong> • Roll Number: <strong className="text-white">{student.rollNo}</strong> • House: <strong className="text-cyan-400">{student.house}</strong>
                   </p>
 
                   <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs text-slate-300 pt-1">
@@ -258,17 +258,17 @@ export default function Dashboard() {
 
                 {/* Quick Score Badges */}
                 <div className="grid grid-cols-3 md:grid-cols-1 gap-2.5 shrink-0 w-full md:w-auto">
-                  <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/15 text-center">
-                    <div className="text-[10px] text-slate-300 uppercase font-semibold">Attendance</div>
-                    <div className="text-lg font-bold text-emerald-400">{student.overallAttendance}%</div>
+                  <div className="bg-slate-950/70 backdrop-blur-md p-3 rounded-xl border border-slate-800 text-center">
+                    <div className="text-[10px] text-slate-400 uppercase font-semibold">Attendance</div>
+                    <div className="text-lg font-bold text-teal-400">{student.overallAttendance}%</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/15 text-center">
-                    <div className="text-[10px] text-slate-300 uppercase font-semibold">Term GPA</div>
-                    <div className="text-lg font-bold text-gold-400">{student.gpa} / 4.0</div>
+                  <div className="bg-slate-950/70 backdrop-blur-md p-3 rounded-xl border border-slate-800 text-center">
+                    <div className="text-[10px] text-slate-400 uppercase font-semibold">Term GPA</div>
+                    <div className="text-lg font-bold text-cyan-400">{student.gpa} / 4.0</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/15 text-center">
-                    <div className="text-[10px] text-slate-300 uppercase font-semibold">Class Rank</div>
-                    <div className="text-lg font-bold text-skyAccent-300">#{student.classRank} in Class</div>
+                  <div className="bg-slate-950/70 backdrop-blur-md p-3 rounded-xl border border-slate-800 text-center">
+                    <div className="text-[10px] text-slate-400 uppercase font-semibold">Class Rank</div>
+                    <div className="text-lg font-bold text-teal-300">#{student.classRank} in Class</div>
                   </div>
                 </div>
               </div>
@@ -278,44 +278,44 @@ export default function Dashboard() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               
               {/* Transport Widget */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
-                <div className="flex items-center justify-between text-navy-900 font-bold text-sm">
+              <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-800/90 shadow-xl space-y-3">
+                <div className="flex items-center justify-between text-white font-bold text-sm">
                   <span className="flex items-center gap-2">
-                    <Bus className="w-4 h-4 text-skyAccent-600" /> Transport Allotment
+                    <Bus className="w-4 h-4 text-cyan-400" /> Transport Allotment
                   </span>
-                  <span className="text-[10px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded font-bold">Active Fleet</span>
+                  <span className="text-[10px] bg-teal-500/20 text-teal-300 border border-teal-500/30 px-2 py-0.5 rounded font-bold">Active Fleet</span>
                 </div>
-                <div className="text-xs text-slate-600">
-                  <div className="font-semibold text-slate-800">{student.busRoute}</div>
+                <div className="text-xs text-slate-300">
+                  <div className="font-semibold text-white">{student.busRoute}</div>
                   <div className="mt-1">Driver In-Charge: Mr. Satish Kumar (+91 98112 33445)</div>
                   <div className="text-slate-400 mt-0.5">Morning Pickup: 07:12 AM • Evening Drop: 02:40 PM</div>
                 </div>
               </div>
 
               {/* Next Exam Notice */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
-                <div className="flex items-center justify-between text-navy-900 font-bold text-sm">
+              <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-800/90 shadow-xl space-y-3">
+                <div className="flex items-center justify-between text-white font-bold text-sm">
                   <span className="flex items-center gap-2">
-                    <Award className="w-4 h-4 text-gold-500" /> Upcoming Assessment
+                    <Award className="w-4 h-4 text-cyan-400" /> Upcoming Assessment
                   </span>
-                  <span className="text-[10px] bg-skyAccent-100 text-skyAccent-700 px-2 py-0.5 rounded font-bold">Term Final</span>
+                  <span className="text-[10px] bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-2 py-0.5 rounded font-bold">Term Final</span>
                 </div>
-                <div className="text-xs text-slate-600">
-                  <div className="font-semibold text-slate-800">Annual Board Practicals</div>
+                <div className="text-xs text-slate-300">
+                  <div className="font-semibold text-white">Annual Board Practicals</div>
                   <div className="mt-1">Physics & Robotics Lab Viva Voce</div>
                   <div className="text-slate-400 mt-0.5">Date: March 18, 2026 • Reporting: 08:30 AM</div>
                 </div>
               </div>
 
               {/* Teacher Remarks Snapshot */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
-                <div className="flex items-center justify-between text-navy-900 font-bold text-sm">
+              <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-800/90 shadow-xl space-y-3">
+                <div className="flex items-center justify-between text-white font-bold text-sm">
                   <span className="flex items-center gap-2">
-                    <MessageSquare className="w-4 h-4 text-purple-600" /> Mentor Remark
+                    <MessageSquare className="w-4 h-4 text-cyan-400" /> Mentor Remark
                   </span>
                   <span className="text-[10px] text-slate-400 font-medium">Mrs. Banerjee</span>
                 </div>
-                <p className="text-xs text-slate-600 italic">
+                <p className="text-xs text-slate-300 italic">
                   "Aryan consistently demonstrates exceptional commitment to mathematics and science research."
                 </p>
               </div>
