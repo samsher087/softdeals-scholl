@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   Compass,
   Calendar,
+  ChevronLeft,
   ChevronRight,
   Download,
   FileText,
@@ -34,6 +35,55 @@ export default function Home({ onOpenAdmissionModal }) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentLightboxIndex, setCurrentLightboxIndex] = useState(0);
   const [activeNoticeCategory, setActiveNoticeCategory] = useState('All');
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroSlides = [
+    {
+      image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=2000&q=85',
+      title: 'Modern Lush Green Campus & Academic Blocks',
+      tag: 'Campus Infrastructure'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=2000&q=85',
+      title: 'Interactive 4K Smart Classrooms',
+      tag: 'Smart Classrooms'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=2000&q=85',
+      title: 'Next-Gen AI & Robotics Innovation Lab',
+      tag: 'Robotics & STEAM Hub'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=85',
+      title: 'Olympic-Standard Aquatic Center & Sports Arena',
+      tag: 'Olympic Sports Arena'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=2000&q=85',
+      title: 'Central Digital Library & Research Center',
+      tag: 'Central Library'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2000&q=85',
+      title: 'Vibrant Community of Future Global Leaders',
+      tag: 'Student Excellence'
+    }
+  ];
+
+  useEffect(() => {
+    const slideTimer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(slideTimer);
+  }, [heroSlides.length]);
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
 
   useEffect(() => {
     // Fetch dynamic content
@@ -155,37 +205,88 @@ export default function Home({ onOpenAdmissionModal }) {
   return (
     <div className="w-full">
 
-      {/* 1. HERO SECTION */}
-      <section className="relative min-h-[640px] lg:min-h-[720px] flex items-center bg-navy-950 overflow-hidden">
-        {/* Background Image with School Stationery Theme */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/school-bg.jpg"
-            alt="St. Xavier's International School Academic & Creative Theme"
-            className="w-full h-full object-cover object-center filter brightness-95"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/85 to-navy-900/40"></div>
+      {/* 1. HERO SECTION WITH SLIDING SCHOOL IMAGES */}
+      <section className="relative min-h-[660px] lg:min-h-[740px] flex items-center bg-navy-950 overflow-hidden group">
+        {/* Sliding Background School Images */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'
+              }`}
+            >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className={`w-full h-full object-cover object-center filter brightness-90 transform transition-transform duration-[7000ms] ease-out ${
+                  index === currentSlide ? 'scale-105' : 'scale-100'
+                }`}
+              />
+            </div>
+          ))}
+          {/* Gradient Overlay for high-contrast crisp text */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/80 to-navy-900/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-navy-950/40"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        {/* Slide Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          aria-label="Previous Slide"
+          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-navy-950/60 hover:bg-gold-500 text-white hover:text-navy-950 backdrop-blur-md border border-white/20 flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-105"
+        >
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+
+        <button
+          onClick={nextSlide}
+          aria-label="Next Slide"
+          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-navy-950/60 hover:bg-gold-500 text-white hover:text-navy-950 backdrop-blur-md border border-white/20 flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-105"
+        >
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-20 lg:py-28 w-full">
           <div className="max-w-5xl xl:max-w-6xl">
 
             {/* Top Pill */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold mb-5 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+              <span className="text-gold-300 font-bold">ADMISSIONS OPEN FOR 2026-27</span>
+              <span className="text-slate-300">| Nursery to Grade XI</span>
+            </div>
 
-
-            {/* Main Headline */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] xl:text-[3.2rem] font-serif font-extrabold text-white tracking-tight leading-tight mb-6 lg:whitespace-nowrap">
+            {/* Main Headline - Single Line on Desktop */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] xl:text-[3.15rem] font-serif font-extrabold text-white tracking-tight leading-tight mb-5 lg:whitespace-nowrap drop-shadow-md">
               Building Bright Futures <span className="gold-gradient-text">Through Quality Education.</span>
             </h1>
 
             {/* Subtitle */}
-
+            <p className="text-sm sm:text-base lg:text-lg text-slate-200 leading-relaxed mb-8 max-w-3xl font-normal drop-shadow-sm">
+              Empowering young minds with academic rigor, discipline, creativity, and technological innovation. Providing a world-class environment where future leaders discover their highest potential.
+            </p>
 
             {/* CTAs */}
-
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-2">
+              <button
+                onClick={onOpenAdmissionModal}
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-950 font-extrabold text-sm sm:text-base rounded-xl shadow-glow-gold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
+              >
+                <span>Admission Enquiry</span>
+                <ChevronRight className="w-5 h-5 text-navy-950" />
+              </button>
+              <Link
+                to="/about"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white/15 hover:bg-white/25 text-white font-bold text-sm sm:text-base rounded-xl backdrop-blur-md border border-white/30 transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <span>Explore Our School</span>
+                <ArrowRight className="w-4 h-4 text-skyAccent-300" />
+              </Link>
+            </div>
 
             {/* Quick Trust Highlights */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-10 mt-10 border-t border-white/15">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-8 mt-8 border-t border-white/15">
               <div className="flex items-center gap-2.5 text-slate-200 text-xs sm:text-sm">
                 <CheckCircle2 className="w-4 h-4 text-gold-400 shrink-0" />
                 <span>CBSE Senior Secondary</span>
@@ -201,6 +302,33 @@ export default function Home({ onOpenAdmissionModal }) {
             </div>
 
           </div>
+
+          {/* Bottom Slider Indicators and Active Facility Badge */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-8 mt-6">
+            {/* Interactive slide indicator dots */}
+            <div className="flex items-center gap-2 bg-navy-950/60 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/15">
+              {heroSlides.map((slide, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  aria-label={`Go to slide ${idx + 1}: ${slide.tag}`}
+                  className={`transition-all duration-300 rounded-full ${
+                    idx === currentSlide
+                      ? 'w-7 h-2 bg-gold-400 shadow-glow-gold'
+                      : 'w-2 h-2 bg-white/40 hover:bg-white/75'
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* Active Facility Tag */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-950/60 backdrop-blur-md border border-white/15 text-xs text-slate-200">
+              <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+              <span className="font-semibold text-white">{heroSlides[currentSlide].tag}</span>
+              <span className="text-slate-400 text-[11px]">({currentSlide + 1} of {heroSlides.length})</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
