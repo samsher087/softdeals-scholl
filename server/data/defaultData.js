@@ -94,6 +94,26 @@ export const initialEvents = [
     badge: 'Career Guidance',
     description: 'Special panel discussion featuring distinguished alumni from IITs, Oxford, and Harvard for senior students.',
     image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'ev-05',
+    title: 'Robotics & AI Drone Tinkering Hackathon "INVENTO 2026"',
+    date: 'May 16, 2026',
+    time: '9:30 AM - 4:00 PM',
+    venue: 'STEAM Hub & Tinkering Lab',
+    badge: 'Robotics Expo',
+    description: 'Inter-school innovation challenge featuring autonomous rovers, obstacle bots, and automated smart-farm models.',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'ev-06',
+    title: 'Summer Performing Arts & Western Music Recital',
+    date: 'May 28, 2026',
+    time: '6:00 PM - 8:30 PM',
+    venue: 'Open-Air Amphitheatre',
+    badge: 'Fine Arts',
+    description: 'Enthralling live concert featuring school chamber orchestra, jazz ensemble, choir harmony, and theatrical recitals.',
+    image: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80'
   }
 ];
 

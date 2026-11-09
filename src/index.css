@@ -61,6 +61,15 @@
   background: #06b6d4;
 }
 
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Glassmorphism helpers - SoftDeals Style */
 .glass-nav {
   background: rgba(3, 7, 18, 0.85);

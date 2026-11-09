@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -23,7 +23,9 @@ import {
   Building2,
   Smile,
   Check,
-  ArrowUpRight
+  ArrowUpRight,
+  Pause,
+  Play
 } from 'lucide-react';
 import { api } from '../services/api';
 import LightboxModal from '../components/common/LightboxModal';
@@ -36,6 +38,8 @@ export default function Home({ onOpenAdmissionModal }) {
   const [currentLightboxIndex, setCurrentLightboxIndex] = useState(0);
   const [activeNoticeCategory, setActiveNoticeCategory] = useState('All');
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isEventsPaused, setIsEventsPaused] = useState(false);
+  const eventsScrollRef = useRef(null);
 
   const heroSlides = [
     {
@@ -99,6 +103,34 @@ export default function Home({ onOpenAdmissionModal }) {
     };
     loadData();
   }, []);
+
+  // Upward auto-scrolling for Upcoming Events with pause on hover
+  useEffect(() => {
+    const el = eventsScrollRef.current;
+    if (!el) return;
+
+    let animId;
+    let lastTime = performance.now();
+    const speed = 26; // pixels per second (smooth, steady reading pace)
+
+    const step = (time) => {
+      const delta = Math.min((time - lastTime) / 1000, 0.1);
+      lastTime = time;
+
+      if (!isEventsPaused && el) {
+        el.scrollTop += speed * delta;
+        // When scrolled past half the scrollHeight, wrap back seamlessly
+        const halfHeight = el.scrollHeight / 2;
+        if (halfHeight > 0 && el.scrollTop >= halfHeight) {
+          el.scrollTop -= halfHeight;
+        }
+      }
+      animId = requestAnimationFrame(step);
+    };
+
+    animId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animId);
+  }, [isEventsPaused, events]);
 
   const openLightboxAt = (index) => {
     setCurrentLightboxIndex(index);
@@ -558,46 +590,85 @@ export default function Home({ onOpenAdmissionModal }) {
               </div>
             </div>
 
-            {/* Upcoming School Events (5 Cols) */}
-            <div className="lg:col-span-5">
-              <div className="mb-6">
-                <span className="text-xs font-bold text-teal-400 uppercase tracking-wider block">Mark Your Calendar</span>
-                <h3 className="text-2xl font-serif font-black text-white">Upcoming Events</h3>
+            {/* Upcoming School Events (5 Cols) - Upward Auto-Scrolling */}
+            <div className="lg:col-span-5 flex flex-col">
+              <div className="mb-6 flex items-center justify-between">
+                <div>
+                  <span className="text-xs font-bold text-teal-400 uppercase tracking-wider block">Mark Your Calendar</span>
+                  <h3 className="text-2xl font-serif font-black text-white">Upcoming Events</h3>
+                </div>
+
+                {/* Auto-scroll status indicator & toggle */}
+                <button
+                  type="button"
+                  onClick={() => setIsEventsPaused((prev) => !prev)}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 hover:bg-slate-850 border border-slate-800 text-[11px] text-cyan-400 font-semibold transition-all shadow-sm"
+                  title={isEventsPaused ? "Click to resume auto-scroll" : "Click to pause auto-scroll (or hover on any card)"}
+                >
+                  {isEventsPaused ? (
+                    <>
+                      <Play className="w-2.5 h-2.5 text-amber-400 fill-amber-400" />
+                      <span className="text-amber-300">Paused</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                      <span>Auto-Scroll</span>
+                    </>
+                  )}
+                </button>
               </div>
 
-              <div className="space-y-4">
-                {events.slice(0, 3).map((event) => (
-                  <div
-                    key={event.id}
-                    className="bg-slate-900/75 hover:bg-slate-850 rounded-2xl overflow-hidden border border-slate-800/90 hover:border-cyan-500/40 shadow-lg transition-all flex flex-col sm:flex-row"
-                  >
-                    <div className="sm:w-36 h-28 sm:h-auto overflow-hidden shrink-0">
-                      <img
-                        src={event.image}
-                        alt={event.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-4 flex flex-col justify-between flex-1">
-                      <div>
-                        <div className="flex items-center justify-between text-[11px] text-cyan-400 font-bold mb-1">
-                          <span>{event.badge}</span>
-                          <span className="text-slate-400 font-normal">{event.time}</span>
+              {/* Scrolling Events Box with Fade Masks */}
+              <div
+                className="relative h-[480px] sm:h-[510px] overflow-hidden rounded-2xl group border border-slate-800/80 bg-slate-950/40 p-2 shadow-xl"
+                onMouseEnter={() => setIsEventsPaused(true)}
+                onMouseLeave={() => setIsEventsPaused(false)}
+              >
+                {/* Top and Bottom Gradient Fade Masks */}
+                <div className="absolute top-0 inset-x-0 h-8 bg-gradient-to-b from-slate-950 via-slate-950/80 to-transparent z-10 pointer-events-none rounded-t-2xl" />
+                <div className="absolute bottom-0 inset-x-0 h-8 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-10 pointer-events-none rounded-b-2xl" />
+
+                {/* Smooth Infinite Vertical Scroller */}
+                <div
+                  ref={eventsScrollRef}
+                  className="h-full overflow-y-auto no-scrollbar space-y-4 py-2 cursor-pointer"
+                  style={{ scrollBehavior: 'auto' }}
+                >
+                  {/* Duplicated event list for seamless, uninterrupted upward loop */}
+                  {(events.length > 0 ? [...events, ...events] : []).map((event, idx) => (
+                    <div
+                      key={`${event.id}-${idx}`}
+                      className="bg-slate-900/80 hover:bg-slate-850 rounded-2xl overflow-hidden border border-slate-800/90 hover:border-cyan-500/50 shadow-lg hover:shadow-cyan-500/10 transition-all flex flex-col sm:flex-row group/card"
+                    >
+                      <div className="sm:w-36 h-28 sm:h-auto overflow-hidden shrink-0 relative">
+                        <img
+                          src={event.image}
+                          alt={event.title}
+                          className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4 flex flex-col justify-between flex-1">
+                        <div>
+                          <div className="flex items-center justify-between text-[11px] text-cyan-400 font-bold mb-1">
+                            <span>{event.badge}</span>
+                            <span className="text-slate-400 font-normal">{event.time}</span>
+                          </div>
+                          <h4 className="text-sm font-bold text-white line-clamp-1 group-hover/card:text-cyan-300 transition-colors">
+                            {event.title}
+                          </h4>
+                          <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">
+                            {event.description}
+                          </p>
                         </div>
-                        <h4 className="text-sm font-bold text-white line-clamp-1">
-                          {event.title}
-                        </h4>
-                        <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">
-                          {event.description}
-                        </p>
-                      </div>
-                      <div className="mt-2 text-[10px] font-semibold text-slate-400 flex items-center justify-between pt-2 border-t border-slate-800">
-                        <span>📍 {event.venue}</span>
-                        <span className="text-cyan-300 font-bold">{event.date}</span>
+                        <div className="mt-2 text-[10px] font-semibold text-slate-400 flex items-center justify-between pt-2 border-t border-slate-800">
+                          <span>📍 {event.venue}</span>
+                          <span className="text-cyan-300 font-bold">{event.date}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
