@@ -242,14 +242,10 @@ export default function Home({ onOpenAdmissionModal }) {
           <div className="max-w-5xl xl:max-w-6xl">
 
 
-            {/* Main Headline - Broken into Two Lines with Big Transparent First Line */}
-            <h1 className="mb-6 tracking-tight drop-shadow-md">
-              <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-serif font-black text-transparent [-webkit-text-stroke:1.5px_rgba(255,255,255,0.9)] sm:[-webkit-text-stroke:2px_#ffffff] leading-[1.08] mb-2 sm:mb-3">
-                Building Bright Futures
-              </span>
-              <span className="block text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-serif font-extrabold bg-gradient-to-r from-cyan-400 via-sky-300 to-teal-300 bg-clip-text text-transparent leading-[1.18]">
-                Through Quality Education.
-              </span>
+            {/* Main Headline - Broken into Two Lines with SoftDeals Cyan-Sky-Teal Gradient */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold text-white tracking-tight leading-[1.15] mb-6 drop-shadow-md">
+              <span className="block">Building Bright Futures</span>
+              <span className="block bg-gradient-to-r from-cyan-400 via-sky-300 to-teal-300 bg-clip-text text-transparent">Through Quality Education.</span>
             </h1>
 
             {/* Subtitle */}
