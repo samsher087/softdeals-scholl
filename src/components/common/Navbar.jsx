@@ -297,9 +297,9 @@ export default function Navbar({ onOpenAdmissionModal }) {
           {/* Important Megaphone Banner Badge in place of Notice */}
           <div className="shrink-0 flex items-center">
             <img
-              src="/images/important-banner.jpg"
+              src="/images/important-banner.png"
               alt="Important Notice"
-              className="h-7 sm:h-8 w-auto object-contain rounded-md shadow-md"
+              className="h-7 sm:h-8 w-auto object-contain drop-shadow-md select-none"
             />
           </div>
 
