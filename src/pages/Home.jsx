@@ -284,7 +284,7 @@ export default function Home({ onOpenAdmissionModal }) {
             </div>
 
             {/* Quick Trust Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 mt-8 border-t border-slate-800/80">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-8 mt-8 border-t border-slate-800/80">
               <div className="flex items-center gap-3 text-slate-200">
                 <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
                   <Users className="w-4 h-4 text-cyan-400" />
@@ -326,6 +326,21 @@ export default function Home({ onOpenAdmissionModal }) {
                   </div>
                   <div className="text-[11px] text-slate-400 hidden sm:block">
                     Established in 1998
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 text-slate-200">
+                <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
+                  <Trophy className="w-4 h-4 text-cyan-400" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-white leading-tight">
+                    <span className="font-serif font-black text-base text-white mr-1.5">100%</span>
+                    Board Examination Pass Rate
+                  </div>
+                  <div className="text-[11px] text-slate-400 hidden sm:block">
+                    Consistently Ranked in Top Tier
                   </div>
                 </div>
               </div>
