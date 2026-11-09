@@ -9,7 +9,6 @@ import {
   X, 
   ChevronRight, 
   User, 
-  Users,
   Bell, 
   Award,
   Sparkles,
@@ -68,8 +67,8 @@ export default function Navbar({ onOpenAdmissionModal }) {
           {/* Institutional Highlights */}
           <div className="flex items-center gap-2 sm:gap-3 overflow-hidden w-full sm:w-auto text-[11px] sm:text-xs text-slate-300 whitespace-nowrap shrink-0">
             <span className="inline-flex items-center gap-1.5 text-cyan-400 font-semibold">
-              <Users className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-              <span>2,850+ Total Students Enrolled</span>
+              <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+              <span>CBSE Senior Secondary</span>
             </span>
             <span className="text-slate-700 hidden sm:inline">•</span>
             <span className="inline-flex items-center gap-1.5 text-slate-200 font-medium">
