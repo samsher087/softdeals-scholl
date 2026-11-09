@@ -284,18 +284,50 @@ export default function Home({ onOpenAdmissionModal }) {
             </div>
 
             {/* Quick Trust Highlights */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-8 mt-8 border-t border-slate-800/80">
-              <div className="flex items-center gap-2.5 text-slate-200 text-xs sm:text-sm">
-                <Users className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span><strong className="text-white font-bold font-serif">2,850+</strong> Total Students Enrolled</span>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 mt-8 border-t border-slate-800/80">
+              <div className="flex items-center gap-3 text-slate-200">
+                <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
+                  <Users className="w-4 h-4 text-cyan-400" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-white leading-tight">
+                    <span className="font-serif font-black text-base text-white mr-1.5">2,850+</span>
+                    Total Students Enrolled
+                  </div>
+                  <div className="text-[11px] text-slate-400 hidden sm:block">
+                    Nurtured Across All Grades
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2.5 text-slate-200 text-xs sm:text-sm">
-                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
-                <span>1:15 Teacher-Student Ratio</span>
+
+              <div className="flex items-center gap-3 text-slate-200">
+                <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
+                  <GraduationCap className="w-4 h-4 text-cyan-400" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-white leading-tight">
+                    <span className="font-serif font-black text-base text-white mr-1.5">120+</span>
+                    Qualified Educators
+                  </div>
+                  <div className="text-[11px] text-slate-400 hidden sm:block">
+                    Certified & Experienced Faculty
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2.5 text-slate-200 text-xs sm:text-sm col-span-2 sm:col-span-1">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>AI & Robotics Hubs</span>
+
+              <div className="flex items-center gap-3 text-slate-200">
+                <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
+                  <Award className="w-4 h-4 text-cyan-400" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-white leading-tight">
+                    <span className="font-serif font-black text-base text-white mr-1.5">28+</span>
+                    Years of Excellence
+                  </div>
+                  <div className="text-[11px] text-slate-400 hidden sm:block">
+                    Established in 1998
+                  </div>
+                </div>
               </div>
             </div>
 
