@@ -284,62 +284,62 @@ export default function Home({ onOpenAdmissionModal }) {
             </div>
 
             {/* Quick Trust Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-8 mt-8 border-t border-slate-800/80">
-              <div className="flex items-center gap-3 text-slate-200">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-4 pt-8 mt-8 border-t border-slate-800/80">
+              <div className="flex items-center gap-3 text-slate-200 min-w-0">
                 <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
                   <Users className="w-4 h-4 text-cyan-400" />
                 </div>
-                <div>
-                  <div className="text-sm font-bold text-white leading-tight">
-                    <span className="font-serif font-black text-base text-white mr-1.5">2,850+</span>
+                <div className="min-w-0">
+                  <div className="text-xs xl:text-sm font-bold text-white leading-tight whitespace-nowrap">
+                    <span className="font-serif font-black text-sm xl:text-base text-white mr-1.5">2,850+</span>
                     Total Students Enrolled
                   </div>
-                  <div className="text-[11px] text-slate-400 hidden sm:block">
+                  <div className="text-[11px] text-slate-400 hidden sm:block whitespace-nowrap">
                     Nurtured Across All Grades
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 text-slate-200">
+              <div className="flex items-center gap-3 text-slate-200 min-w-0">
                 <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
                   <GraduationCap className="w-4 h-4 text-cyan-400" />
                 </div>
-                <div>
-                  <div className="text-sm font-bold text-white leading-tight">
-                    <span className="font-serif font-black text-base text-white mr-1.5">120+</span>
+                <div className="min-w-0">
+                  <div className="text-xs xl:text-sm font-bold text-white leading-tight whitespace-nowrap">
+                    <span className="font-serif font-black text-sm xl:text-base text-white mr-1.5">120+</span>
                     Qualified Educators
                   </div>
-                  <div className="text-[11px] text-slate-400 hidden sm:block">
+                  <div className="text-[11px] text-slate-400 hidden sm:block whitespace-nowrap">
                     Certified & Experienced Faculty
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 text-slate-200">
+              <div className="flex items-center gap-3 text-slate-200 min-w-0">
                 <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
                   <Award className="w-4 h-4 text-cyan-400" />
                 </div>
-                <div>
-                  <div className="text-sm font-bold text-white leading-tight">
-                    <span className="font-serif font-black text-base text-white mr-1.5">28+</span>
+                <div className="min-w-0">
+                  <div className="text-xs xl:text-sm font-bold text-white leading-tight whitespace-nowrap">
+                    <span className="font-serif font-black text-sm xl:text-base text-white mr-1.5">28+</span>
                     Years of Excellence
                   </div>
-                  <div className="text-[11px] text-slate-400 hidden sm:block">
+                  <div className="text-[11px] text-slate-400 hidden sm:block whitespace-nowrap">
                     Established in 1998
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 text-slate-200">
+              <div className="flex items-center gap-3 text-slate-200 min-w-0">
                 <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
                   <Trophy className="w-4 h-4 text-cyan-400" />
                 </div>
-                <div>
-                  <div className="text-sm font-bold text-white leading-tight">
-                    <span className="font-serif font-black text-base text-white mr-1.5">100%</span>
+                <div className="min-w-0">
+                  <div className="text-xs xl:text-sm font-bold text-white leading-tight whitespace-nowrap">
+                    <span className="font-serif font-black text-sm xl:text-base text-white mr-1.5">100%</span>
                     Board Examination Pass Rate
                   </div>
-                  <div className="text-[11px] text-slate-400 hidden sm:block">
+                  <div className="text-[11px] text-slate-400 hidden sm:block whitespace-nowrap">
                     Consistently Ranked in Top Tier
                   </div>
                 </div>
