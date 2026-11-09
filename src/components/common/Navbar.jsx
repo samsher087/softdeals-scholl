@@ -59,7 +59,7 @@ export default function Navbar({ onOpenAdmissionModal }) {
   };
 
   return (
-    <header className="w-full relative z-50">
+    <header className="w-full sticky top-0 z-50 shadow-md transition-shadow">
       {/* Top Announcement Bar */}
       <div className="bg-navy-950 text-slate-200 text-xs py-2 px-4 border-b border-navy-800">
         <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
@@ -98,12 +98,12 @@ export default function Navbar({ onOpenAdmissionModal }) {
         </div>
       </div>
 
-      {/* Main Sticky Navigation Bar */}
+      {/* Main Navigation Bar */}
       <nav 
         className={`w-full transition-all duration-300 ${
           isScrolled 
-            ? 'glass-nav shadow-premium sticky top-0 py-2.5 border-b border-slate-200' 
-            : 'bg-white py-3.5 border-b border-slate-100'
+            ? 'glass-nav py-2 sm:py-2.5 border-b border-slate-200' 
+            : 'bg-white py-3 sm:py-3.5 border-b border-slate-100'
         }`}
       >
         <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
