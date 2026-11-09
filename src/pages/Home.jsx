@@ -241,12 +241,6 @@ export default function Home({ onOpenAdmissionModal }) {
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-20 lg:py-28 w-full">
           <div className="max-w-5xl xl:max-w-6xl">
 
-            {/* Top Pill - SoftDeals Cyan Accent */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-xs font-semibold mb-5 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-              <span className="text-cyan-300 font-bold">ADMISSIONS OPEN FOR 2026-27</span>
-              <span className="text-slate-300">| Nursery to Grade XI</span>
-            </div>
 
             {/* Main Headline - Single Line on Desktop with SoftDeals Cyan-Sky-Teal Gradient */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] xl:text-[3.15rem] font-serif font-extrabold text-white tracking-tight leading-tight mb-5 lg:whitespace-nowrap drop-shadow-md">
@@ -254,9 +248,7 @@ export default function Home({ onOpenAdmissionModal }) {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed mb-8 max-w-3xl font-normal drop-shadow-sm">
-              Empowering young minds with academic rigor, discipline, creativity, and technological innovation. Providing a world-class environment where future leaders discover their highest potential.
-            </p>
+
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-2">
@@ -339,32 +331,6 @@ export default function Home({ onOpenAdmissionModal }) {
               </div>
             </div>
 
-          </div>
-
-          {/* Bottom Slider Indicators and Active Facility Badge */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-8 mt-6">
-            {/* Interactive slide indicator dots */}
-            <div className="flex items-center gap-2 bg-slate-950/70 backdrop-blur-md px-3.5 py-2 rounded-full border border-slate-800">
-              {heroSlides.map((slide, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentSlide(idx)}
-                  aria-label={`Go to slide ${idx + 1}: ${slide.tag}`}
-                  className={`transition-all duration-300 rounded-full ${
-                    idx === currentSlide
-                      ? 'w-7 h-2 bg-gradient-to-r from-cyan-400 to-teal-400 shadow-md shadow-cyan-500/50'
-                      : 'w-2 h-2 bg-slate-700 hover:bg-slate-500'
-                  }`}
-                />
-              ))}
-            </div>
-
-            {/* Active Facility Tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950/70 backdrop-blur-md border border-slate-800 text-xs text-slate-200">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-              <span className="font-semibold text-white">{heroSlides[currentSlide].tag}</span>
-              <span className="text-slate-400 text-[11px]">({currentSlide + 1} of {heroSlides.length})</span>
-            </div>
           </div>
 
         </div>
@@ -552,11 +518,10 @@ export default function Home({ onOpenAdmissionModal }) {
                     <button
                       key={cat}
                       onClick={() => setActiveNoticeCategory(cat)}
-                      className={`px-3 py-1 rounded-lg transition-colors ${
-                        activeNoticeCategory === cat
-                          ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 font-bold'
-                          : 'text-slate-400 hover:text-white'
-                      }`}
+                      className={`px-3 py-1 rounded-lg transition-colors ${activeNoticeCategory === cat
+                        ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 font-bold'
+                        : 'text-slate-400 hover:text-white'
+                        }`}
                     >
                       {cat}
                     </button>
@@ -573,11 +538,10 @@ export default function Home({ onOpenAdmissionModal }) {
                   >
                     <div className="flex items-start justify-between gap-3 mb-1.5">
                       <div className="flex items-center gap-2">
-                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${
-                          notice.urgent
-                            ? 'bg-red-500/15 text-red-300 border border-red-500/30'
-                            : 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/30'
-                        }`}>
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${notice.urgent
+                          ? 'bg-red-500/15 text-red-300 border border-red-500/30'
+                          : 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/30'
+                          }`}>
                           {notice.category}
                         </span>
                         <span className="text-[11px] text-slate-400 flex items-center gap-1">
