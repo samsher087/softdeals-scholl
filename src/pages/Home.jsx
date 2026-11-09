@@ -286,8 +286,8 @@ export default function Home({ onOpenAdmissionModal }) {
             {/* Quick Trust Highlights */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-8 mt-8 border-t border-slate-800/80">
               <div className="flex items-center gap-2.5 text-slate-200 text-xs sm:text-sm">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>CBSE Senior Secondary</span>
+                <Users className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span><strong className="text-white font-bold font-serif">2,850+</strong> Total Students Enrolled</span>
               </div>
               <div className="flex items-center gap-2.5 text-slate-200 text-xs sm:text-sm">
                 <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
