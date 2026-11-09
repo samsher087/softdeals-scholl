@@ -30,6 +30,7 @@ import {
 import { api } from '../services/api';
 import { initialEvents } from '../../server/data/defaultData.js';
 import LightboxModal from '../components/common/LightboxModal';
+import InnovationLabSection from '../components/home/InnovationLabSection';
 
 export default function Home({ onOpenAdmissionModal }) {
   const [notices, setNotices] = useState([]);
@@ -247,15 +248,33 @@ export default function Home({ onOpenAdmissionModal }) {
 
 
             {/* Main Headline - Broken into Two Lines with SoftDeals Cyan-Sky-Teal Gradient */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold text-white tracking-tight leading-[1.15] mb-6 drop-shadow-md">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold text-white tracking-tight leading-[1.15] mb-5 drop-shadow-md">
               <span className="block">Building Bright Futures</span>
-              <span className="block bg-gradient-to-r from-cyan-400 via-sky-300 to-teal-300 bg-clip-text text-transparent">Through Quality Education.</span>
+              <span className="block bg-gradient-to-r from-cyan-400 via-sky-300 to-teal-300 bg-clip-text text-transparent">
+                Through Quality Education.
+              </span>
             </h1>
 
             {/* Subtitle */}
-
+            <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl font-normal leading-relaxed mb-8 drop-shadow">
+              Nurturing intellectual curiosity, leadership character, and technological innovation in students from Pre-Nursery to Grade XII.
+            </p>
 
             {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4 mb-8">
+              <button
+                onClick={onOpenAdmissionModal}
+                className="px-6 sm:px-8 py-3.5 bg-gradient-to-r from-cyan-500 via-sky-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-bold text-sm sm:text-base rounded-xl shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5"
+              >
+                Admission Enquiry 2026-27
+              </button>
+              <Link
+                to="/academics"
+                className="px-6 sm:px-8 py-3.5 bg-slate-900/80 hover:bg-slate-800 text-white font-bold text-sm sm:text-base rounded-xl border border-slate-700/80 backdrop-blur-md transition-all shadow-md"
+              >
+                Explore Academics & Curriculum
+              </Link>
+            </div>
 
 
             {/* Quick Trust Highlights */}
@@ -487,6 +506,9 @@ export default function Home({ onOpenAdmissionModal }) {
 
         </div>
       </section>
+
+      {/* 5.5 THE INNOVATION LAB - Interactive STEAM & 3D Prototyping (inspired by ashfall.studio/lab) */}
+      <InnovationLabSection />
 
       {/* 6. LATEST ANNOUNCEMENTS & EVENTS SECTION - SoftDeals Dark Style */}
       <section className="py-16 sm:py-24">
