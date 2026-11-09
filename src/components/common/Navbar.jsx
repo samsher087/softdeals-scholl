@@ -285,6 +285,53 @@ export default function Navbar({ onOpenAdmissionModal }) {
           </div>
         )}
       </nav>
+
+      {/* Notice Marquee Bar just below Menu (Same size as top bar) */}
+      <div className="bg-navy-950 text-slate-200 text-xs py-2 px-4 border-b border-navy-800 flex items-center overflow-hidden">
+        <div className="max-w-[1440px] w-full mx-auto flex items-center gap-3">
+          
+          {/* Badge */}
+          <div className="flex items-center gap-1.5 bg-gold-500 text-navy-950 font-bold px-2.5 py-0.5 rounded text-[10px] tracking-wider uppercase shrink-0 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse"></span>
+            <span className="font-extrabold">NOTICE</span>
+          </div>
+
+          {/* Marquee Ticker */}
+          <div className="flex-1 overflow-hidden flex items-center">
+            <marquee
+              behavior="scroll"
+              direction="left"
+              scrollamount="6"
+              onMouseOver={(e) => e.target.stop()}
+              onMouseOut={(e) => e.target.start()}
+              className="text-slate-300 text-xs font-medium cursor-pointer"
+            >
+              <span className="inline-flex items-center gap-8 whitespace-nowrap">
+                <span className="text-slate-200 hover:text-gold-400 transition-colors">
+                  📢 <strong className="text-gold-400">Admissions Open 2026-27:</strong> Online registration is active for Pre-Nursery to Grade XI (Science, Commerce & Humanities) • Limited Seats Available.
+                </span>
+                <span className="text-gold-500 font-bold">★★★</span>
+                <span className="text-slate-200 hover:text-gold-400 transition-colors">
+                  📝 <strong className="text-skyAccent-400">CBSE Board Examinations:</strong> Senior Secondary practical schedules & hall tickets for Grades 10 & 12 are available on the Student Information Portal.
+                </span>
+                <span className="text-gold-500 font-bold">★★★</span>
+                <span className="text-slate-200 hover:text-gold-400 transition-colors">
+                  🤖 <strong className="text-gold-400">STEM & Robotics Expo:</strong> Annual Inter-School Science Fair "INNOVIZ 2026" registrations open for student prototypes.
+                </span>
+                <span className="text-gold-500 font-bold">★★★</span>
+                <span className="text-slate-200 hover:text-gold-400 transition-colors">
+                  🏆 <strong className="text-skyAccent-400">Athletic Meet 2026:</strong> Inter-house sports finals (Blue Sapphire, Emerald, Ruby, Topaz) scheduled this weekend at the Main Stadium.
+                </span>
+                <span className="text-gold-500 font-bold">★★★</span>
+                <span className="text-slate-200 hover:text-gold-400 transition-colors">
+                  👨‍👩‍👧 <strong className="text-gold-400">Parent-Teacher Meeting:</strong> Term-2 PTM consultation slots are now open for online reservation.
+                </span>
+              </span>
+            </marquee>
+          </div>
+
+        </div>
+      </div>
     </header>
   );
 }

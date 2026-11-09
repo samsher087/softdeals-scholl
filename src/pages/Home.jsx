@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  CheckCircle2, 
-  GraduationCap, 
-  Users, 
-  Award, 
-  BookOpen, 
-  Sparkles, 
-  ShieldCheck, 
-  Compass, 
-  Calendar, 
-  ChevronRight, 
-  Download, 
-  FileText, 
-  Star, 
-  Eye, 
-  Cpu, 
-  Trophy, 
-  Globe, 
-  Building2, 
-  Smile, 
-  Check, 
-  ArrowUpRight 
+import {
+  ArrowRight,
+  CheckCircle2,
+  GraduationCap,
+  Users,
+  Award,
+  BookOpen,
+  Sparkles,
+  ShieldCheck,
+  Compass,
+  Calendar,
+  ChevronRight,
+  Download,
+  FileText,
+  Star,
+  Eye,
+  Cpu,
+  Trophy,
+  Globe,
+  Building2,
+  Smile,
+  Check,
+  ArrowUpRight
 } from 'lucide-react';
 import { api } from '../services/api';
 import LightboxModal from '../components/common/LightboxModal';
@@ -55,8 +55,8 @@ export default function Home({ onOpenAdmissionModal }) {
     setLightboxOpen(true);
   };
 
-  const filteredNotices = activeNoticeCategory === 'All' 
-    ? notices 
+  const filteredNotices = activeNoticeCategory === 'All'
+    ? notices
     : notices.filter(n => n.category.toLowerCase() === activeNoticeCategory.toLowerCase());
 
   const stats = [
@@ -154,7 +154,7 @@ export default function Home({ onOpenAdmissionModal }) {
 
   return (
     <div className="w-full">
-      
+
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[640px] lg:min-h-[720px] flex items-center bg-navy-950 overflow-hidden">
         {/* Background Image with High Quality Campus Life */}
@@ -169,13 +169,9 @@ export default function Home({ onOpenAdmissionModal }) {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="max-w-5xl xl:max-w-6xl">
-            
+
             {/* Top Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold mb-6">
-              <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
-              <span className="text-gold-300 font-bold">ADMISSIONS OPEN FOR 2026-27</span>
-              <span className="text-slate-300">| Nursery to Grade XI</span>
-            </div>
+
 
             {/* Main Headline */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] xl:text-[3.2rem] font-serif font-extrabold text-white tracking-tight leading-tight mb-6 lg:whitespace-nowrap">
@@ -183,28 +179,10 @@ export default function Home({ onOpenAdmissionModal }) {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed mb-8 max-w-2xl font-normal">
-              Empowering young minds with academic rigor, discipline, creativity, and technological innovation. Providing a world-class environment where future leaders discover their highest potential.
-            </p>
+
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <button
-                onClick={onOpenAdmissionModal}
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-950 font-extrabold text-sm sm:text-base rounded-xl shadow-glow-gold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
-              >
-                <span>Admission Enquiry</span>
-                <ChevronRight className="w-5 h-5 text-navy-950" />
-              </button>
 
-              <Link
-                to="/about"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white/15 hover:bg-white/25 text-white font-bold text-sm sm:text-base rounded-xl backdrop-blur-md border border-white/30 transition-all duration-300"
-              >
-                <span>Explore Our School</span>
-                <ArrowRight className="w-4 h-4 text-skyAccent-300" />
-              </Link>
-            </div>
 
             {/* Quick Trust Highlights */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-10 mt-10 border-t border-white/15">
@@ -257,7 +235,7 @@ export default function Home({ onOpenAdmissionModal }) {
       <section className="py-16 sm:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-soft border border-slate-200/80 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
+
             {/* Principal Photograph & Badge */}
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white aspect-[4/5] max-w-md mx-auto">
@@ -294,7 +272,7 @@ export default function Home({ onOpenAdmissionModal }) {
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 Dear Students, Parents, and Honored Guests,
               </p>
-              
+
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 At St. Xavier's International School, we consider education a sacred journey of transformation. Our mission extends far beyond textbooks and examinations—we inspire young minds to question with curiosity, innovate with courage, and serve society with unshakeable moral integrity.
               </p>
@@ -325,7 +303,7 @@ export default function Home({ onOpenAdmissionModal }) {
       {/* 4. WHY CHOOSE OUR SCHOOL */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-skyAccent-600 bg-skyAccent-50 px-3 py-1 rounded-full">
               Why Parents Choose Us
@@ -366,7 +344,7 @@ export default function Home({ onOpenAdmissionModal }) {
       {/* 5. FACILITIES & INFRASTRUCTURE PREVIEW */}
       <section className="py-16 sm:py-24 bg-navy-900 text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-gold-400 bg-navy-800 px-3 py-1 rounded-full border border-navy-700">
@@ -387,7 +365,7 @@ export default function Home({ onOpenAdmissionModal }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {facilities.map((fac, idx) => (
-              <div 
+              <div
                 key={idx}
                 className="group relative rounded-2xl overflow-hidden bg-navy-950 border border-navy-800 shadow-lg hover:border-gold-500/50 transition-all duration-300"
               >
@@ -416,9 +394,9 @@ export default function Home({ onOpenAdmissionModal }) {
       {/* 6. LATEST ANNOUNCEMENTS & EVENTS SECTION */}
       <section className="py-16 sm:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            
+
             {/* Notices & Circulars (7 Cols) */}
             <div className="lg:col-span-7">
               <div className="flex items-center justify-between mb-6">
@@ -433,11 +411,10 @@ export default function Home({ onOpenAdmissionModal }) {
                     <button
                       key={cat}
                       onClick={() => setActiveNoticeCategory(cat)}
-                      className={`px-2.5 py-1 rounded-md transition-colors ${
-                        activeNoticeCategory === cat 
-                          ? 'bg-navy-900 text-white font-bold' 
-                          : 'text-slate-600 hover:text-navy-900'
-                      }`}
+                      className={`px-2.5 py-1 rounded-md transition-colors ${activeNoticeCategory === cat
+                        ? 'bg-navy-900 text-white font-bold'
+                        : 'text-slate-600 hover:text-navy-900'
+                        }`}
                     >
                       {cat}
                     </button>
@@ -454,11 +431,10 @@ export default function Home({ onOpenAdmissionModal }) {
                   >
                     <div className="flex items-start justify-between gap-3 mb-1.5">
                       <div className="flex items-center gap-2">
-                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider ${
-                          notice.urgent 
-                            ? 'bg-red-100 text-red-700 border border-red-200' 
-                            : 'bg-skyAccent-100 text-skyAccent-700'
-                        }`}>
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider ${notice.urgent
+                          ? 'bg-red-100 text-red-700 border border-red-200'
+                          : 'bg-skyAccent-100 text-skyAccent-700'
+                          }`}>
                           {notice.category}
                         </span>
                         <span className="text-[11px] text-slate-400 flex items-center gap-1">
@@ -540,7 +516,7 @@ export default function Home({ onOpenAdmissionModal }) {
       {/* 7. PARENT TESTIMONIALS */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-gold-600 bg-gold-50 px-3 py-1 rounded-full border border-gold-200">
               Voices of Trust
@@ -593,7 +569,7 @@ export default function Home({ onOpenAdmissionModal }) {
       {/* 8. PHOTO GALLERY PREVIEW */}
       <section className="py-16 sm:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10">
             <div>
               <span className="text-xs font-bold text-skyAccent-600 uppercase tracking-wider block">Life at St. Xavier's</span>
