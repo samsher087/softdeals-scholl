@@ -21,6 +21,7 @@ import {
   PlusCircle,
   CreditCard,
   ChevronRight,
+  ChevronDown,
   TrendingUp,
   Inbox
 } from 'lucide-react';
@@ -331,33 +332,33 @@ export default function Dashboard() {
             
             {/* Metric Summary */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                <div className="text-xs font-semibold text-slate-500 uppercase">Total Working Days</div>
-                <div className="text-2xl font-bold font-serif text-navy-900 mt-1">{attendance?.totalDays || 182}</div>
+              <div className="bg-slate-900/60 backdrop-blur-xl p-5 rounded-2xl border border-slate-800/80 shadow-xl">
+                <div className="text-xs font-semibold text-slate-400 uppercase">Total Working Days</div>
+                <div className="text-2xl font-bold font-serif text-white mt-1">{attendance?.totalDays || 182}</div>
               </div>
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                <div className="text-xs font-semibold text-slate-500 uppercase">Days Present</div>
-                <div className="text-2xl font-bold font-serif text-emerald-600 mt-1">{attendance?.presentDays || 172}</div>
+              <div className="bg-slate-900/60 backdrop-blur-xl p-5 rounded-2xl border border-slate-800/80 shadow-xl">
+                <div className="text-xs font-semibold text-slate-400 uppercase">Days Present</div>
+                <div className="text-2xl font-bold font-serif text-emerald-400 mt-1">{attendance?.presentDays || 172}</div>
               </div>
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                <div className="text-xs font-semibold text-slate-500 uppercase">Authorized Leave</div>
-                <div className="text-2xl font-bold font-serif text-amber-600 mt-1">{attendance?.medicalLeave || 3}</div>
+              <div className="bg-slate-900/60 backdrop-blur-xl p-5 rounded-2xl border border-slate-800/80 shadow-xl">
+                <div className="text-xs font-semibold text-slate-400 uppercase">Authorized Leave</div>
+                <div className="text-2xl font-bold font-serif text-amber-400 mt-1">{attendance?.medicalLeave || 3}</div>
               </div>
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                <div className="text-xs font-semibold text-slate-500 uppercase">Term Attendance Rate</div>
-                <div className="text-2xl font-bold font-serif text-skyAccent-600 mt-1">{attendance?.attendancePercentage || 94.5}%</div>
+              <div className="bg-slate-900/60 backdrop-blur-xl p-5 rounded-2xl border border-slate-800/80 shadow-xl">
+                <div className="text-xs font-semibold text-slate-400 uppercase">Term Attendance Rate</div>
+                <div className="text-2xl font-bold font-serif text-cyan-400 mt-1">{attendance?.attendancePercentage || 94.5}%</div>
               </div>
             </div>
 
             {/* Monthly Breakdown Table */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-              <h3 className="text-lg font-serif font-bold text-navy-900 mb-4">
+            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl">
+              <h3 className="text-lg font-serif font-bold text-white mb-4">
                 Monthly Attendance Breakdown (Academic Year 2025-26)
               </h3>
               
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto rounded-xl border border-slate-800/80">
                 <table className="w-full text-left text-xs sm:text-sm">
-                  <thead className="bg-navy-950 text-white uppercase text-xs">
+                  <thead className="bg-slate-950 text-slate-300 uppercase text-xs border-b border-slate-800">
                     <tr>
                       <th className="px-5 py-3">Month</th>
                       <th className="px-5 py-3">Total Working Days</th>
@@ -366,15 +367,15 @@ export default function Dashboard() {
                       <th className="px-5 py-3">CBSE Threshold Status</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-200 text-slate-700">
+                  <tbody className="divide-y divide-slate-800/70 text-slate-300">
                     {(attendance?.monthlySummary || []).map((m, idx) => (
-                      <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                        <td className="px-5 py-3 font-bold text-navy-900">{m.month}</td>
-                        <td className="px-5 py-3">{m.total} Days</td>
-                        <td className="px-5 py-3 font-semibold text-emerald-600">{m.present} Days</td>
-                        <td className="px-5 py-3 font-mono font-bold text-skyAccent-600">{m.rate}</td>
-                        <td className="px-5 py-3">
-                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                      <tr key={idx} className="bg-slate-950/40 hover:bg-slate-900/60 transition-colors">
+                        <td className="px-5 py-3.5 font-bold text-white">{m.month}</td>
+                        <td className="px-5 py-3.5 text-slate-400">{m.total} Days</td>
+                        <td className="px-5 py-3.5 font-semibold text-emerald-400">{m.present} Days</td>
+                        <td className="px-5 py-3.5 font-mono font-bold text-cyan-400">{m.rate}</td>
+                        <td className="px-5 py-3.5">
+                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-400 bg-emerald-500/15 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
                             <CheckCircle2 className="w-3 h-3" /> Satisfactory
                           </span>
                         </td>
@@ -386,21 +387,21 @@ export default function Dashboard() {
             </div>
 
             {/* Subject-Wise Attendance */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-              <h3 className="text-lg font-serif font-bold text-navy-900 mb-4">
+            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl">
+              <h3 className="text-lg font-serif font-bold text-white mb-4">
                 Subject-Wise Attendance Distribution
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {(attendance?.subjectWise || []).map((sw, i) => (
-                  <div key={i} className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
-                    <div className="flex justify-between items-center text-xs font-bold text-navy-900">
+                  <div key={i} className="p-4 bg-slate-950/60 rounded-xl border border-slate-800/80 space-y-2">
+                    <div className="flex justify-between items-center text-xs font-bold text-white">
                       <span>{sw.subject}</span>
-                      <span className="text-skyAccent-600 font-mono">{sw.percentage}% ({sw.attended}/{sw.total})</span>
+                      <span className="text-cyan-400 font-mono">{sw.percentage}% ({sw.attended}/{sw.total})</span>
                     </div>
-                    <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                    <div className="w-full bg-slate-800/80 h-2 rounded-full overflow-hidden">
                       <div 
-                        className="bg-skyAccent-500 h-full rounded-full transition-all"
+                        className="bg-gradient-to-r from-cyan-500 to-teal-400 h-full rounded-full transition-all"
                         style={{ width: `${sw.percentage}%` }}
                       ></div>
                     </div>
@@ -416,45 +417,45 @@ export default function Dashboard() {
         {activeTab === 'results' && (
           <div className="space-y-6 animate-fadeIn">
             
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
+            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
                 <div>
-                  <span className="text-xs font-bold text-gold-600 uppercase tracking-widest">{results?.examTitle || 'Pre-Board Assessment'}</span>
-                  <h3 className="text-2xl font-serif font-bold text-navy-900 mt-1">Official Term Gradebook</h3>
+                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">{results?.examTitle || 'Pre-Board Assessment'}</span>
+                  <h3 className="text-2xl font-serif font-bold text-white mt-1">Official Term Gradebook</h3>
                 </div>
 
                 <button
                   onClick={() => setActiveTab('reportCard')}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-navy-900 to-skyAccent-700 text-white font-bold text-xs rounded-xl shadow shrink-0"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-cyan-500/20 shrink-0 transition-all"
                 >
-                  <FileText className="w-4 h-4 text-gold-400" />
+                  <FileText className="w-4 h-4 text-slate-950" />
                   <span>Generate Report Card Format</span>
                 </button>
               </div>
 
               {/* Result Summary Bar */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
-                <div className="p-4 bg-navy-50 rounded-xl border border-navy-100 text-center">
-                  <div className="text-xs text-slate-500 font-semibold uppercase">Overall Aggregate</div>
-                  <div className="text-2xl font-extrabold text-navy-900 font-serif mt-0.5">{results?.overallPercentage || '92.8'}%</div>
-                  <div className="text-[11px] text-emerald-600 font-bold mt-1">Passed with Distinction</div>
+                <div className="p-4 bg-slate-950/70 rounded-xl border border-slate-800/80 text-center">
+                  <div className="text-xs text-slate-400 font-semibold uppercase">Overall Aggregate</div>
+                  <div className="text-2xl font-extrabold text-cyan-400 font-serif mt-0.5">{results?.overallPercentage || '92.8'}%</div>
+                  <div className="text-[11px] text-emerald-400 font-bold mt-1">Passed with Distinction</div>
                 </div>
-                <div className="p-4 bg-navy-50 rounded-xl border border-navy-100 text-center">
-                  <div className="text-xs text-slate-500 font-semibold uppercase">Class Standings</div>
-                  <div className="text-2xl font-extrabold text-navy-900 font-serif mt-0.5">Rank 2nd</div>
-                  <div className="text-[11px] text-slate-500 font-medium mt-1">Among 42 Section Peers</div>
+                <div className="p-4 bg-slate-950/70 rounded-xl border border-slate-800/80 text-center">
+                  <div className="text-xs text-slate-400 font-semibold uppercase">Class Standings</div>
+                  <div className="text-2xl font-extrabold text-white font-serif mt-0.5">Rank 2nd</div>
+                  <div className="text-[11px] text-slate-400 font-medium mt-1">Among 42 Section Peers</div>
                 </div>
-                <div className="p-4 bg-navy-50 rounded-xl border border-navy-100 text-center">
-                  <div className="text-xs text-slate-500 font-semibold uppercase">Conduct Grade</div>
-                  <div className="text-2xl font-extrabold text-emerald-600 font-serif mt-0.5">Grade A+</div>
-                  <div className="text-[11px] text-slate-500 font-medium mt-1">Exemplary Discipline</div>
+                <div className="p-4 bg-slate-950/70 rounded-xl border border-slate-800/80 text-center">
+                  <div className="text-xs text-slate-400 font-semibold uppercase">Conduct Grade</div>
+                  <div className="text-2xl font-extrabold text-emerald-400 font-serif mt-0.5">Grade A+</div>
+                  <div className="text-[11px] text-slate-400 font-medium mt-1">Exemplary Discipline</div>
                 </div>
               </div>
 
               {/* Subject Scores Table */}
-              <div className="overflow-x-auto rounded-xl border border-slate-200">
+              <div className="overflow-x-auto rounded-xl border border-slate-800/80">
                 <table className="w-full text-left text-xs sm:text-sm">
-                  <thead className="bg-navy-950 text-white uppercase text-xs font-semibold">
+                  <thead className="bg-slate-950 text-slate-300 uppercase text-xs font-semibold border-b border-slate-800">
                     <tr>
                       <th className="px-5 py-3">Subject Code & Name</th>
                       <th className="px-5 py-3">Max Marks</th>
@@ -463,21 +464,21 @@ export default function Dashboard() {
                       <th className="px-5 py-3">Faculty Remark</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-200 text-slate-700">
+                  <tbody className="divide-y divide-slate-800/70 text-slate-300">
                     {(results?.subjects || []).map((sub, i) => (
-                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                        <td className="px-5 py-3 font-bold text-navy-900">
+                      <tr key={i} className="bg-slate-950/40 hover:bg-slate-900/60 transition-colors">
+                        <td className="px-5 py-3.5 font-bold text-white">
                           <span className="text-[10px] text-slate-400 block font-mono">{sub.code}</span>
                           {sub.name}
                         </td>
-                        <td className="px-5 py-3 font-mono">{sub.maxMarks}</td>
-                        <td className="px-5 py-3 font-mono font-bold text-navy-900">{sub.marksObtained}</td>
-                        <td className="px-5 py-3">
-                          <span className="font-bold text-xs bg-gold-100 text-gold-800 px-2.5 py-0.5 rounded border border-gold-300">
+                        <td className="px-5 py-3.5 font-mono text-slate-400">{sub.maxMarks}</td>
+                        <td className="px-5 py-3.5 font-mono font-bold text-cyan-300">{sub.marksObtained}</td>
+                        <td className="px-5 py-3.5">
+                          <span className="font-bold text-xs bg-cyan-950/60 text-cyan-300 border border-cyan-800/60 px-2.5 py-0.5 rounded-full">
                             {sub.grade}
                           </span>
                         </td>
-                        <td className="px-5 py-3 text-xs text-slate-500">{sub.remarks}</td>
+                        <td className="px-5 py-3.5 text-xs text-slate-400">{sub.remarks}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -493,16 +494,16 @@ export default function Dashboard() {
           <div className="space-y-6">
             
             {/* Action Bar (Screen Only) */}
-            <div className="no-print flex flex-col sm:flex-row items-center justify-between gap-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
-              <div className="text-xs text-slate-600">
-                <strong className="text-navy-900">Official Institutional Report Card:</strong> Standardized CBSE grading format suitable for printing and record archiving.
+            <div className="no-print flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-900/60 backdrop-blur-xl p-4 rounded-2xl border border-slate-800/80 shadow-xl">
+              <div className="text-xs text-slate-300">
+                <strong className="text-white">Official Institutional Report Card:</strong> Standardized CBSE grading format suitable for printing and record archiving.
               </div>
               <div className="flex items-center gap-3">
                 <button
                   onClick={handlePrintReport}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-navy-900 hover:bg-navy-950 text-white font-bold text-xs rounded-xl shadow transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-cyan-500/20 transition-all"
                 >
-                  <Printer className="w-4 h-4 text-gold-400" />
+                  <Printer className="w-4 h-4 text-slate-950" />
                   <span>Print Official Report Card</span>
                 </button>
               </div>
@@ -668,13 +669,13 @@ export default function Dashboard() {
         {/* 5. HOMEWORK & ASSIGNMENTS TAB */}
         {activeTab === 'homework' && (
           <div className="space-y-6 animate-fadeIn">
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <span className="text-xs font-bold text-skyAccent-600 uppercase tracking-widest">Academic Tasks</span>
-                  <h3 className="text-2xl font-serif font-bold text-navy-900 mt-1">Daily Homework & Projects</h3>
+                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Academic Tasks</span>
+                  <h3 className="text-2xl font-serif font-bold text-white mt-1">Daily Homework & Projects</h3>
                 </div>
-                <span className="text-xs text-slate-500">
+                <span className="text-xs text-slate-400">
                   Click checkbox to toggle submission status
                 </span>
               </div>
@@ -687,8 +688,8 @@ export default function Dashboard() {
                       key={hw.id}
                       className={`p-5 rounded-2xl border transition-all ${
                         isDone 
-                          ? 'bg-slate-50 border-slate-200 opacity-75' 
-                          : 'bg-white border-slate-200 shadow-sm hover:border-skyAccent-300'
+                          ? 'bg-slate-950/40 border-slate-800/60 opacity-60' 
+                          : 'bg-slate-950/70 border-slate-800/80 shadow-lg hover:border-cyan-500/50'
                       }`}
                     >
                       <div className="flex items-start justify-between gap-4">
@@ -698,7 +699,7 @@ export default function Dashboard() {
                             className={`w-6 h-6 rounded-lg border flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
                               isDone
                                 ? 'bg-emerald-500 border-emerald-500 text-white'
-                                : 'border-slate-300 hover:border-skyAccent-500 bg-white'
+                                : 'border-slate-700 hover:border-cyan-400 bg-slate-900 text-transparent'
                             }`}
                           >
                             {isDone && <CheckCircle2 className="w-4 h-4" />}
@@ -706,29 +707,29 @@ export default function Dashboard() {
 
                           <div>
                             <div className="flex items-center gap-2">
-                              <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-skyAccent-50 text-skyAccent-700 uppercase">
+                              <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-950/70 text-cyan-300 border border-cyan-800/60 uppercase">
                                 {hw.subject}
                               </span>
                               <span className="text-xs text-slate-400">• Teacher: {hw.teacher}</span>
                             </div>
 
-                            <h4 className={`text-sm font-bold text-navy-900 mt-1 ${isDone ? 'line-through text-slate-500' : ''}`}>
+                            <h4 className={`text-sm font-bold text-white mt-1.5 ${isDone ? 'line-through text-slate-500' : ''}`}>
                               {hw.title}
                             </h4>
 
-                            <p className="text-xs text-slate-600 mt-1">
+                            <p className="text-xs text-slate-300 mt-1">
                               {hw.instructions}
                             </p>
                           </div>
                         </div>
 
                         <div className="text-right shrink-0">
-                          <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider block mb-1 ${
+                          <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider block mb-1 border ${
                             isDone 
-                              ? 'bg-emerald-100 text-emerald-700' 
+                              ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-400' 
                               : hw.priority === 'High' 
-                                ? 'bg-red-100 text-red-700' 
-                                : 'bg-amber-100 text-amber-700'
+                                ? 'bg-rose-500/15 border-rose-500/30 text-rose-400' 
+                                : 'bg-amber-500/15 border-amber-500/30 text-amber-400'
                           }`}>
                             {hw.status}
                           </span>
@@ -749,15 +750,15 @@ export default function Dashboard() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               
               {/* Message Class Teacher */}
-              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
-                <span className="text-xs font-bold text-skyAccent-600 uppercase tracking-widest">Direct Communication</span>
-                <h3 className="text-xl font-serif font-bold text-navy-900">Message Class Teacher</h3>
-                <p className="text-xs text-slate-600">
+              <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl space-y-4">
+                <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Direct Communication</span>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">Message Class Teacher</h3>
+                <p className="text-xs text-slate-300">
                   Send a query directly to Class Mentor Mrs. Sunanda Banerjee. Replies will appear here within 24 hours.
                 </p>
 
                 {msgSent ? (
-                  <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-800 font-medium">
+                  <div className="p-4 bg-emerald-500/15 border border-emerald-500/30 rounded-xl text-xs text-emerald-300 font-medium">
                     ✓ Your note has been delivered to the teacher's portal desk.
                   </div>
                 ) : (
@@ -768,13 +769,13 @@ export default function Dashboard() {
                       value={teacherMsg}
                       onChange={(e) => setTeacherMsg(e.target.value)}
                       placeholder="Write your note regarding student progress, leave requests, or questions..."
-                      className="w-full p-3 text-xs border border-slate-300 rounded-xl outline-none focus:ring-2 focus:ring-skyAccent-400"
+                      className="w-full p-3 text-xs text-white bg-slate-950/70 border border-slate-700/80 rounded-xl outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 placeholder:text-slate-500 shadow-inner"
                     ></textarea>
                     <button
                       type="submit"
-                      className="px-5 py-2.5 bg-navy-900 hover:bg-navy-950 text-white font-bold text-xs rounded-xl shadow flex items-center gap-2"
+                      className="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-cyan-500/20 flex items-center gap-2 transition-all"
                     >
-                      <Send className="w-3.5 h-3.5 text-gold-400" />
+                      <Send className="w-3.5 h-3.5 text-slate-950" />
                       <span>Transmit Message</span>
                     </button>
                   </form>
@@ -782,33 +783,33 @@ export default function Dashboard() {
               </div>
 
               {/* Schedule PTM Meeting */}
-              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
-                <span className="text-xs font-bold text-gold-600 uppercase tracking-widest">Parent-Teacher Meeting</span>
-                <h3 className="text-xl font-serif font-bold text-navy-900">Reserve PTM Consultation Slot</h3>
-                <p className="text-xs text-slate-600">
-                  Upcoming PTM Date: <strong>Saturday, March 21, 2026</strong>. Reserve your 15-minute 1-on-1 discussion window.
+              <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl space-y-4">
+                <span className="text-xs font-bold text-teal-400 uppercase tracking-widest">Parent-Teacher Meeting</span>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">Reserve PTM Consultation Slot</h3>
+                <p className="text-xs text-slate-300">
+                  Upcoming PTM Date: <strong className="text-white">Saturday, March 21, 2026</strong>. Reserve your 15-minute 1-on-1 discussion window.
                 </p>
 
                 {ptmRequested ? (
-                  <div className="p-4 bg-skyAccent-50 border border-skyAccent-200 rounded-xl text-xs text-skyAccent-900 font-medium">
+                  <div className="p-4 bg-cyan-500/15 border border-cyan-500/30 rounded-xl text-xs text-cyan-200 font-medium">
                     ✓ PTM Slot Confirmed: Saturday, 10:30 AM - 10:45 AM (Room 204 - Science Wing). A calendar invite has been emailed to you.
                   </div>
                 ) : (
                   <div className="space-y-3">
-                    <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-700">
-                      <strong>Available Slots:</strong>
-                      <div className="grid grid-cols-2 gap-2 mt-2">
+                    <div className="p-4 bg-slate-950/60 rounded-xl border border-slate-800/80 text-xs text-slate-300">
+                      <strong className="text-white">Available Slots:</strong>
+                      <div className="grid grid-cols-2 gap-2.5 mt-3">
                         <button
                           type="button"
                           onClick={() => setPtmRequested(true)}
-                          className="p-2 bg-white hover:bg-skyAccent-50 rounded-lg border text-center font-bold text-navy-900"
+                          className="p-2.5 bg-slate-900 hover:bg-cyan-950/50 hover:border-cyan-400/60 rounded-xl border border-slate-800 text-center font-bold text-cyan-300 transition-all shadow"
                         >
                           10:30 AM - 10:45 AM
                         </button>
                         <button
                           type="button"
                           onClick={() => setPtmRequested(true)}
-                          className="p-2 bg-white hover:bg-skyAccent-50 rounded-lg border text-center font-bold text-navy-900"
+                          className="p-2.5 bg-slate-900 hover:bg-cyan-950/50 hover:border-cyan-400/60 rounded-xl border border-slate-800 text-center font-bold text-cyan-300 transition-all shadow"
                         >
                           11:00 AM - 11:15 AM
                         </button>
@@ -825,13 +826,13 @@ export default function Dashboard() {
         {/* 7. FEES TAB */}
         {activeTab === 'fees' && (
           <div className="space-y-6 animate-fadeIn">
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-              <h3 className="text-xl font-serif font-bold text-navy-900 mb-2">Quarterly Fee Summary & Receipts</h3>
-              <p className="text-xs text-slate-500 mb-6">Student ID: {student.studentId} • Academic Session 2025-26</p>
+            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl">
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mb-2">Quarterly Fee Summary & Receipts</h3>
+              <p className="text-xs text-slate-400 mb-6">Student ID: {student.studentId} • Academic Session 2025-26</p>
 
-              <div className="overflow-x-auto rounded-xl border border-slate-200">
+              <div className="overflow-x-auto rounded-xl border border-slate-800/80">
                 <table className="w-full text-left text-xs sm:text-sm">
-                  <thead className="bg-navy-950 text-white uppercase text-xs font-semibold">
+                  <thead className="bg-slate-950 text-slate-300 uppercase text-xs font-semibold border-b border-slate-800">
                     <tr>
                       <th className="px-5 py-3">Installment Quarter</th>
                       <th className="px-5 py-3">Due Date</th>
@@ -840,26 +841,26 @@ export default function Dashboard() {
                       <th className="px-5 py-3">Receipt Document</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-200 text-slate-700">
+                  <tbody className="divide-y divide-slate-800/70 text-slate-300">
                     {[
                       { qtr: 'Quarter 1 (Apr - Jun)', due: '15 April 2025', amt: '₹ 29,000', status: 'Paid', receipt: 'REC-2025-Q1' },
                       { qtr: 'Quarter 2 (Jul - Sep)', due: '15 July 2025', amt: '₹ 29,000', status: 'Paid', receipt: 'REC-2025-Q2' },
                       { qtr: 'Quarter 3 (Oct - Dec)', due: '15 October 2025', amt: '₹ 29,000', status: 'Paid', receipt: 'REC-2025-Q3' },
                       { qtr: 'Quarter 4 (Jan - Mar)', due: '15 January 2026', amt: '₹ 29,000', status: 'Paid', receipt: 'REC-2026-Q4' }
                     ].map((f, i) => (
-                      <tr key={i} className="bg-white">
-                        <td className="px-5 py-3 font-bold text-navy-900">{f.qtr}</td>
-                        <td className="px-5 py-3 text-slate-500">{f.due}</td>
-                        <td className="px-5 py-3 font-mono font-bold text-slate-800">{f.amt}</td>
-                        <td className="px-5 py-3">
-                          <span className="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded">
+                      <tr key={i} className="bg-slate-950/40 hover:bg-slate-900/60 transition-colors">
+                        <td className="px-5 py-3.5 font-bold text-white">{f.qtr}</td>
+                        <td className="px-5 py-3.5 text-slate-400">{f.due}</td>
+                        <td className="px-5 py-3.5 font-mono font-bold text-cyan-300">{f.amt}</td>
+                        <td className="px-5 py-3.5">
+                          <span className="bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full">
                             {f.status}
                           </span>
                         </td>
-                        <td className="px-5 py-3">
+                        <td className="px-5 py-3.5">
                           <button
                             onClick={() => alert(`Downloading Verified Fee Receipt: ${f.receipt} (PDF).`)}
-                            className="inline-flex items-center gap-1 text-xs font-bold text-skyAccent-600 hover:underline"
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300 transition-colors hover:underline"
                           >
                             <Download className="w-3.5 h-3.5" /> {f.receipt}.pdf
                           </button>
@@ -877,99 +878,116 @@ export default function Dashboard() {
         {activeTab === 'adminTools' && user?.role === 'admin' && (
           <div className="space-y-6 animate-fadeIn">
             
-            {/* Post Notice Section */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
-              <span className="text-xs font-bold text-gold-600 uppercase tracking-widest">Administrative Directorate</span>
-              <h3 className="text-xl font-serif font-bold text-navy-900">Publish New Official School Notice</h3>
+            {/* Post Notice Section - Transparent Glass Theme */}
+            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl space-y-5">
+              <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Administrative Directorate</span>
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">Publish New Official School Notice</h3>
 
               {noticePosted && (
-                <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-800 font-medium">
-                  ✓ School Notice broadcasted successfully to all students, parents, and public portal!
+                <div className="p-3.5 bg-emerald-500/15 border border-emerald-500/30 rounded-xl text-xs text-emerald-300 font-medium flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>School Notice broadcasted successfully to all students, parents, and public portal!</span>
                 </div>
               )}
 
               <form onSubmit={handleCreateNotice} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Notice Headline *</label>
+                    <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
+                      Notice Headline <span className="text-cyan-400">*</span>
+                    </label>
                     <input
                       type="text"
                       required
                       value={noticeTitle}
                       onChange={(e) => setNoticeTitle(e.target.value)}
                       placeholder="e.g. Schedule for Annual Science Olympiad 2026"
-                      className="w-full px-3.5 py-2 text-xs border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-skyAccent-400"
+                      className="w-full px-4 py-2.5 text-xs text-white bg-slate-950/70 border border-slate-700/80 rounded-xl outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 placeholder:text-slate-500 transition-all shadow-inner"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Category</label>
-                    <select
-                      value={noticeCategory}
-                      onChange={(e) => setNoticeCategory(e.target.value)}
-                      className="w-full px-3.5 py-2 text-xs border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-skyAccent-400 bg-white"
-                    >
-                      <option value="Academic">Academic</option>
-                      <option value="Admissions">Admissions</option>
-                      <option value="Examinations">Examinations</option>
-                      <option value="Sports">Sports</option>
-                      <option value="Events">Events</option>
-                    </select>
+                    <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">Category</label>
+                    <div className="relative">
+                      <select
+                        value={noticeCategory}
+                        onChange={(e) => setNoticeCategory(e.target.value)}
+                        className="w-full px-4 py-2.5 text-xs text-white bg-slate-950/70 border border-slate-700/80 rounded-xl outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 appearance-none cursor-pointer pr-10 transition-all shadow-inner"
+                      >
+                        <option value="Academic" className="bg-slate-900 text-white py-1">Academic</option>
+                        <option value="Admissions" className="bg-slate-900 text-white py-1">Admissions</option>
+                        <option value="Examinations" className="bg-slate-900 text-white py-1">Examinations</option>
+                        <option value="Sports" className="bg-slate-900 text-white py-1">Sports</option>
+                        <option value="Events" className="bg-slate-900 text-white py-1">Events</option>
+                      </select>
+                      <ChevronDown className="w-4 h-4 text-slate-400 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    </div>
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Notice Details & Summary *</label>
+                  <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
+                    Notice Details & Summary <span className="text-cyan-400">*</span>
+                  </label>
                   <textarea
-                    rows="2"
+                    rows="3"
                     required
                     value={noticeSummary}
                     onChange={(e) => setNoticeSummary(e.target.value)}
                     placeholder="Enter announcement text to display on homepage and portal..."
-                    className="w-full px-3.5 py-2 text-xs border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-skyAccent-400"
+                    className="w-full px-4 py-2.5 text-xs text-white bg-slate-950/70 border border-slate-700/80 rounded-xl outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 placeholder:text-slate-500 transition-all shadow-inner resize-y"
                   ></textarea>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2.5 pt-1">
                   <input
                     type="checkbox"
                     id="urgent"
                     checked={noticeUrgent}
                     onChange={(e) => setNoticeUrgent(e.target.checked)}
-                    className="rounded text-red-600 focus:ring-red-400"
+                    className="w-4 h-4 rounded bg-slate-950 border-slate-700 text-rose-500 focus:ring-rose-400 focus:ring-offset-slate-900 cursor-pointer"
                   />
-                  <label htmlFor="urgent" className="text-xs text-slate-700 font-semibold cursor-pointer">
-                    Flag as Urgent / High Priority Notice
+                  <label htmlFor="urgent" className="text-xs text-slate-300 font-medium cursor-pointer select-none">
+                    Flag as <span className="text-rose-400 font-semibold">Urgent / High Priority</span> Notice
                   </label>
                 </div>
 
-                <button
-                  type="submit"
-                  className="px-6 py-2.5 bg-navy-900 hover:bg-navy-950 text-white font-bold text-xs rounded-xl shadow"
-                >
-                  Publish Notice
-                </button>
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className="px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5"
+                  >
+                    Publish Notice
+                  </button>
+                </div>
               </form>
             </div>
 
-            {/* Received Enquiries List */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+            {/* Received Enquiries List - Transparent Glass Theme */}
+            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <span className="text-xs font-bold text-skyAccent-600 uppercase tracking-widest">Admissions Inbox</span>
-                  <h3 className="text-xl font-serif font-bold text-navy-900 mt-1">Recent Website Enquiries</h3>
+                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Admissions Inbox</span>
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-1">Recent Website Enquiries</h3>
                 </div>
-                <span className="text-xs font-semibold text-slate-500">{enquiries.length} Inquiries Logged</span>
+                <span className="text-xs font-semibold text-slate-300 bg-slate-800/80 px-3 py-1 rounded-lg border border-slate-700/60">
+                  {enquiries.length} Inquiries Logged
+                </span>
               </div>
 
               <div className="space-y-3">
                 {enquiries.map((enq) => (
-                  <div key={enq.id} className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1">
-                    <div className="flex items-center justify-between font-bold text-navy-900">
-                      <span>{enq.name} ({enq.phone})</span>
-                      <span className="text-gold-600 bg-gold-50 px-2 py-0.5 rounded text-[10px]">{enq.grade}</span>
+                  <div key={enq.id} className="p-4 bg-slate-950/60 rounded-xl border border-slate-800/80 text-xs space-y-1.5 hover:border-slate-700 transition-colors">
+                    <div className="flex items-center justify-between font-bold text-white">
+                      <span>{enq.name} <span className="text-slate-400 font-normal">({enq.phone})</span></span>
+                      <span className="text-cyan-300 bg-cyan-950/70 border border-cyan-800/60 px-2.5 py-0.5 rounded-full text-[10px] font-bold">
+                        {enq.grade}
+                      </span>
                     </div>
-                    <div className="text-slate-600">{enq.message}</div>
-                    <div className="text-[10px] text-slate-400 pt-1">Student: {enq.studentName} • Status: {enq.status}</div>
+                    <div className="text-slate-300">{enq.message}</div>
+                    <div className="text-[10px] text-slate-400 pt-1 border-t border-slate-800/60 flex items-center justify-between">
+                      <span>Student: <strong className="text-slate-200">{enq.studentName}</strong></span>
+                      <span className="text-emerald-400 font-semibold">• {enq.status}</span>
+                    </div>
                   </div>
                 ))}
               </div>
