@@ -242,32 +242,21 @@ export default function Home({ onOpenAdmissionModal }) {
           <div className="max-w-5xl xl:max-w-6xl">
 
 
-            {/* Main Headline - Broken into Two Lines with SoftDeals Cyan-Sky-Teal Gradient */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold text-white tracking-tight leading-[1.15] mb-6 drop-shadow-md">
-              <span className="block">Building Bright Futures</span>
-              <span className="block bg-gradient-to-r from-cyan-400 via-sky-300 to-teal-300 bg-clip-text text-transparent">Through Quality Education.</span>
+            {/* Main Headline - Broken into Two Lines with Big Transparent First Line */}
+            <h1 className="mb-6 tracking-tight drop-shadow-md">
+              <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-serif font-black text-transparent [-webkit-text-stroke:1.5px_rgba(255,255,255,0.9)] sm:[-webkit-text-stroke:2px_#ffffff] leading-[1.08] mb-2 sm:mb-3">
+                Building Bright Futures
+              </span>
+              <span className="block text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-serif font-extrabold bg-gradient-to-r from-cyan-400 via-sky-300 to-teal-300 bg-clip-text text-transparent leading-[1.18]">
+                Through Quality Education.
+              </span>
             </h1>
 
             {/* Subtitle */}
 
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-2">
-              <button
-                onClick={onOpenAdmissionModal}
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-white font-bold text-sm sm:text-base rounded-2xl shadow-xl shadow-cyan-950/60 hover:scale-[1.02] transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <span>Admission Enquiry</span>
-                <ChevronRight className="w-5 h-5 text-teal-200" />
-              </button>
-              <Link
-                to="/about"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-slate-900/60 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold text-sm sm:text-base rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <span>Explore Our School</span>
-                <ArrowRight className="w-4 h-4 text-cyan-400" />
-              </Link>
-            </div>
+
 
             {/* Quick Trust Highlights */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-4 pt-8 mt-8 border-t border-slate-800/80">
