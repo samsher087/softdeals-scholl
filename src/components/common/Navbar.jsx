@@ -291,11 +291,11 @@ export default function Navbar({ onOpenAdmissionModal }) {
       </nav>
 
       {/* Notice Marquee Bar just below Menu - SoftDeals Dark Style */}
-      <div className="bg-slate-900/95 text-slate-300 text-xs py-2 px-4 border-b border-slate-800/80 flex items-center overflow-hidden">
+      <div className="bg-slate-900/95 text-slate-200 py-2.5 px-4 border-b border-slate-800/80 flex items-center overflow-hidden">
         <div className="max-w-[1440px] w-full mx-auto flex items-center gap-3">
           
           {/* Badge */}
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-[10px] font-bold tracking-wider uppercase shrink-0 shadow-xs">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-xs font-bold tracking-wider uppercase shrink-0 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
             <span>NOTICE</span>
           </div>
@@ -308,7 +308,7 @@ export default function Navbar({ onOpenAdmissionModal }) {
               scrollamount="6"
               onMouseOver={(e) => e.target.stop()}
               onMouseOut={(e) => e.target.start()}
-              className="text-slate-300 text-xs font-medium cursor-pointer"
+              className="text-slate-200 text-sm sm:text-[15px] font-medium cursor-pointer"
             >
               <span className="inline-flex items-center gap-8 whitespace-nowrap">
                 <span className="text-slate-200 hover:text-cyan-300 transition-colors">
