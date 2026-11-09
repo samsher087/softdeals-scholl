@@ -28,18 +28,18 @@ import {
   Play
 } from 'lucide-react';
 import { api } from '../services/api';
+import { initialEvents } from '../../server/data/defaultData.js';
 import LightboxModal from '../components/common/LightboxModal';
 
 export default function Home({ onOpenAdmissionModal }) {
   const [notices, setNotices] = useState([]);
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState(initialEvents);
   const [galleryPreview, setGalleryPreview] = useState([]);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentLightboxIndex, setCurrentLightboxIndex] = useState(0);
   const [activeNoticeCategory, setActiveNoticeCategory] = useState('All');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isEventsPaused, setIsEventsPaused] = useState(false);
-  const eventsScrollRef = useRef(null);
 
   const heroSlides = [
     {
@@ -103,34 +103,6 @@ export default function Home({ onOpenAdmissionModal }) {
     };
     loadData();
   }, []);
-
-  // Upward auto-scrolling for Upcoming Events with pause on hover
-  useEffect(() => {
-    const el = eventsScrollRef.current;
-    if (!el) return;
-
-    let animId;
-    let lastTime = performance.now();
-    const speed = 26; // pixels per second (smooth, steady reading pace)
-
-    const step = (time) => {
-      const delta = Math.min((time - lastTime) / 1000, 0.1);
-      lastTime = time;
-
-      if (!isEventsPaused && el) {
-        el.scrollTop += speed * delta;
-        // When scrolled past half the scrollHeight, wrap back seamlessly
-        const halfHeight = el.scrollHeight / 2;
-        if (halfHeight > 0 && el.scrollTop >= halfHeight) {
-          el.scrollTop -= halfHeight;
-        }
-      }
-      animId = requestAnimationFrame(step);
-    };
-
-    animId = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(animId);
-  }, [isEventsPaused, events]);
 
   const openLightboxAt = (index) => {
     setCurrentLightboxIndex(index);
@@ -622,18 +594,19 @@ export default function Home({ onOpenAdmissionModal }) {
               {/* Scrolling Events Box with Fade Masks */}
               <div
                 className="relative h-[480px] sm:h-[510px] overflow-hidden rounded-2xl group border border-slate-800/80 bg-slate-950/40 p-2 shadow-xl"
-                onMouseEnter={() => setIsEventsPaused(true)}
-                onMouseLeave={() => setIsEventsPaused(false)}
               >
                 {/* Top and Bottom Gradient Fade Masks */}
                 <div className="absolute top-0 inset-x-0 h-8 bg-gradient-to-b from-slate-950 via-slate-950/80 to-transparent z-10 pointer-events-none rounded-t-2xl" />
                 <div className="absolute bottom-0 inset-x-0 h-8 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-10 pointer-events-none rounded-b-2xl" />
 
-                {/* Smooth Infinite Vertical Scroller */}
+                {/* Hardware-Accelerated CSS Infinite Vertical Scroller */}
                 <div
-                  ref={eventsScrollRef}
-                  className="h-full overflow-y-auto no-scrollbar space-y-4 py-2 cursor-pointer"
-                  style={{ scrollBehavior: 'auto' }}
+                  className="animate-scroll-up space-y-4 py-2 cursor-pointer"
+                  style={{
+                    animationPlayState: isEventsPaused ? 'paused' : 'running'
+                  }}
+                  onMouseEnter={() => setIsEventsPaused(true)}
+                  onMouseLeave={() => setIsEventsPaused(false)}
                 >
                   {/* Duplicated event list for seamless, uninterrupted upward loop */}
                   {(events.length > 0 ? [...events, ...events] : []).map((event, idx) => (

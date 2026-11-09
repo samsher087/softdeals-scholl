@@ -70,6 +70,25 @@
   scrollbar-width: none;
 }
 
+/* Upward auto-scrolling ticker for events */
+@keyframes scrollUpInfinite {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-scroll-up {
+  animation: scrollUpInfinite 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-up:hover {
+  animation-play-state: paused !important;
+}
+
 /* Glassmorphism helpers - SoftDeals Style */
 .glass-nav {
   background: rgba(3, 7, 18, 0.85);
