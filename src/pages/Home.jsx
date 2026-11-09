@@ -168,7 +168,7 @@ export default function Home({ onOpenAdmissionModal }) {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-          <div className="max-w-3xl">
+          <div className="max-w-5xl xl:max-w-6xl">
             
             {/* Top Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold mb-6">
@@ -178,9 +178,8 @@ export default function Home({ onOpenAdmissionModal }) {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold text-white tracking-tight leading-[1.15] mb-6">
-              Building Bright Futures <br />
-              <span className="gold-gradient-text">Through Quality Education.</span>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] xl:text-[3.2rem] font-serif font-extrabold text-white tracking-tight leading-tight mb-6 lg:whitespace-nowrap">
+              Building Bright Futures <span className="gold-gradient-text">Through Quality Education.</span>
             </h1>
 
             {/* Subtitle */}
