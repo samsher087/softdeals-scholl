@@ -157,14 +157,14 @@ export default function Home({ onOpenAdmissionModal }) {
 
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[640px] lg:min-h-[720px] flex items-center bg-navy-950 overflow-hidden">
-        {/* Background Image with High Quality Campus Life */}
+        {/* Background Image with School Stationery Theme */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=2000&q=85"
-            alt="St. Xavier's International School Campus and Students"
-            className="w-full h-full object-cover object-center filter brightness-50"
+            src="/images/school-bg.jpg"
+            alt="St. Xavier's International School Academic & Creative Theme"
+            className="w-full h-full object-cover object-center filter brightness-95"
           />
-          <div className="absolute inset-0 hero-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/85 to-navy-900/40"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">

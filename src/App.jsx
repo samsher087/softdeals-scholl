@@ -36,12 +36,16 @@ function MainLayout({ onOpenAdmissionModal, children }) {
   const isLogin = location.pathname === '/portal/login';
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen relative">
+      {/* Whole Website Background Theme */}
+      <div className="site-bg-backdrop" aria-hidden="true"></div>
+      <div className="site-bg-tint" aria-hidden="true"></div>
+
       {!isDashboard && !isLogin && (
         <Navbar onOpenAdmissionModal={onOpenAdmissionModal} />
       )}
       
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         {children}
       </main>
 

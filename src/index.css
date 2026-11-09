@@ -4,9 +4,11 @@
 
 @layer base {
   body {
-    background-color: #f8fafc;
+    background-color: #fbf6ec;
     color: #0f172a;
     overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
   }
 
   h1,
@@ -16,6 +18,28 @@
   .font-heading {
     letter-spacing: -0.02em;
   }
+}
+
+/* Persistent Whole Website Background Theme */
+.site-bg-backdrop {
+  position: fixed;
+  inset: 0;
+  background-image: url('/images/school-bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.site-bg-tint {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 252, 245, 0.42);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Custom Scrollbar */
