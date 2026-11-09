@@ -206,7 +206,7 @@ export default function Home({ onOpenAdmissionModal }) {
 
       {/* 2. KEY STATISTICS BAR */}
       <section className="relative z-20 -mt-8 sm:-mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 bg-white rounded-2xl p-6 sm:p-8 shadow-premium border border-slate-100">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 bg-white/95 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-premium border border-amber-200/60">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
@@ -232,9 +232,9 @@ export default function Home({ onOpenAdmissionModal }) {
       </section>
 
       {/* 3. PRINCIPAL'S WELCOME MESSAGE */}
-      <section className="py-16 sm:py-24 bg-slate-50">
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-soft border border-slate-200/80 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="bg-white/95 backdrop-blur-md rounded-3xl p-8 sm:p-12 shadow-soft border border-amber-200/60 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
             {/* Principal Photograph & Badge */}
             <div className="lg:col-span-5 relative">
@@ -301,7 +301,7 @@ export default function Home({ onOpenAdmissionModal }) {
       </section>
 
       {/* 4. WHY CHOOSE OUR SCHOOL */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -322,7 +322,7 @@ export default function Home({ onOpenAdmissionModal }) {
               return (
                 <div
                   key={index}
-                  className="group bg-slate-50 hover:bg-white rounded-2xl p-7 border border-slate-200 hover:border-skyAccent-300 shadow-sm hover:shadow-premium transition-all duration-300 transform hover:-translate-y-1"
+                  className="group bg-white/95 backdrop-blur-md hover:bg-white rounded-2xl p-7 border border-amber-200/60 hover:border-skyAccent-300 shadow-sm hover:shadow-premium transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 border ${item.color} group-hover:scale-110 transition-transform`}>
                     <Icon className="w-6 h-6" />
@@ -392,7 +392,7 @@ export default function Home({ onOpenAdmissionModal }) {
       </section>
 
       {/* 6. LATEST ANNOUNCEMENTS & EVENTS SECTION */}
-      <section className="py-16 sm:py-24 bg-slate-50">
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
@@ -514,7 +514,7 @@ export default function Home({ onOpenAdmissionModal }) {
       </section>
 
       {/* 7. PARENT TESTIMONIALS */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-2xl mx-auto mb-14">
@@ -533,7 +533,7 @@ export default function Home({ onOpenAdmissionModal }) {
             {testimonials.map((t, idx) => (
               <div
                 key={idx}
-                className="bg-slate-50 rounded-2xl p-7 border border-slate-200 shadow-sm relative flex flex-col justify-between hover:shadow-premium transition-all duration-300"
+                className="bg-white/95 backdrop-blur-md rounded-2xl p-7 border border-amber-200/60 shadow-sm relative flex flex-col justify-between hover:shadow-premium transition-all duration-300"
               >
                 <div>
                   {/* Rating Stars */}
@@ -567,7 +567,7 @@ export default function Home({ onOpenAdmissionModal }) {
       </section>
 
       {/* 8. PHOTO GALLERY PREVIEW */}
-      <section className="py-16 sm:py-24 bg-slate-50">
+      <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10">
