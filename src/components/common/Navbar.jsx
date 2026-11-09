@@ -14,7 +14,8 @@ import {
   Sparkles,
   LogIn,
   LogOut,
-  Compass
+  Compass,
+  CheckCircle2
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
@@ -61,16 +62,24 @@ export default function Navbar({ onOpenAdmissionModal }) {
     <header className="w-full relative z-50">
       {/* Top Announcement Bar */}
       <div className="bg-navy-950 text-slate-200 text-xs py-2 px-4 border-b border-navy-800">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           
-          {/* Ticker / Notice */}
-          <div className="flex items-center gap-2 overflow-hidden w-full sm:w-auto">
-            <span className="bg-gold-500 text-navy-950 font-bold px-2 py-0.5 rounded text-[10px] tracking-wider uppercase flex items-center gap-1 shrink-0">
-              <Sparkles className="w-3 h-3 text-navy-950 animate-spin" /> Notice
+          {/* Institutional Highlights */}
+          <div className="flex items-center gap-2 sm:gap-3 overflow-hidden w-full sm:w-auto text-[11px] sm:text-xs text-slate-300 whitespace-nowrap shrink-0">
+            <span className="inline-flex items-center gap-1.5 text-gold-400 font-semibold">
+              <CheckCircle2 className="w-3.5 h-3.5 text-gold-400 shrink-0" />
+              <span>CBSE Senior Secondary</span>
             </span>
-            <div className="truncate text-slate-300 text-[11px] sm:text-xs">
-              <span className="text-gold-400 font-semibold">Admissions Open 2026-27</span> for Nursery to Grade XI • Affiliation No: 2130894
-            </div>
+            <span className="text-slate-600 hidden sm:inline">•</span>
+            <span className="inline-flex items-center gap-1.5 text-slate-200 font-medium">
+              <CheckCircle2 className="w-3.5 h-3.5 text-skyAccent-400 shrink-0" />
+              <span>1:15 Teacher-Student Ratio</span>
+            </span>
+            <span className="text-slate-600 hidden sm:inline">•</span>
+            <span className="inline-flex items-center gap-1.5 text-slate-200 font-medium">
+              <CheckCircle2 className="w-3.5 h-3.5 text-skyAccent-400 shrink-0" />
+              <span>AI & Robotics Hubs</span>
+            </span>
           </div>
 
           {/* Quick Contact & Working Hours */}
