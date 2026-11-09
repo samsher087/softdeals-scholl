@@ -109,13 +109,6 @@ export default function Home({ onOpenAdmissionModal }) {
     ? notices
     : notices.filter(n => n.category.toLowerCase() === activeNoticeCategory.toLowerCase());
 
-  const stats = [
-    { label: 'Total Students Enrolled', value: '2,850+', subtext: 'Nurtured Across All Grades', icon: Users },
-    { label: 'Qualified Educators', value: '120+', subtext: 'Certified & Experienced Faculty', icon: GraduationCap },
-    { label: 'Years of Excellence', value: '28+', subtext: 'Established in 1998', icon: Award },
-    { label: 'Board Examination Pass Rate', value: '100%', subtext: 'Consistently Ranked in Top Tier', icon: Trophy }
-  ];
-
   const whyChooseUs = [
     {
       title: 'Holistic & Innovative Pedagogy',
@@ -377,34 +370,7 @@ export default function Home({ onOpenAdmissionModal }) {
         </div>
       </section>
 
-      {/* 2. KEY STATISTICS BAR - SoftDeals Dark Glass Style */}
-      <section className="relative z-20 -mt-8 sm:-mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl shadow-cyan-500/5 border border-slate-800/90">
-          {stats.map((stat, idx) => {
-            const Icon = stat.icon;
-            return (
-              <div key={idx} className="flex items-center gap-4 p-2">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-slate-800/90 text-cyan-400 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
-                  <Icon className="w-6 h-6 text-cyan-400" />
-                </div>
-                <div>
-                  <div className="text-2xl sm:text-3xl font-black text-white tracking-tight font-serif">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs sm:text-sm font-bold text-slate-200">
-                    {stat.label}
-                  </div>
-                  <div className="text-[11px] text-slate-400 hidden sm:block">
-                    {stat.subtext}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* 3. PRINCIPAL'S WELCOME MESSAGE - SoftDeals Dark Style */}
+      {/* 2. PRINCIPAL'S WELCOME MESSAGE - SoftDeals Dark Style */}
       <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 sm:p-12 shadow-2xl border border-slate-800/90 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
