@@ -9,7 +9,11 @@
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, .font-heading {
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-heading {
     letter-spacing: -0.02em;
   }
 }
@@ -64,12 +68,10 @@
 }
 
 .hero-overlay {
-  background: linear-gradient(
-    to right,
-    rgba(10, 25, 47, 0.94) 0%,
-    rgba(10, 25, 47, 0.82) 50%,
-    rgba(15, 23, 42, 0.45) 100%
-  );
+  background: linear-gradient(to right,
+      rgba(10, 25, 47, 0.94) 0%,
+      rgba(10, 25, 47, 0.82) 50%,
+      rgba(15, 23, 42, 0.45) 100%);
 }
 
 /* Print Styles for Official Report Card & Prospectus */
@@ -78,12 +80,15 @@
     background: #fff !important;
     color: #000 !important;
   }
+
   .no-print {
     display: none !important;
   }
+
   .print-only {
     display: block !important;
   }
+
   .print-card {
     border: 2px solid #000 !important;
     box-shadow: none !important;

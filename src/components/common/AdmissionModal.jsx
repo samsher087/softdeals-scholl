@@ -300,3 +300,4 @@ export default function AdmissionModal({ isOpen, onClose }) {
     </div>
   );
 }
+

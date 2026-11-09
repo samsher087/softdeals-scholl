@@ -240,3 +240,4 @@ app.get('/api/students/homework', authenticateToken, (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 SOFTDEALS School API Server running at http://localhost:${PORT}`);
 });
+

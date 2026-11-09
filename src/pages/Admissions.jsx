@@ -458,3 +458,4 @@ export default function Admissions({ onOpenAdmissionModal }) {
     </div>
   );
 }
+
