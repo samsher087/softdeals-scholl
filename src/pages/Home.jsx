@@ -342,21 +342,21 @@ export default function Home({ onOpenAdmissionModal }) {
       </section>
 
       {/* 5. FACILITIES & INFRASTRUCTURE PREVIEW */}
-      <section className="py-16 sm:py-24 bg-navy-900 text-white relative overflow-hidden">
+      <section className="py-16 sm:py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-gold-400 bg-navy-800 px-3 py-1 rounded-full border border-navy-700">
+              <span className="text-xs font-bold uppercase tracking-widest text-gold-700 bg-gold-50 px-3 py-1 rounded-full border border-gold-200">
                 World-Class Infrastructure
               </span>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mt-3">
+              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-navy-900 mt-3">
                 Inspiring Spaces for Learning & Discovery
               </h2>
             </div>
             <Link
               to="/gallery"
-              className="mt-4 md:mt-0 inline-flex items-center gap-2 text-xs font-bold text-skyAccent-300 hover:text-white uppercase tracking-wider transition-colors"
+              className="mt-4 md:mt-0 inline-flex items-center gap-2 text-xs font-bold text-skyAccent-600 hover:text-skyAccent-800 uppercase tracking-wider transition-colors"
             >
               <span>View Full Campus Gallery</span>
               <ArrowRight className="w-4 h-4" />
@@ -367,22 +367,24 @@ export default function Home({ onOpenAdmissionModal }) {
             {facilities.map((fac, idx) => (
               <div
                 key={idx}
-                className="group relative rounded-2xl overflow-hidden bg-navy-950 border border-navy-800 shadow-lg hover:border-gold-500/50 transition-all duration-300"
+                className="group relative rounded-2xl overflow-hidden bg-white/95 backdrop-blur-md border border-amber-200/60 shadow-sm hover:shadow-premium hover:border-skyAccent-400 transition-all duration-300 flex flex-col justify-between"
               >
-                <div className="h-48 overflow-hidden">
+                <div className="h-48 overflow-hidden bg-slate-100">
                   <img
                     src={fac.image}
                     alt={fac.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-5">
-                  <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-gold-400 transition-colors">
-                    {fac.name}
-                  </h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    {fac.description}
-                  </p>
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-base font-bold text-navy-900 mb-1.5 group-hover:text-skyAccent-600 transition-colors">
+                      {fac.name}
+                    </h3>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {fac.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -610,33 +612,35 @@ export default function Home({ onOpenAdmissionModal }) {
       </section>
 
       {/* 9. ADMISSION CALL TO ACTION BANNER */}
-      <section className="py-16 bg-gradient-to-r from-navy-950 via-navy-900 to-skyAccent-900 text-white relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500 text-navy-950 text-xs font-bold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5" /> Admissions Open 2026-27
-          </span>
+      <section className="py-16 sm:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 text-white rounded-3xl p-10 sm:p-14 shadow-2xl relative overflow-hidden border border-navy-800 text-center">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500 text-navy-950 text-xs font-bold uppercase tracking-wider mb-4">
+              <Sparkles className="w-3.5 h-3.5" /> Admissions Open 2026-27
+            </span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-4">
-            Give Your Child the Foundation They Deserve
-          </h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-4">
+              Give Your Child the Foundation They Deserve
+            </h2>
 
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8">
-            Schedule a personal campus walkthrough, interact with our academic coordinators, and discover the St. Xavier's advantage.
-          </p>
+            <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8">
+              Schedule a personal campus walkthrough, interact with our academic coordinators, and discover the St. Xavier's advantage.
+            </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={onOpenAdmissionModal}
-              className="w-full sm:w-auto px-8 py-3.5 bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold rounded-xl shadow-glow-gold transition-all"
-            >
-              Apply Online Now
-            </button>
-            <Link
-              to="/contact"
-              className="w-full sm:w-auto px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all"
-            >
-              Contact Admissions Office
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button
+                onClick={onOpenAdmissionModal}
+                className="w-full sm:w-auto px-8 py-3.5 bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold rounded-xl shadow-glow-gold transition-all"
+              >
+                Apply Online Now
+              </button>
+              <Link
+                to="/contact"
+                className="w-full sm:w-auto px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all"
+              >
+                Contact Admissions Office
+              </Link>
+            </div>
           </div>
         </div>
       </section>
