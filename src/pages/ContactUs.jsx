@@ -45,7 +45,7 @@ export default function ContactUs() {
     }
   };
 
-  const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/919818572692?text=${encodeURIComponent(
     "Hello Admissions Team! I'm reaching out through the school website contact page for admission information."
   )}`;
 
@@ -110,9 +110,9 @@ export default function ContactUs() {
                   <div>
                     <strong className="block text-white text-sm">Telephone Helplines</strong>
                     <div className="text-xs space-y-1 mt-0.5 text-[#a99ac7]">
-                      <div>Admissions Desk: <a href="tel:+919876543210" className="text-fuchsia-300 font-bold hover:underline">+91 98765 43210</a></div>
-                      <div>General Reception: <a href="tel:+919876543211" className="text-fuchsia-300 font-bold hover:underline">+91 98765 43211</a></div>
-                      <div>Transport Control: <a href="tel:+919876543212" className="text-fuchsia-300 font-bold hover:underline">+91 98765 43212</a></div>
+                      <div>Admissions Desk: <a href="tel:+919818572692" className="text-fuchsia-300 font-bold hover:underline">+91-9818572692</a></div>
+                      <div>General Reception: <a href="tel:+919818572692" className="text-fuchsia-300 font-bold hover:underline">+91-9818572692</a></div>
+                      <div>Transport Control: <a href="tel:+919818572692" className="text-fuchsia-300 font-bold hover:underline">+91-9818572692</a></div>
                     </div>
                   </div>
                 </div>
@@ -248,7 +248,7 @@ export default function ContactUs() {
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
+                        placeholder="+91-9818572692"
                         className="w-full px-4 py-2.5 text-sm bg-[#0d0722] border border-[#3e276b] text-white rounded-2xl outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder-[#7964a2]"
                       />
                     </div>

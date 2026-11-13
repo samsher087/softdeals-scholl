@@ -167,7 +167,7 @@ export default function AdmissionModal({ isOpen, onClose }) {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+91 98765 43210"
+                      placeholder="+91-9818572692"
                       className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-[#0d0722] border border-[#3e276b] text-white rounded-2xl focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none placeholder-[#7964a2]"
                     />
                   </div>

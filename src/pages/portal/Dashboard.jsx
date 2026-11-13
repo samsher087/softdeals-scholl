@@ -125,7 +125,7 @@ export default function Dashboard() {
     bloodGroup: 'B+',
     house: 'Blue Sapphire',
     fatherName: 'Dr. Rajeshwar Sharma',
-    parentPhone: '+91 98765 43210',
+    parentPhone: '+91-9818572692',
     overallAttendance: 94.6,
     gpa: 3.92,
     classRank: 2,

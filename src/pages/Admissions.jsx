@@ -561,7 +561,7 @@ export default function Admissions({ onOpenAdmissionModal }) {
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+91 98765 43210"
+                      placeholder="+91-9818572692"
                       className="w-full px-3.5 py-3 text-sm border border-[#3a2466] rounded-2xl outline-none focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-500/25 bg-[#0d0722]/90 text-white placeholder-[#746098] transition-all"
                     />
                   </div>

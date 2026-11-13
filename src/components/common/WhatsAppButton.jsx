@@ -3,7 +3,7 @@ import { MessageCircle, X } from 'lucide-react';
 
 export default function WhatsAppButton() {
   const [showTooltip, setShowTooltip] = useState(true);
-  const phoneNumber = '919876543210';
+  const phoneNumber = '919818572692';
   const defaultMessage = encodeURIComponent(
     "Hello Admissions Desk! I am interested in admission for the 2026-27 academic session at Umeed Global International School. Please share the details."
   );

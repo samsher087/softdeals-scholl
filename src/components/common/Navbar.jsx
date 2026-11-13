@@ -84,8 +84,8 @@ export default function Navbar({ onOpenAdmissionModal }) {
 
           {/* Quick Contact & Working Hours */}
           <div className="hidden md:flex items-center gap-4 xl:gap-5 text-[11px] text-[#b8a7db] whitespace-nowrap shrink-0">
-            <a href="tel:+919876543210" className="hover:text-fuchsia-300 transition-colors flex items-center gap-1.5 whitespace-nowrap">
-              <Phone className="w-3.5 h-3.5 text-fuchsia-400 shrink-0" /> +91 98765 43210
+            <a href="tel:+919818572692" className="hover:text-fuchsia-300 transition-colors flex items-center gap-1.5 whitespace-nowrap">
+              <Phone className="w-3.5 h-3.5 text-fuchsia-400 shrink-0" /> +91-9818572692
             </a>
             <a href="mailto:admissions@umeedglobal.edu" className="hover:text-fuchsia-300 transition-colors flex items-center gap-1.5 whitespace-nowrap">
               <Mail className="w-3.5 h-3.5 text-fuchsia-400 shrink-0" /> admissions@umeedglobal.edu
@@ -283,7 +283,7 @@ export default function Navbar({ onOpenAdmissionModal }) {
               </button>
 
               <div className="text-center pt-2 text-xs text-slate-500">
-                Helpline: <a href="tel:+919876543210" className="text-skyAccent-600 font-bold">+91 98765 43210</a>
+                Helpline: <a href="tel:+919818572692" className="text-fuchsia-400 font-bold">+91-9818572692</a>
               </div>
             </div>
           </div>
