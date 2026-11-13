@@ -65,33 +65,33 @@ export default function Navbar({ onOpenAdmissionModal }) {
         <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           
           {/* Institutional Highlights */}
-          <div className="flex items-center gap-2 sm:gap-3 overflow-hidden w-full sm:w-auto text-[11px] sm:text-xs text-slate-300 whitespace-nowrap shrink-0">
-            <span className="inline-flex items-center gap-1.5 text-cyan-400 font-semibold">
-              <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+          <div className="flex items-center gap-2 sm:gap-3 overflow-hidden w-full sm:w-auto text-[11px] sm:text-xs text-[#d4c6f3] whitespace-nowrap shrink-0">
+            <span className="inline-flex items-center gap-1.5 text-fuchsia-400 font-semibold">
+              <CheckCircle2 className="w-3.5 h-3.5 text-fuchsia-400 shrink-0" />
               <span>CBSE Senior Secondary</span>
             </span>
-            <span className="text-slate-700 hidden sm:inline">•</span>
-            <span className="inline-flex items-center gap-1.5 text-slate-200 font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
+            <span className="text-[#3e276b] hidden sm:inline">•</span>
+            <span className="inline-flex items-center gap-1.5 text-purple-200 font-medium">
+              <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0" />
               <span>1:15 Teacher-Student Ratio</span>
             </span>
-            <span className="text-slate-700 hidden sm:inline">•</span>
-            <span className="inline-flex items-center gap-1.5 text-slate-200 font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
+            <span className="text-[#3e276b] hidden sm:inline">•</span>
+            <span className="inline-flex items-center gap-1.5 text-purple-200 font-medium">
+              <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0" />
               <span>AI & Robotics Hubs</span>
             </span>
           </div>
 
           {/* Quick Contact & Working Hours */}
-          <div className="hidden md:flex items-center gap-4 xl:gap-5 text-[11px] text-slate-300 whitespace-nowrap shrink-0">
-            <a href="tel:+919876543210" className="hover:text-cyan-300 transition-colors flex items-center gap-1.5 whitespace-nowrap">
-              <Phone className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> +91 98765 43210
+          <div className="hidden md:flex items-center gap-4 xl:gap-5 text-[11px] text-[#b8a7db] whitespace-nowrap shrink-0">
+            <a href="tel:+919876543210" className="hover:text-fuchsia-300 transition-colors flex items-center gap-1.5 whitespace-nowrap">
+              <Phone className="w-3.5 h-3.5 text-fuchsia-400 shrink-0" /> +91 98765 43210
             </a>
-            <a href="mailto:admissions@stxavierschool.edu" className="hover:text-cyan-300 transition-colors flex items-center gap-1.5 whitespace-nowrap">
-              <Mail className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> admissions@stxavierschool.edu
+            <a href="mailto:admissions@stxavierschool.edu" className="hover:text-fuchsia-300 transition-colors flex items-center gap-1.5 whitespace-nowrap">
+              <Mail className="w-3.5 h-3.5 text-fuchsia-400 shrink-0" /> admissions@stxavierschool.edu
             </a>
-            <div className="flex items-center gap-1.5 text-slate-400 whitespace-nowrap">
-              <Clock className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Mon - Sat: 8:00 AM - 3:30 PM
+            <div className="flex items-center gap-1.5 text-[#a99ac7] whitespace-nowrap">
+              <Clock className="w-3.5 h-3.5 text-fuchsia-400 shrink-0" /> Mon - Sat: 8:00 AM - 3:30 PM
             </div>
           </div>
 
@@ -100,8 +100,8 @@ export default function Navbar({ onOpenAdmissionModal }) {
 
       {/* Main Navigation Bar - SoftDeals Dark Glass Architecture */}
       <nav 
-        className={`w-full transition-all duration-300 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 ${
-          isScrolled ? 'py-2 sm:py-2.5 shadow-lg shadow-black/40' : 'py-3 sm:py-3.5'
+        className={`w-full transition-all duration-300 bg-[#0c061e]/95 backdrop-blur-xl border-b border-[#341f5e]/80 ${
+          isScrolled ? 'py-2 sm:py-2.5 shadow-xl shadow-purple-950/40' : 'py-3 sm:py-3.5'
         }`}
       >
         <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
@@ -109,18 +109,18 @@ export default function Navbar({ onOpenAdmissionModal }) {
             
             {/* School Brand / Crest */}
             <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-slate-900 border border-cyan-500/40 flex items-center justify-center shadow-lg shadow-cyan-500/10 group-hover:border-cyan-400 group-hover:scale-105 transition-all duration-300 shrink-0">
-                <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
-                <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-3.5 sm:h-3.5 bg-teal-400 rounded-full border-2 border-slate-950"></div>
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#180e38] border border-purple-500/50 flex items-center justify-center shadow-lg shadow-purple-500/20 group-hover:border-fuchsia-400 group-hover:scale-105 transition-all duration-300 shrink-0">
+                <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7 text-fuchsia-300 group-hover:text-white transition-colors" />
+                <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-3.5 sm:h-3.5 bg-fuchsia-400 rounded-full border-2 border-[#0c061e]"></div>
               </div>
               <div className="flex flex-col whitespace-nowrap">
-                <span className="font-serif font-black text-base sm:text-xl text-white tracking-tight leading-none group-hover:text-cyan-300 transition-colors">
+                <span className="font-serif font-black text-base sm:text-xl text-white tracking-tight leading-none group-hover:text-fuchsia-300 transition-colors">
                   ST. XAVIER'S
                 </span>
-                <span className="text-[9px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
+                <span className="text-[9px] sm:text-[11px] font-bold text-[#b8a7db] uppercase tracking-widest mt-0.5">
                   International School
                 </span>
-                <span className="text-[9px] font-semibold text-cyan-400/90 tracking-normal hidden xl:block">
+                <span className="text-[9px] font-semibold text-fuchsia-400/90 tracking-normal hidden xl:block">
                   Affiliated to CBSE, New Delhi • Estd. 1998
                 </span>
               </div>
@@ -134,15 +134,15 @@ export default function Navbar({ onOpenAdmissionModal }) {
                   <Link
                     key={link.name}
                     to={link.path}
-                    className={`relative whitespace-nowrap px-2.5 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 shrink-0 ${
+                    className={`relative whitespace-nowrap px-2.5 xl:px-3 py-2 rounded-xl text-xs xl:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 shrink-0 ${
                       active
-                        ? 'text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 font-bold shadow-xs'
-                        : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                        ? 'text-white bg-purple-900/60 border border-purple-500/50 font-bold shadow-sm'
+                        : 'text-purple-200 hover:text-white hover:bg-[#1b103e]/70'
                     }`}
                   >
                     <span className="whitespace-nowrap">{link.name}</span>
                     {link.badge && (
-                      <span className="text-[10px] bg-cyan-500/20 text-cyan-300 font-bold px-1.5 py-0.2 rounded-full border border-cyan-400/30 shrink-0">
+                      <span className="text-[10px] bg-purple-500/25 text-fuchsia-300 font-bold px-1.5 py-0.2 rounded-full border border-purple-400/40 shrink-0">
                         {link.badge}
                       </span>
                     )}
@@ -157,12 +157,12 @@ export default function Navbar({ onOpenAdmissionModal }) {
                 <div className="flex items-center gap-2 shrink-0">
                   <Link
                     to="/portal/dashboard"
-                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900 text-slate-200 hover:bg-slate-800 hover:text-white text-xs font-semibold border border-slate-700/80 transition-colors whitespace-nowrap shrink-0"
+                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#180e38] text-purple-200 hover:bg-[#22134e] hover:text-white text-xs font-semibold border border-[#442c75]/80 transition-colors whitespace-nowrap shrink-0"
                   >
                     <img 
                       src={user?.avatar || "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80"} 
                       alt={user?.name} 
-                      className="w-5 h-5 rounded-full object-cover border border-cyan-400 shrink-0"
+                      className="w-5 h-5 rounded-full object-cover border border-purple-400 shrink-0"
                     />
                     <span className="truncate max-w-[110px] whitespace-nowrap">{user?.name?.split(' ')[0]}</span>
                   </Link>
@@ -177,19 +177,19 @@ export default function Navbar({ onOpenAdmissionModal }) {
               ) : (
                 <Link
                   to="/portal/login"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-slate-200 bg-slate-900/90 hover:bg-slate-800 hover:text-white border border-slate-700/80 hover:border-cyan-500/40 hover:text-cyan-300 rounded-xl transition-all whitespace-nowrap shrink-0 shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-purple-200 bg-[#180e38]/90 hover:bg-[#22134e] hover:text-white border border-[#442c75]/80 hover:border-purple-400/60 rounded-xl transition-all whitespace-nowrap shrink-0 shadow-sm"
                 >
-                  <User className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <User className="w-3.5 h-3.5 text-fuchsia-400 shrink-0" />
                   <span className="whitespace-nowrap">Portal Login</span>
                 </Link>
               )}
 
               <button
                 onClick={onOpenAdmissionModal}
-                className="inline-flex items-center gap-1.5 xl:gap-2 px-4 xl:px-4.5 py-2.5 text-xs font-bold bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-white rounded-xl shadow-md shadow-cyan-950/60 hover:scale-[1.02] transition-all whitespace-nowrap shrink-0"
+                className="inline-flex items-center gap-1.5 xl:gap-2 px-4 xl:px-4.5 py-2.5 text-xs font-bold bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white rounded-2xl shadow-lg shadow-purple-950/60 hover:scale-[1.02] transition-all whitespace-nowrap shrink-0"
               >
                 <span className="whitespace-nowrap">Admission Enquiry</span>
-                <ChevronRight className="w-3.5 h-3.5 text-teal-200 shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-pink-200 shrink-0" />
               </button>
             </div>
 
@@ -197,7 +197,7 @@ export default function Navbar({ onOpenAdmissionModal }) {
             <div className="flex lg:hidden items-center gap-2">
               <button
                 onClick={onOpenAdmissionModal}
-                className="text-xs font-bold text-white bg-gradient-to-r from-brand-600 to-cyan-600 px-3 py-1.5 rounded-lg sm:hidden"
+                className="text-xs font-bold text-white bg-gradient-to-r from-[#6366f1] to-[#ec4899] px-3 py-1.5 rounded-lg sm:hidden shadow-md"
               >
                 Apply
               </button>
@@ -290,8 +290,8 @@ export default function Navbar({ onOpenAdmissionModal }) {
         )}
       </nav>
 
-      {/* Notice Marquee Bar just below Menu - SoftDeals Dark Style */}
-      <div className="bg-slate-900/95 text-slate-200 py-2.5 px-4 border-b border-slate-800/80 flex items-center overflow-hidden">
+      {/* Notice Marquee Bar just below Menu - SoftDeals Glowing Violet Style */}
+      <div className="bg-[#12082b]/95 text-[#d4c6f3] py-2.5 px-4 border-b border-[#341f5e]/80 flex items-center overflow-hidden">
         <div className="max-w-[1440px] w-full mx-auto flex items-center gap-3">
           
           {/* Important Megaphone Banner Badge in place of Notice */}
@@ -311,27 +311,27 @@ export default function Navbar({ onOpenAdmissionModal }) {
               scrollamount="6"
               onMouseOver={(e) => e.target.stop()}
               onMouseOut={(e) => e.target.start()}
-              className="text-slate-200 text-sm sm:text-[15px] font-medium cursor-pointer"
+              className="text-[#d4c6f3] text-sm sm:text-[15px] font-medium cursor-pointer"
             >
               <span className="inline-flex items-center gap-8 whitespace-nowrap">
-                <span className="text-slate-200 hover:text-cyan-300 transition-colors">
-                  📢 <strong className="text-cyan-300">Admissions Open 2026-27:</strong> Online registration is active for Pre-Nursery to Grade XI (Science, Commerce & Humanities) • Limited Seats Available.
+                <span className="text-purple-200 hover:text-fuchsia-300 transition-colors">
+                  📢 <strong className="text-fuchsia-300">Admissions Open 2026-27:</strong> Online registration is active for Pre-Nursery to Grade XI (Science, Commerce & Humanities) • Limited Seats Available.
                 </span>
-                <span className="text-cyan-500/70 font-bold">★★★</span>
-                <span className="text-slate-200 hover:text-cyan-300 transition-colors">
-                  📝 <strong className="text-teal-300">CBSE Board Examinations:</strong> Senior Secondary practical schedules & hall tickets for Grades 10 & 12 are available on the Student Information Portal.
+                <span className="text-purple-400 font-bold">★★★</span>
+                <span className="text-purple-200 hover:text-fuchsia-300 transition-colors">
+                  📝 <strong className="text-fuchsia-300">CBSE Board Examinations:</strong> Senior Secondary practical schedules & hall tickets for Grades 10 & 12 are available on the Student Information Portal.
                 </span>
-                <span className="text-cyan-500/70 font-bold">★★★</span>
-                <span className="text-slate-200 hover:text-cyan-300 transition-colors">
-                  🤖 <strong className="text-cyan-300">STEM & Robotics Expo:</strong> Annual Inter-School Science Fair "INNOVIZ 2026" registrations open for student prototypes.
+                <span className="text-purple-400 font-bold">★★★</span>
+                <span className="text-purple-200 hover:text-fuchsia-300 transition-colors">
+                  🤖 <strong className="text-fuchsia-300">STEM & Robotics Expo:</strong> Annual Inter-School Science Fair "INNOVIZ 2026" registrations open for student prototypes.
                 </span>
-                <span className="text-cyan-500/70 font-bold">★★★</span>
-                <span className="text-slate-200 hover:text-cyan-300 transition-colors">
-                  🏆 <strong className="text-teal-300">Athletic Meet 2026:</strong> Inter-house sports finals (Blue Sapphire, Emerald, Ruby, Topaz) scheduled this weekend at the Main Stadium.
+                <span className="text-purple-400 font-bold">★★★</span>
+                <span className="text-purple-200 hover:text-fuchsia-300 transition-colors">
+                  🏆 <strong className="text-fuchsia-300">Athletic Meet 2026:</strong> Inter-house sports finals (Blue Sapphire, Emerald, Ruby, Topaz) scheduled this weekend at the Main Stadium.
                 </span>
-                <span className="text-cyan-500/70 font-bold">★★★</span>
-                <span className="text-slate-200 hover:text-cyan-300 transition-colors">
-                  👨‍👩‍👧 <strong className="text-cyan-300">Parent-Teacher Meeting:</strong> Term-2 PTM consultation slots are now open for online reservation.
+                <span className="text-purple-400 font-bold">★★★</span>
+                <span className="text-purple-200 hover:text-fuchsia-300 transition-colors">
+                  👨‍👩‍👧 <strong className="text-fuchsia-300">Parent-Teacher Meeting:</strong> Term-2 PTM consultation slots are now open for online reservation.
                 </span>
               </span>
             </marquee>

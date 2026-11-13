@@ -13,7 +13,9 @@ import {
   Trophy, 
   Compass, 
   Lightbulb, 
-  Globe2 
+  Globe2,
+  Clock,
+  Check
 } from 'lucide-react';
 
 export default function AboutUs({ onOpenAdmissionModal }) {
@@ -77,7 +79,7 @@ export default function AboutUs({ onOpenAdmissionModal }) {
           />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-cyan-300 bg-cyan-500/10 px-3.5 py-1 rounded-full border border-cyan-500/30 mb-3">
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-fuchsia-300 bg-purple-950/80 px-3.5 py-1 rounded-full border border-purple-500/30 mb-3 shadow-md">
             Legacy of 28 Years
           </span>
           <h1 className="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight">
@@ -95,7 +97,7 @@ export default function AboutUs({ onOpenAdmissionModal }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-6 space-y-5">
-              <span className="text-xs font-bold text-cyan-300 uppercase tracking-widest bg-cyan-500/10 border border-cyan-500/30 px-3 py-1 rounded-full">
+              <span className="text-xs font-bold text-fuchsia-300 uppercase tracking-widest bg-purple-950/80 border border-purple-500/30 px-3 py-1 rounded-full shadow-md">
                 Our Heritage & Story
               </span>
               <h2 className="text-3xl sm:text-4xl font-serif font-black text-white leading-tight">
@@ -109,28 +111,28 @@ export default function AboutUs({ onOpenAdmissionModal }) {
               </p>
 
               <div className="pt-2 grid grid-cols-2 gap-4">
-                <div className="p-4 bg-slate-900/80 rounded-2xl border border-slate-800">
-                  <div className="text-2xl font-black font-serif text-white">2,850+</div>
-                  <div className="text-xs text-slate-400 font-medium">Students Enrolled</div>
+                <div className="theme-box p-4 sm:p-5">
+                  <div className="text-2xl sm:text-3xl font-black font-serif text-white">2,850+</div>
+                  <div className="text-xs text-[#a99ac7] font-medium mt-0.5">Students Enrolled</div>
                 </div>
-                <div className="p-4 bg-slate-900/80 rounded-2xl border border-slate-800">
-                  <div className="text-2xl font-black font-serif text-cyan-400">100%</div>
-                  <div className="text-xs text-slate-400 font-medium">CBSE Distinction Rate</div>
+                <div className="theme-box p-4 sm:p-5">
+                  <div className="text-2xl sm:text-3xl font-black font-serif text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899]">100%</div>
+                  <div className="text-xs text-[#a99ac7] font-medium mt-0.5">CBSE Distinction Rate</div>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-800">
+              <div className="relative theme-box p-0 overflow-hidden shadow-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=80"
                   alt="School Campus Front Facade"
                   className="w-full h-96 sm:h-[480px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6 text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080414] via-transparent to-transparent flex items-end p-6 text-white">
                   <div>
                     <div className="font-serif font-bold text-lg text-white">Main Heritage Academic Block</div>
-                    <div className="text-xs text-cyan-300">Modern Architecture • Eco-Friendly Campus</div>
+                    <div className="text-xs text-fuchsia-300">Modern Architecture • Eco-Friendly Campus</div>
                   </div>
                 </div>
               </div>
@@ -146,31 +148,93 @@ export default function AboutUs({ onOpenAdmissionModal }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
             {/* Vision */}
-            <div className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 sm:p-10 shadow-xl border border-slate-800/90 relative overflow-hidden">
-              <div className="w-14 h-14 rounded-2xl bg-slate-800 text-cyan-400 flex items-center justify-center mb-6 border border-slate-700">
-                <Eye className="w-7 h-7" />
+            <div className="theme-box p-8 sm:p-10 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#a78bfa] tracking-wider">
+                    <Clock className="w-3.5 h-3.5 text-[#a78bfa]" />
+                    <span>Institutional Vision • Directive</span>
+                  </span>
+                  <span className="text-[10px] uppercase font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
+                    Charter 2026
+                  </span>
+                </div>
+
+                <div className="w-14 h-14 rounded-2xl bg-[#190f38] text-purple-300 flex items-center justify-center mb-5 border border-purple-500/40 shadow-lg shadow-purple-950/60">
+                  <Eye className="w-7 h-7" />
+                </div>
+                <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-widest block mb-1">Our Vision</span>
+                <h3 className="text-2xl font-serif font-black text-white mb-3">
+                  Inspiring Intellect, Elevating Character
+                </h3>
+                <p className="text-[#d4c6f3] text-xs sm:text-sm leading-relaxed mb-6">
+                  To be a benchmark international center of learning that fosters intellectual curiosity, ethical leadership, scientific temperament, and emotional resilience—empowering every student to leave an indelible, positive footprint on the world.
+                </p>
               </div>
-              <span className="text-xs font-bold text-cyan-300 uppercase tracking-widest">Our Vision</span>
-              <h3 className="text-2xl font-serif font-black text-white mt-2 mb-4">
-                Inspiring Intellect, Elevating Character
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                To be a benchmark international center of learning that fosters intellectual curiosity, ethical leadership, scientific temperament, and emotional resilience—empowering every student to leave an indelible, positive footprint on the world.
-              </p>
+
+              <div>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  <span className="theme-pill">Curiosity Nurturing</span>
+                  <span className="theme-pill">Ethical Leadership</span>
+                  <span className="theme-pill">Global Footprint</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={onOpenAdmissionModal}
+                  className="w-full py-2.5 px-4 rounded-2xl bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold text-xs shadow-[0_8px_20px_rgba(168,85,247,0.35)] flex items-center justify-center gap-2 hover:scale-[1.01] transition-all"
+                >
+                  <span className="w-4 h-4 rounded-full border border-white/90 flex items-center justify-center">
+                    <Check className="w-2.5 h-2.5 stroke-[3] text-white" />
+                  </span>
+                  <span>Explore Academic Programs</span>
+                </button>
+                <div className="w-20 h-1 bg-white/20 rounded-full mx-auto mt-5" />
+              </div>
             </div>
 
             {/* Mission */}
-            <div className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 sm:p-10 shadow-xl border border-slate-800/90 relative overflow-hidden">
-              <div className="w-14 h-14 rounded-2xl bg-slate-800 text-teal-400 flex items-center justify-center mb-6 border border-slate-700">
-                <Target className="w-7 h-7" />
+            <div className="theme-box p-8 sm:p-10 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#a78bfa] tracking-wider">
+                    <Clock className="w-3.5 h-3.5 text-[#a78bfa]" />
+                    <span>Holistic Mission • Pedagogy</span>
+                  </span>
+                  <span className="text-[10px] uppercase font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
+                    Empowerment
+                  </span>
+                </div>
+
+                <div className="w-14 h-14 rounded-2xl bg-[#190f38] text-fuchsia-400 flex items-center justify-center mb-5 border border-purple-500/40 shadow-lg shadow-purple-950/60">
+                  <Target className="w-7 h-7" />
+                </div>
+                <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-widest block mb-1">Our Mission</span>
+                <h3 className="text-2xl font-serif font-black text-white mb-3">
+                  Empowering Holistic Excellence
+                </h3>
+                <p className="text-[#d4c6f3] text-xs sm:text-sm leading-relaxed mb-6">
+                  To deliver a child-centric, research-informed curriculum that nurtures creative potential, critical discernment, physical fitness, and technological fluency, while instilling timeless moral convictions and universal human empathy.
+                </p>
               </div>
-              <span className="text-xs font-bold text-teal-300 uppercase tracking-widest">Our Mission</span>
-              <h3 className="text-2xl font-serif font-black text-white mt-2 mb-4">
-                Empowering Holistic Excellence
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                To deliver a child-centric, research-informed curriculum that nurtures creative potential, critical discernment, physical fitness, and technological fluency, while instilling timeless moral convictions and universal human empathy.
-              </p>
+
+              <div>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  <span className="theme-pill">Research-Informed</span>
+                  <span className="theme-pill">Critical Discernment</span>
+                  <span className="theme-pill">Human Empathy</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={onOpenAdmissionModal}
+                  className="w-full py-2.5 px-4 rounded-2xl bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold text-xs shadow-[0_8px_20px_rgba(168,85,247,0.35)] flex items-center justify-center gap-2 hover:scale-[1.01] transition-all"
+                >
+                  <span className="w-4 h-4 rounded-full border border-white/90 flex items-center justify-center">
+                    <Check className="w-2.5 h-2.5 stroke-[3] text-white" />
+                  </span>
+                  <span>Connect With Admissions</span>
+                </button>
+                <div className="w-20 h-1 bg-white/20 rounded-full mx-auto mt-5" />
+              </div>
             </div>
 
           </div>
@@ -182,7 +246,7 @@ export default function AboutUs({ onOpenAdmissionModal }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-2xl mx-auto">
-            <span className="text-xs font-bold text-cyan-300 uppercase tracking-widest bg-cyan-500/10 border border-cyan-500/30 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold text-fuchsia-300 uppercase tracking-widest bg-purple-950/80 border border-purple-500/30 px-3 py-1 rounded-full shadow-md">
               School Leadership
             </span>
             <h2 className="text-3xl font-serif font-black text-white mt-2">
@@ -191,9 +255,9 @@ export default function AboutUs({ onOpenAdmissionModal }) {
           </div>
 
           {/* Chairman's Message */}
-          <div className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 sm:p-12 border border-slate-800/90 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-xl">
+          <div className="theme-box p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl">
             <div className="lg:col-span-4 text-center lg:text-left">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700 max-w-[280px] mx-auto">
+              <div className="relative rounded-[24px] overflow-hidden shadow-2xl border border-[#442c75]/80 max-w-[280px] mx-auto">
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
                   alt="Chairman Shri Arvind Singhal"
@@ -202,42 +266,46 @@ export default function AboutUs({ onOpenAdmissionModal }) {
               </div>
               <div className="mt-4">
                 <h4 className="font-serif font-bold text-lg text-white">Shri Arvind Singhal</h4>
-                <div className="text-xs text-cyan-400 font-semibold">Chairman & Managing Trustee</div>
-                <div className="text-[11px] text-slate-400">M.Tech (IIT Delhi), Philanthropist & Educationist</div>
+                <div className="text-xs text-fuchsia-400 font-semibold">Chairman & Managing Trustee</div>
+                <div className="text-[11px] text-[#a99ac7]">M.Tech (IIT Delhi), Philanthropist & Educationist</div>
               </div>
             </div>
 
             <div className="lg:col-span-8 space-y-4">
-              <div className="text-xs font-bold text-cyan-300 uppercase tracking-wider">Chairman's Address</div>
-              <h3 className="text-2xl font-serif font-bold text-white">
+              <div className="flex items-center gap-2">
+                <span className="theme-pill">Chairman's Address</span>
+              </div>
+              <h3 className="text-2xl font-serif font-black text-white">
                 "Education is the ignite switch for human potential."
               </h3>
-              <p className="text-slate-300 text-sm leading-relaxed">
+              <p className="text-[#d4c6f3] text-sm leading-relaxed">
                 When we planted the seeds of St. Xavier's International School nearly three decades ago, our vision was unambiguous: to create an institution that neither compromises on scholastic superiority nor dilutes human character.
               </p>
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-[#a99ac7] text-sm leading-relaxed">
                 Today, as artificial intelligence and automation reshape our global society, the greatest gift we can bestow upon our children is the capacity to think critically, adapt fluidly, and remain deeply grounded in moral integrity. I welcome you to join our family.
               </p>
             </div>
           </div>
 
           {/* Principal's Message */}
-          <div className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 sm:p-12 border border-slate-800/90 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-xl">
+          <div className="theme-box p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl">
             <div className="lg:col-span-8 space-y-4 order-2 lg:order-1">
-              <div className="text-xs font-bold text-teal-300 uppercase tracking-wider">Principal's Address</div>
-              <h3 className="text-2xl font-serif font-bold text-white">
+              <div className="flex items-center gap-2">
+                <span className="theme-pill">Principal's Address</span>
+              </div>
+              <h3 className="text-2xl font-serif font-black text-white">
                 "Every child is an ocean of undiscovered brilliance."
               </h3>
-              <p className="text-slate-300 text-sm leading-relaxed">
+              <p className="text-[#d4c6f3] text-sm leading-relaxed">
                 At St. Xavier's, we believe that education is an art of discovery rather than an exercise in rote compliance. Our classrooms are vibrant incubation centers where learners are encouraged to formulate hypotheses, experiment fearlessly, and embrace mistakes as valuable stepping stones.
               </p>
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-[#a99ac7] text-sm leading-relaxed">
                 Our faculty members act as facilitators, mentors, and guides. We pride ourselves on creating an emotionally safe, intellectually invigorating atmosphere where every student feels seen, heard, and valued.
               </p>
             </div>
 
             <div className="lg:col-span-4 text-center lg:text-right order-1 lg:order-2">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700 max-w-[280px] mx-auto">
+              <div className="relative rounded-[24px] overflow-hidden shadow-2xl border border-[#442c75]/80 max-w-[280px] mx-auto">
                 <img
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"
                   alt="Principal Dr. Eleanor Vance"
@@ -246,8 +314,8 @@ export default function AboutUs({ onOpenAdmissionModal }) {
               </div>
               <div className="mt-4">
                 <h4 className="font-serif font-bold text-lg text-white">Dr. Eleanor Vance</h4>
-                <div className="text-xs text-teal-400 font-semibold">Principal & Head of School</div>
-                <div className="text-[11px] text-slate-400">M.Sc., M.Ed., Ph.D., National Pedagogical Fellow</div>
+                <div className="text-xs text-fuchsia-400 font-semibold">Principal & Head of School</div>
+                <div className="text-[11px] text-[#a99ac7]">M.Sc., M.Ed., Ph.D., National Pedagogical Fellow</div>
               </div>
             </div>
           </div>
@@ -260,7 +328,7 @@ export default function AboutUs({ onOpenAdmissionModal }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-bold text-cyan-300 uppercase tracking-widest bg-cyan-500/10 border border-cyan-500/30 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold text-fuchsia-300 uppercase tracking-widest bg-purple-950/80 border border-purple-500/30 px-3 py-1 rounded-full shadow-md">
               Our Compass
             </span>
             <h2 className="text-3xl font-serif font-black text-white mt-2 mb-3">
@@ -277,17 +345,23 @@ export default function AboutUs({ onOpenAdmissionModal }) {
               return (
                 <div
                   key={idx}
-                  className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-6 border border-slate-800/90 shadow-xl hover:border-cyan-500/50 hover:shadow-cyan-500/10 transition-all"
+                  className="theme-box p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 bg-slate-800 border border-slate-700 text-cyan-400">
-                    <Icon className="w-6 h-6" />
+                  <div>
+                    <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 bg-[#190f38] border border-purple-500/40 text-purple-300 shadow-md">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-base font-bold text-white mb-2">
+                      {val.title}
+                    </h3>
+                    <p className="text-[#d4c6f3] text-xs sm:text-sm leading-relaxed mb-4">
+                      {val.desc}
+                    </p>
                   </div>
-                  <h3 className="text-base font-bold text-white mb-2">
-                    {val.title}
-                  </h3>
-                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                    {val.desc}
-                  </p>
+                  <div>
+                    <span className="theme-pill text-[10px]">St. Xavier's Core Value</span>
+                    <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mt-4" />
+                  </div>
                 </div>
               );
             })}
@@ -302,7 +376,7 @@ export default function AboutUs({ onOpenAdmissionModal }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             <div className="space-y-6">
-              <span className="text-xs font-bold text-cyan-300 uppercase tracking-widest bg-cyan-500/10 border border-cyan-500/30 px-3 py-1 rounded-full">
+              <span className="text-xs font-bold text-fuchsia-300 uppercase tracking-widest bg-purple-950/80 border border-purple-500/30 px-3 py-1 rounded-full shadow-md">
                 Pedagogy & Methodology
               </span>
               <h2 className="text-3xl font-serif font-black text-white">
@@ -314,7 +388,7 @@ export default function AboutUs({ onOpenAdmissionModal }) {
 
               <div className="space-y-3.5">
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-xl bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</div>
+                  <div className="w-6 h-6 rounded-xl bg-purple-950 text-fuchsia-300 border border-purple-500/40 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</div>
                   <div>
                     <strong className="text-sm text-white">Inquiry-Driven Classroom:</strong>
                     <p className="text-xs text-slate-400 mt-0.5">Students formulate open-ended questions, design investigative experiments, and collaborate on real-world case studies.</p>
@@ -322,7 +396,7 @@ export default function AboutUs({ onOpenAdmissionModal }) {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-xl bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</div>
+                  <div className="w-6 h-6 rounded-xl bg-purple-950 text-fuchsia-300 border border-purple-500/40 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</div>
                   <div>
                     <strong className="text-sm text-white">Integrated STEAM Framework:</strong>
                     <p className="text-xs text-slate-400 mt-0.5">Science, Technology, Engineering, Arts, and Mathematics are blended naturally into interdisciplinary coursework.</p>
@@ -330,7 +404,7 @@ export default function AboutUs({ onOpenAdmissionModal }) {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-xl bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</div>
+                  <div className="w-6 h-6 rounded-xl bg-purple-950 text-fuchsia-300 border border-purple-500/40 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</div>
                   <div>
                     <strong className="text-sm text-white">Formative Continuous Evaluation:</strong>
                     <p className="text-xs text-slate-400 mt-0.5">Assessment that supports learning rather than inducing anxiety, highlighting individualized growth trajectories.</p>
@@ -340,19 +414,19 @@ export default function AboutUs({ onOpenAdmissionModal }) {
             </div>
 
             {/* Milestones Timeline */}
-            <div className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 border border-slate-800/90 shadow-xl">
+            <div className="theme-box p-8 sm:p-10 shadow-xl">
               <h3 className="text-xl font-serif font-black text-white mb-6 flex items-center gap-2">
-                <Trophy className="w-5 h-5 text-cyan-400" />
+                <Trophy className="w-5 h-5 text-fuchsia-400" />
                 Historic Milestones
               </h3>
 
-              <div className="relative pl-6 border-l-2 border-slate-700 space-y-6">
+              <div className="relative pl-6 border-l-2 border-purple-500/30 space-y-6">
                 {milestones.map((m, i) => (
                   <div key={i} className="relative">
-                    <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-cyan-400 border-4 border-slate-900 shadow"></div>
-                    <span className="text-xs font-bold text-cyan-300 font-mono">{m.year}</span>
+                    <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-gradient-to-r from-[#6366f1] to-[#ec4899] border-2 border-[#130b2e] shadow-md shadow-purple-950/80"></div>
+                    <span className="text-xs font-bold text-fuchsia-300 font-mono">{m.year}</span>
                     <h4 className="text-sm font-bold text-white">{m.title}</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">{m.desc}</p>
+                    <p className="text-xs text-[#a99ac7] mt-0.5">{m.desc}</p>
                   </div>
                 ))}
               </div>
@@ -363,20 +437,23 @@ export default function AboutUs({ onOpenAdmissionModal }) {
       </section>
 
       {/* CTA Box */}
-      <section className="py-14 bg-slate-950 border-t border-slate-800 text-white text-center">
+      <section className="py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <h3 className="text-2xl font-serif font-black text-white mb-2">
-            Experience Our Campus Firsthand
-          </h3>
-          <p className="text-slate-400 text-xs sm:text-sm mb-6">
-            Book an appointment for a personalized campus interaction with our academic counselors.
-          </p>
-          <button
-            onClick={onOpenAdmissionModal}
-            className="px-7 py-3.5 bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-white font-bold rounded-2xl text-sm shadow-xl shadow-cyan-950/60 hover:scale-[1.02] transition-all"
-          >
-            Schedule Campus Visit
-          </button>
+          <div className="theme-box p-8 sm:p-12 text-center text-white">
+            <h3 className="text-2xl sm:text-3xl font-serif font-black text-white mb-2">
+              Experience Our Campus Firsthand
+            </h3>
+            <p className="text-[#d4c6f3] text-xs sm:text-sm mb-6 max-w-xl mx-auto">
+              Book an appointment for a personalized campus interaction with our academic counselors.
+            </p>
+            <button
+              onClick={onOpenAdmissionModal}
+              className="px-8 py-3.5 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold rounded-2xl text-sm shadow-xl shadow-purple-950/60 hover:scale-[1.02] transition-all"
+            >
+              Schedule Campus Visit
+            </button>
+            <div className="w-20 h-1 bg-white/20 rounded-full mx-auto mt-6" />
+          </div>
         </div>
       </section>
 

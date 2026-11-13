@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, Send, GraduationCap, Phone, Mail, User, Sparkles } from 'lucide-react';
+import { X, CheckCircle2, Send, GraduationCap, Phone, Mail, User, Sparkles, Clock, Check } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { api } from '../../services/api';
 
@@ -67,65 +67,69 @@ export default function AdmissionModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#080414]/85 backdrop-blur-xl animate-fadeIn">
       <div 
-        className="relative w-full max-w-xl bg-slate-900 text-slate-100 rounded-3xl shadow-2xl border border-slate-800 overflow-hidden"
+        className="relative w-full max-w-xl theme-box p-0 text-slate-100 rounded-[32px] shadow-2xl overflow-hidden border border-[#442c75]/80"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Modal Header - SoftDeals Dark Style */}
-        <div className="bg-slate-950 text-white p-6 relative border-b border-slate-800">
+        {/* Modal Header */}
+        <div className="p-6 sm:p-7 relative border-b border-[#341f5e]/80">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl transition-colors"
+            className="absolute top-5 right-5 p-2 text-[#a99ac7] hover:text-white hover:bg-[#1f1248] rounded-2xl transition-colors"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
 
-          <div className="flex items-center gap-2 mb-2">
-            <span className="bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
-              <Sparkles className="w-3 h-3 text-cyan-400" /> Session 2026-27
+          <div className="flex items-center gap-2 mb-3">
+            <span className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#a78bfa] tracking-wider">
+              <Clock className="w-3.5 h-3.5 text-[#a78bfa]" />
+              <span>Intake Active • 2026-2027</span>
             </span>
-            <span className="text-xs text-teal-300 font-medium">Limited Seats</span>
+            <span className="text-[10px] uppercase font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
+              Limited Seats
+            </span>
           </div>
 
           <h3 className="text-xl sm:text-2xl font-serif font-black flex items-center gap-2 text-white">
-            <GraduationCap className="w-6 h-6 text-cyan-400" />
+            <GraduationCap className="w-6 h-6 text-fuchsia-400" />
             Online Admission Enquiry
           </h3>
-          <p className="text-xs sm:text-sm text-slate-400 mt-1">
+          <p className="text-xs sm:text-sm text-[#d4c6f3] mt-1.5 leading-relaxed">
             Fill the form below to receive syllabus, fee structure & schedule a campus interaction.
           </p>
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 bg-slate-900">
+        <div className="p-6 sm:p-7 bg-transparent">
           {submitted ? (
             <div className="text-center py-8 space-y-4">
-              <div className="w-16 h-16 bg-teal-500/15 text-teal-400 border border-teal-500/30 rounded-2xl flex items-center justify-center mx-auto shadow-inner">
+              <div className="w-16 h-16 bg-purple-500/20 text-fuchsia-400 border border-purple-500/40 rounded-2xl flex items-center justify-center mx-auto shadow-inner">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
               <div>
                 <h4 className="text-xl font-bold text-white">Application Registered Successfully!</h4>
-                <p className="text-sm text-slate-300 mt-1">
-                  Thank you for your interest in <span className="font-semibold text-cyan-300">St. Xavier's International School</span>.
+                <p className="text-sm text-[#d4c6f3] mt-1">
+                  Thank you for your interest in <span className="font-semibold text-fuchsia-300">St. Xavier's International School</span>.
                 </p>
-                <div className="mt-3 inline-block bg-slate-950 px-4 py-2 rounded-xl border border-slate-800">
-                  <span className="text-xs text-slate-400 block uppercase tracking-wider font-semibold">Enquiry Reference ID</span>
-                  <span className="text-base font-mono font-bold text-cyan-400">{regId}</span>
+                <div className="mt-3 inline-block bg-[#0d0722] px-5 py-2.5 rounded-2xl border border-[#3e276b]">
+                  <span className="text-[10px] text-[#a99ac7] block uppercase tracking-wider font-semibold">Enquiry Reference ID</span>
+                  <span className="text-base font-mono font-bold text-fuchsia-300">{regId}</span>
                 </div>
               </div>
-              <p className="text-xs text-slate-400 max-w-sm mx-auto">
-                Our Admissions Counselor will contact you on <span className="font-semibold text-slate-200">{formData.phone}</span> within 24 working hours.
+              <p className="text-xs text-[#a99ac7] max-w-sm mx-auto">
+                Our Admissions Counselor will contact you on <span className="font-semibold text-white">{formData.phone}</span> within 24 working hours.
               </p>
               <div className="pt-2">
                 <button
                   onClick={handleReset}
-                  className="px-6 py-2.5 bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-white font-bold text-sm rounded-xl shadow-lg"
+                  className="px-8 py-3 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold text-sm rounded-2xl shadow-xl shadow-purple-950/60"
                 >
                   Done
                 </button>
               </div>
+              <div className="w-20 h-1 bg-white/20 rounded-full mx-auto mt-4" />
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -133,11 +137,11 @@ export default function AdmissionModal({ isOpen, onClose }) {
                 
                 {/* Parent Name */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-bold text-[#d4c6f3] uppercase tracking-wider mb-1">
                     Parent / Guardian Name *
                   </label>
                   <div className="relative">
-                    <User className="w-4 h-4 text-slate-500 absolute left-3 top-3" />
+                    <User className="w-4 h-4 text-[#7964a2] absolute left-3.5 top-3" />
                     <input
                       type="text"
                       name="name"
@@ -145,18 +149,18 @@ export default function AdmissionModal({ isOpen, onClose }) {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Dr. Rajeshwar Sharma"
-                      className="w-full pl-9 pr-3 py-2 text-sm bg-slate-950 border border-slate-800 text-white rounded-xl focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none placeholder-slate-600"
+                      className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-[#0d0722] border border-[#3e276b] text-white rounded-2xl focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none placeholder-[#7964a2]"
                     />
                   </div>
                 </div>
 
                 {/* Mobile Number */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-bold text-[#d4c6f3] uppercase tracking-wider mb-1">
                     Mobile Number *
                   </label>
                   <div className="relative">
-                    <Phone className="w-4 h-4 text-slate-500 absolute left-3 top-3" />
+                    <Phone className="w-4 h-4 text-[#7964a2] absolute left-3.5 top-3" />
                     <input
                       type="tel"
                       name="phone"
@@ -164,18 +168,18 @@ export default function AdmissionModal({ isOpen, onClose }) {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+91 98765 43210"
-                      className="w-full pl-9 pr-3 py-2 text-sm bg-slate-950 border border-slate-800 text-white rounded-xl focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none placeholder-slate-600"
+                      className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-[#0d0722] border border-[#3e276b] text-white rounded-2xl focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none placeholder-[#7964a2]"
                     />
                   </div>
                 </div>
 
                 {/* Email Address */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-bold text-[#d4c6f3] uppercase tracking-wider mb-1">
                     Email Address *
                   </label>
                   <div className="relative">
-                    <Mail className="w-4 h-4 text-slate-500 absolute left-3 top-3" />
+                    <Mail className="w-4 h-4 text-[#7964a2] absolute left-3.5 top-3" />
                     <input
                       type="email"
                       name="email"
@@ -183,14 +187,14 @@ export default function AdmissionModal({ isOpen, onClose }) {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="parent@example.com"
-                      className="w-full pl-9 pr-3 py-2 text-sm bg-slate-950 border border-slate-800 text-white rounded-xl focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none placeholder-slate-600"
+                      className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-[#0d0722] border border-[#3e276b] text-white rounded-2xl focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none placeholder-[#7964a2]"
                     />
                   </div>
                 </div>
 
                 {/* Student Full Name */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-bold text-[#d4c6f3] uppercase tracking-wider mb-1">
                     Student's Full Name *
                   </label>
                   <input
@@ -200,20 +204,20 @@ export default function AdmissionModal({ isOpen, onClose }) {
                     value={formData.studentName}
                     onChange={handleChange}
                     placeholder="e.g. Aryan Sharma"
-                    className="w-full px-3 py-2 text-sm bg-slate-950 border border-slate-800 text-white rounded-xl focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none placeholder-slate-600"
+                    className="w-full px-4 py-2.5 text-sm bg-[#0d0722] border border-[#3e276b] text-white rounded-2xl focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none placeholder-[#7964a2]"
                   />
                 </div>
 
                 {/* Grade / Class */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-bold text-[#d4c6f3] uppercase tracking-wider mb-1">
                     Class Seeking Admission *
                   </label>
                   <select
                     name="grade"
                     value={formData.grade}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 text-sm bg-slate-950 border border-slate-800 text-white rounded-xl focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none"
+                    className="w-full px-4 py-2.5 text-sm bg-[#0d0722] border border-[#3e276b] text-white rounded-2xl focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none"
                   >
                     <option value="Pre-Nursery">Pre-Nursery (Age 2.5+)</option>
                     <option value="Nursery">Nursery (Age 3+)</option>
@@ -237,14 +241,14 @@ export default function AdmissionModal({ isOpen, onClose }) {
 
                 {/* Academic Session */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-bold text-[#d4c6f3] uppercase tracking-wider mb-1">
                     Target Academic Session
                   </label>
                   <input
                     type="text"
                     disabled
                     value="2026 - 2027 (Active Intake)"
-                    className="w-full px-3 py-2 text-sm border border-slate-800 bg-slate-950/60 text-cyan-300 rounded-xl font-medium cursor-not-allowed"
+                    className="w-full px-4 py-2.5 text-sm border border-[#3e276b] bg-[#0d0722]/60 text-fuchsia-300 rounded-2xl font-medium cursor-not-allowed"
                   />
                 </div>
 
@@ -252,7 +256,7 @@ export default function AdmissionModal({ isOpen, onClose }) {
 
               {/* Message / Remarks */}
               <div>
-                <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">
+                <label className="block text-xs font-bold text-[#d4c6f3] uppercase tracking-wider mb-1">
                   Specific Questions or Requirements (Optional)
                 </label>
                 <textarea
@@ -261,8 +265,15 @@ export default function AdmissionModal({ isOpen, onClose }) {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Ask about bus routes, hostel, scholarships, or curriculum..."
-                  className="w-full px-3 py-2 text-sm bg-slate-950 border border-slate-800 text-white rounded-xl focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none placeholder-slate-600"
+                  className="w-full px-4 py-2.5 text-sm bg-[#0d0722] border border-[#3e276b] text-white rounded-2xl focus:border-purple-400 focus:ring-1 focus:ring-purple-400 outline-none placeholder-[#7964a2]"
                 ></textarea>
+              </div>
+
+              {/* Capsule tags */}
+              <div className="flex flex-wrap gap-2 pt-1">
+                <span className="theme-pill text-[10px]">Instant SMS Confirmation</span>
+                <span className="theme-pill text-[10px]">Zero Registration Fee</span>
+                <span className="theme-pill text-[10px]">Direct Counselor Connect</span>
               </div>
 
               {/* Action Buttons */}
@@ -270,29 +281,29 @@ export default function AdmissionModal({ isOpen, onClose }) {
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-4 py-2 text-sm text-slate-400 hover:text-white font-semibold transition-colors"
+                  className="px-5 py-2.5 text-xs text-[#a99ac7] hover:text-white font-semibold transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-white font-bold text-sm rounded-xl shadow-lg shadow-cyan-950/60 transition-all duration-200 disabled:opacity-50"
+                  className="inline-flex items-center gap-2 px-7 py-3 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold text-sm rounded-2xl shadow-xl shadow-purple-950/60 transition-all duration-200 disabled:opacity-50 hover:scale-[1.01]"
                 >
                   {submitting ? (
                     <span>Registering...</span>
                   ) : (
                     <>
-                      <span>Submit Enquiry</span>
-                      <Send className="w-4 h-4 text-cyan-200" />
+                      <span className="w-4 h-4 rounded-full border border-white flex items-center justify-center">
+                        <Check className="w-2.5 h-2.5 stroke-[3] text-white" />
+                      </span>
+                      <span>Submit Admission Enquiry</span>
                     </>
                   )}
                 </button>
               </div>
 
-              <p className="text-[11px] text-center text-slate-500 pt-1">
-                🔒 Your personal information is encrypted and strictly used for school communication only.
-              </p>
+              <div className="w-20 h-1 bg-white/20 rounded-full mx-auto mt-4" />
             </form>
           )}
         </div>
@@ -300,4 +311,3 @@ export default function AdmissionModal({ isOpen, onClose }) {
     </div>
   );
 }
-

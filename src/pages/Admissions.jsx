@@ -32,7 +32,6 @@ export default function Admissions({ onOpenAdmissionModal }) {
 
   const steps = [
     {
-
       title: 'Online Enquiry & Registration',
       desc: 'Submit the digital enquiry form or obtain the prospectus from our admissions desk. Receive your unique applicant ID.',
       tag: 'Stage 01',
@@ -40,7 +39,6 @@ export default function Admissions({ onOpenAdmissionModal }) {
       action: 'Start Registration'
     },
     {
-
       title: 'Campus Tour & Orientation',
       desc: 'Parents and applicant are invited for a guided campus walkthrough, facility inspection, and discussion with our academic coordinators.',
       tag: 'Stage 02',
@@ -48,7 +46,6 @@ export default function Admissions({ onOpenAdmissionModal }) {
       action: 'Schedule Tour'
     },
     {
-
       title: 'Assessment & Interaction',
       desc: 'Age-appropriate foundational assessment (Grades 1 to 11) to understand student learning styles and aptitude. Friendly informal interaction for Pre-Primary.',
       tag: 'Stage 03',
@@ -56,7 +53,6 @@ export default function Admissions({ onOpenAdmissionModal }) {
       action: 'Assessment Info'
     },
     {
-
       title: 'Enrollment & Welcome Kit',
       desc: 'Verification of required certificates, fee deposit confirmation, issuance of school ID, uniform allotment, and class assignment.',
       tag: 'Stage 04',
@@ -104,30 +100,30 @@ export default function Admissions({ onOpenAdmissionModal }) {
     <div className="w-full min-h-screen text-slate-100">
 
       {/* Header Banner */}
-      <section className="bg-slate-950/80 border-b border-slate-800/80 text-white py-16 sm:py-20 relative overflow-hidden">
+      <section className="bg-[#0c0722]/90 border-b border-[#341f5e]/80 text-white py-16 sm:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-cyan-300 bg-cyan-500/15 px-3.5 py-1 rounded-full border border-cyan-400/30">
-            Admissions Open 2026-27
+          <span className="text-xs font-bold uppercase tracking-widest text-fuchsia-300 bg-purple-950/80 px-3.5 py-1 rounded-full border border-purple-500/30 inline-flex items-center gap-1.5 shadow-md">
+            <Sparkles className="w-3.5 h-3.5 text-fuchsia-400" /> Admissions Open 2026-27
           </span>
-          <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight mt-3">
+          <h1 className="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight mt-3">
             Admissions Process & Fee Structure
           </h1>
-          <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto">
+          <p className="mt-3 text-sm sm:text-base text-[#d4c6f3] max-w-2xl mx-auto">
             Discover a seamless, transparent admission experience designed to place your child at the center of holistic growth and scholastic distinction.
           </p>
 
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <button
               onClick={() => alert("Downloading Official School Prospectus 2026-27 (PDF).")}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-white font-bold text-xs rounded-xl shadow-lg shadow-cyan-950/60 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold text-xs rounded-2xl shadow-lg shadow-purple-950/60 transition-all hover:scale-[1.02]"
             >
-              <Download className="w-4 h-4 text-cyan-200" /> Download Prospectus (PDF)
+              <Download className="w-4 h-4 text-fuchsia-200" /> Download Prospectus (PDF)
             </button>
             <button
               onClick={onOpenAdmissionModal}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900/90 hover:bg-slate-800 text-slate-200 font-bold text-xs rounded-xl border border-slate-700/80 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#180e38]/85 hover:bg-[#22134e] text-purple-200 hover:text-white font-bold text-xs rounded-2xl border border-[#442c75]/80 backdrop-blur-md transition-all shadow-md"
             >
-              Apply Online Now <ChevronRight className="w-4 h-4 text-cyan-400" />
+              Apply Online Now <ChevronRight className="w-4 h-4 text-fuchsia-400" />
             </button>
           </div>
         </div>
@@ -282,7 +278,7 @@ export default function Admissions({ onOpenAdmissionModal }) {
                 <span className="theme-pill">📋 TC from Recognized Board</span>
                 <span className="theme-pill">📅 Cutoff 31st March 2026</span>
               </div>
-              <button 
+              <button
                 onClick={onOpenAdmissionModal}
                 className="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold text-xs shadow-[0_8px_20px_rgba(168,85,247,0.35)] transition-all flex items-center gap-2 hover:scale-[1.01] shrink-0"
               >

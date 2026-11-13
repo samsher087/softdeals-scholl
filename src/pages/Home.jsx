@@ -25,7 +25,8 @@ import {
   Check,
   ArrowUpRight,
   Pause,
-  Play
+  Play,
+  Clock
 } from 'lucide-react';
 import { api } from '../services/api';
 import { initialEvents } from '../../server/data/defaultData.js';
@@ -142,7 +143,7 @@ export default function Home({ onOpenAdmissionModal }) {
       title: 'Global Citizen Curriculum',
       desc: 'Foreign language electives (French, German), Model United Nations (MUN), international student exchange, and public speaking clubs.',
       icon: Globe,
-      color: 'bg-cyan-50 text-cyan-600 border-cyan-200'
+      color: 'bg-purple-50 text-purple-600 border-purple-200'
     },
     {
       title: 'Individual Attention (1:15 Ratio)',
@@ -229,15 +230,14 @@ export default function Home({ onOpenAdmissionModal }) {
         <button
           onClick={prevSlide}
           aria-label="Previous Slide"
-          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-950/70 hover:bg-cyan-500 text-slate-300 hover:text-slate-950 backdrop-blur-md border border-slate-700/80 flex items-center justify-center transition-all duration-300 shadow-xl hover:scale-105"
+          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0d0722]/80 hover:bg-purple-600 text-purple-200 hover:text-white backdrop-blur-md border border-[#442c75]/80 flex items-center justify-center transition-all duration-300 shadow-xl hover:scale-105"
         >
           <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
-
         <button
           onClick={nextSlide}
           aria-label="Next Slide"
-          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-950/70 hover:bg-cyan-500 text-slate-300 hover:text-slate-950 backdrop-blur-md border border-slate-700/80 flex items-center justify-center transition-all duration-300 shadow-xl hover:scale-105"
+          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0d0722]/80 hover:bg-purple-600 text-purple-200 hover:text-white backdrop-blur-md border border-[#442c75]/80 flex items-center justify-center transition-all duration-300 shadow-xl hover:scale-105"
         >
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
@@ -246,10 +246,10 @@ export default function Home({ onOpenAdmissionModal }) {
           <div className="max-w-5xl xl:max-w-6xl">
 
 
-            {/* Main Headline - Broken into Two Lines with SoftDeals Cyan-Sky-Teal Gradient */}
+            {/* Main Headline - Broken into Two Lines with SoftDeals Radiant Purple-Magenta Gradient */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold text-white tracking-tight leading-[1.15] mb-6 drop-shadow-md">
               <span className="block">Building Bright Futures</span>
-              <span className="block bg-gradient-to-r from-cyan-400 via-sky-300 to-teal-300 bg-clip-text text-transparent">Through Quality Education.</span>
+              <span className="block bg-gradient-to-r from-[#c084fc] via-[#e879f9] to-[#f472b6] bg-clip-text text-transparent">Through Quality Education.</span>
             </h1>
 
             {/* Subtitle */}
@@ -261,78 +261,139 @@ export default function Home({ onOpenAdmissionModal }) {
             <div className="flex flex-wrap items-center gap-4 mb-8">
               <button
                 onClick={onOpenAdmissionModal}
-                className="px-6 sm:px-8 py-3.5 bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-white font-bold text-sm sm:text-base rounded-2xl shadow-lg shadow-purple-950/60 transition-all transform hover:-translate-y-0.5"
+                className="px-6 sm:px-8 py-3.5 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold text-sm sm:text-base rounded-2xl shadow-xl shadow-purple-950/60 hover:scale-[1.02] transition-all flex items-center gap-2"
               >
-                Admission Enquiry 2026-27
+                <Sparkles className="w-4 h-4 text-pink-200" />
+                <span>Admission Enquiry 2026-27</span>
               </button>
               <Link
                 to="/academics"
-                className="px-6 sm:px-8 py-3.5 bg-slate-900/80 hover:bg-slate-850 text-white font-bold text-sm sm:text-base rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all shadow-md"
+                className="px-6 sm:px-8 py-3.5 bg-[#180e38]/85 hover:bg-[#22134e] text-purple-100 hover:text-white font-bold text-sm sm:text-base rounded-2xl border border-[#442c75]/80 backdrop-blur-md transition-all shadow-md hover:-translate-y-0.5"
               >
                 Explore Academics & Curriculum
               </Link>
             </div>
 
 
-            {/* Quick Trust Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-4 pt-8 mt-8 border-t border-slate-800/80">
-              <div className="flex items-center gap-3 text-slate-200 min-w-0">
-                <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
-                  <Users className="w-4 h-4 text-cyan-400" />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-xs xl:text-sm font-bold text-white leading-tight whitespace-nowrap">
-                    <span className="font-serif font-black text-sm xl:text-base text-white mr-1.5">2,850+</span>
-                    Total Students Enrolled
+            {/* Quick Trust Highlights - Exact Reference Cyber Modal Style */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-8 mt-8 border-t border-[#341f5e]/80">
+              <div className="theme-box p-5 flex flex-col justify-between hover:-translate-y-1 transition-all">
+                <div>
+                  <div className="flex items-center justify-between text-xs font-mono font-semibold text-[#a78bfa] mb-2">
+                    <span className="flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-[#a78bfa]" /> 2026 Cohort
+                    </span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
+                      Enrolled
+                    </span>
                   </div>
-                  <div className="text-[11px] text-slate-400 hidden sm:block whitespace-nowrap">
+                  <div className="flex items-center gap-3 my-2">
+                    <div className="w-10 h-10 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
+                      <Users className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-xl sm:text-2xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c084fc] to-[#f472b6]">
+                        2,850+
+                      </div>
+                      <div className="text-xs font-bold text-white">Total Students</div>
+                    </div>
+                  </div>
+                  <div className="text-[11px] text-[#d4c6f3] mt-1">
                     Nurtured Across All Grades
                   </div>
                 </div>
+                <div>
+                  <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mt-4" />
+                </div>
               </div>
 
-              <div className="flex items-center gap-3 text-slate-200 min-w-0">
-                <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
-                  <GraduationCap className="w-4 h-4 text-cyan-400" />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-xs xl:text-sm font-bold text-white leading-tight whitespace-nowrap">
-                    <span className="font-serif font-black text-sm xl:text-base text-white mr-1.5">120+</span>
-                    Qualified Educators
+              <div className="theme-box p-5 flex flex-col justify-between hover:-translate-y-1 transition-all">
+                <div>
+                  <div className="flex items-center justify-between text-xs font-mono font-semibold text-[#a78bfa] mb-2">
+                    <span className="flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-[#a78bfa]" /> 1:15 Ratio
+                    </span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
+                      Certified
+                    </span>
                   </div>
-                  <div className="text-[11px] text-slate-400 hidden sm:block whitespace-nowrap">
+                  <div className="flex items-center gap-3 my-2">
+                    <div className="w-10 h-10 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
+                      <GraduationCap className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-xl sm:text-2xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c084fc] to-[#f472b6]">
+                        120+
+                      </div>
+                      <div className="text-xs font-bold text-white">Qualified Educators</div>
+                    </div>
+                  </div>
+                  <div className="text-[11px] text-[#d4c6f3] mt-1">
                     Certified & Experienced Faculty
                   </div>
                 </div>
+                <div>
+                  <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mt-4" />
+                </div>
               </div>
 
-              <div className="flex items-center gap-3 text-slate-200 min-w-0">
-                <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
-                  <Award className="w-4 h-4 text-cyan-400" />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-xs xl:text-sm font-bold text-white leading-tight whitespace-nowrap">
-                    <span className="font-serif font-black text-sm xl:text-base text-white mr-1.5">28+</span>
-                    Years of Excellence
+              <div className="theme-box p-5 flex flex-col justify-between hover:-translate-y-1 transition-all">
+                <div>
+                  <div className="flex items-center justify-between text-xs font-mono font-semibold text-[#a78bfa] mb-2">
+                    <span className="flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-[#a78bfa]" /> Est. 1998
+                    </span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
+                      Heritage
+                    </span>
                   </div>
-                  <div className="text-[11px] text-slate-400 hidden sm:block whitespace-nowrap">
+                  <div className="flex items-center gap-3 my-2">
+                    <div className="w-10 h-10 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
+                      <Award className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-xl sm:text-2xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c084fc] to-[#f472b6]">
+                        28+
+                      </div>
+                      <div className="text-xs font-bold text-white">Years of Excellence</div>
+                    </div>
+                  </div>
+                  <div className="text-[11px] text-[#d4c6f3] mt-1">
                     Established in 1998
                   </div>
                 </div>
+                <div>
+                  <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mt-4" />
+                </div>
               </div>
 
-              <div className="flex items-center gap-3 text-slate-200 min-w-0">
-                <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center shrink-0 shadow-sm">
-                  <Trophy className="w-4 h-4 text-cyan-400" />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-xs xl:text-sm font-bold text-white leading-tight whitespace-nowrap">
-                    <span className="font-serif font-black text-sm xl:text-base text-white mr-1.5">100%</span>
-                    Board Examination Pass Rate
+              <div className="theme-box p-5 flex flex-col justify-between hover:-translate-y-1 transition-all">
+                <div>
+                  <div className="flex items-center justify-between text-xs font-mono font-semibold text-[#a78bfa] mb-2">
+                    <span className="flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-[#a78bfa]" /> Top Tier
+                    </span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
+                      CBSE
+                    </span>
                   </div>
-                  <div className="text-[11px] text-slate-400 hidden sm:block whitespace-nowrap">
+                  <div className="flex items-center gap-3 my-2">
+                    <div className="w-10 h-10 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
+                      <Trophy className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-xl sm:text-2xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c084fc] to-[#f472b6]">
+                        100%
+                      </div>
+                      <div className="text-xs font-bold text-white">Board Pass Rate</div>
+                    </div>
+                  </div>
+                  <div className="text-[11px] text-[#d4c6f3] mt-1">
                     Consistently Ranked in Top Tier
                   </div>
+                </div>
+                <div>
+                  <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mt-4" />
                 </div>
               </div>
             </div>
@@ -355,25 +416,25 @@ export default function Home({ onOpenAdmissionModal }) {
                   alt="Dr. Eleanor Vance - Principal"
                   className="w-full h-full object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080414]/90 via-transparent to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="font-serif font-bold text-lg text-white">Dr. Eleanor Vance</div>
-                  <div className="text-xs text-cyan-300 font-medium">Principal & Academic Director</div>
-                  <div className="text-[11px] text-slate-400">M.Sc., M.Ed., Ph.D. in Child Pedagogy • 26 Yrs Exp.</div>
+                  <div className="text-xs text-fuchsia-300 font-medium">Principal & Academic Director</div>
+                  <div className="text-[11px] text-[#a99ac7]">M.Sc., M.Ed., Ph.D. in Child Pedagogy • 26 Yrs Exp.</div>
                 </div>
               </div>
 
               {/* Decorative Floating Quote Pill */}
-              <div className="absolute -bottom-4 -right-2 sm:-right-4 bg-slate-900/95 text-white p-3.5 rounded-xl shadow-xl border border-cyan-500/40 hidden sm:flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-cyan-400" />
-                <span className="text-xs font-semibold text-slate-200">"Excellence is not an act, but a habit."</span>
+              <div className="absolute -bottom-4 -right-2 sm:-right-4 bg-[#180e38]/95 text-white p-3.5 rounded-2xl shadow-xl border border-purple-500/40 hidden sm:flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-fuchsia-400" />
+                <span className="text-xs font-semibold text-[#d4c6f3]">"Excellence is not an act, but a habit."</span>
               </div>
             </div>
 
             {/* Welcome Statement */}
             <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-bold uppercase tracking-wider">
-                <GraduationCap className="w-3.5 h-3.5" /> Welcome to Our Campus
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-500/30 text-fuchsia-300 text-xs font-bold uppercase tracking-wider shadow-md">
+                <GraduationCap className="w-3.5 h-3.5 text-fuchsia-400" /> Welcome to Our Campus
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-serif font-black text-white leading-tight">
@@ -384,23 +445,23 @@ export default function Home({ onOpenAdmissionModal }) {
                 Dear Students, Parents, and Honored Guests,
               </p>
 
-              <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+              <p className="text-[#d4c6f3] text-sm sm:text-base leading-relaxed">
                 At St. Xavier's International School, we consider education a sacred journey of transformation. Our mission extends far beyond textbooks and examinations—we inspire young minds to question with curiosity, innovate with courage, and serve society with unshakeable moral integrity.
               </p>
 
-              <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+              <p className="text-[#d4c6f3] text-sm sm:text-base leading-relaxed">
                 Supported by cutting-edge STEM laboratories, world-class athletic infrastructure, and faculty trained in global best practices, our learners consistently excel in academic olympiads and university placements across India and abroad.
               </p>
 
-              <div className="pt-4 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="pt-4 border-t border-[#341f5e]/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <div className="font-serif font-bold text-white text-base">Dr. Eleanor Vance</div>
-                  <div className="text-xs text-cyan-400">Principal, St. Xavier's International School</div>
+                  <div className="text-xs text-fuchsia-400">Principal, St. Xavier's International School</div>
                 </div>
 
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300 uppercase tracking-wider transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-fuchsia-400 hover:text-fuchsia-300 uppercase tracking-wider transition-colors"
                 >
                   Read Full Leadership Message <ChevronRight className="w-4 h-4" />
                 </Link>
@@ -411,18 +472,19 @@ export default function Home({ onOpenAdmissionModal }) {
         </div>
       </section>
 
-      {/* 4. WHY CHOOSE OUR SCHOOL - SoftDeals Dark Style */}
+      {/* 4. WHY CHOOSE OUR SCHOOL - Theme Box Style */}
       <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold uppercase tracking-widest text-fuchsia-300 bg-purple-950/80 border border-purple-500/30 px-3.5 py-1 rounded-full inline-flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-fuchsia-400" />
               Why Parents Choose Us
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif font-black text-white mt-3 mb-4">
               An Educational Experience Rooted in Excellence
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base">
+            <p className="text-[#d4c6f3] text-sm sm:text-base">
               We provide a balanced ecosystem where scholastic achievement is harmonized with character building, creative expression, and athletic training.
             </p>
           </div>
@@ -433,17 +495,34 @@ export default function Home({ onOpenAdmissionModal }) {
               return (
                 <div
                   key={index}
-                  className="group theme-box p-7 hover:-translate-y-1.5 transition-all duration-300"
+                  className="group theme-box p-8 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
                 >
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 bg-slate-800/90 text-cyan-400 border border-slate-700/80 group-hover:border-cyan-400 group-hover:scale-110 transition-all shadow-sm">
-                    <Icon className="w-6 h-6" />
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#a78bfa] tracking-wider">
+                        <Clock className="w-3.5 h-3.5 text-[#a78bfa]" />
+                        <span>Pillar {index + 1}</span>
+                      </span>
+                      <span className="text-[10px] uppercase font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
+                        Excellence
+                      </span>
+                    </div>
+
+                    <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 bg-[#190f38] text-purple-300 border border-purple-500/40 group-hover:border-purple-400 group-hover:scale-105 transition-all shadow-md">
+                      <Icon className="w-6 h-6 text-purple-300" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-fuchsia-300 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-[#d4c6f3] text-xs sm:text-sm leading-relaxed mb-4">
+                      {item.desc}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                    {item.desc}
-                  </p>
+
+                  <div>
+                    <span className="theme-pill text-[10px]">St. Xavier's Distinction</span>
+                    <div className="w-14 h-1 bg-white/20 rounded-full mx-auto mt-4" />
+                  </div>
                 </div>
               );
             })}
@@ -452,13 +531,14 @@ export default function Home({ onOpenAdmissionModal }) {
         </div>
       </section>
 
-      {/* 5. FACILITIES & INFRASTRUCTURE PREVIEW - SoftDeals Dark Style */}
+      {/* 5. FACILITIES & INFRASTRUCTURE PREVIEW - Theme Box Style */}
       <section className="py-16 sm:py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 px-3 py-1 rounded-full">
+              <span className="text-xs font-bold uppercase tracking-widest text-fuchsia-300 bg-purple-950/80 border border-purple-500/30 px-3.5 py-1 rounded-full inline-flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-fuchsia-400" />
                 World-Class Infrastructure
               </span>
               <h2 className="text-3xl sm:text-4xl font-serif font-black text-white mt-3">
@@ -467,7 +547,7 @@ export default function Home({ onOpenAdmissionModal }) {
             </div>
             <Link
               to="/gallery"
-              className="mt-4 md:mt-0 inline-flex items-center gap-2 text-xs font-bold text-cyan-400 hover:text-cyan-300 uppercase tracking-wider transition-colors"
+              className="mt-4 md:mt-0 inline-flex items-center gap-2 text-xs font-bold text-fuchsia-400 hover:text-fuchsia-300 uppercase tracking-wider transition-colors"
             >
               <span>View Full Campus Gallery</span>
               <ArrowRight className="w-4 h-4" />
@@ -478,9 +558,9 @@ export default function Home({ onOpenAdmissionModal }) {
             {facilities.map((fac, idx) => (
               <div
                 key={idx}
-                className="group theme-box hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                className="group theme-box hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden"
               >
-                <div className="h-48 overflow-hidden bg-slate-800 relative">
+                <div className="h-48 overflow-hidden bg-[#180e38] relative">
                   <img
                     src={fac.image}
                     alt={fac.name}
@@ -488,15 +568,17 @@ export default function Home({ onOpenAdmissionModal }) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#130b2e] via-transparent to-transparent pointer-events-none" />
                 </div>
-                <div className="p-5 flex-1 flex flex-col justify-between">
+                <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-purple-300 transition-colors">
+                    <span className="theme-pill text-[10px] mb-2.5">Campus Wing</span>
+                    <h3 className="text-base font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
                       {fac.name}
                     </h3>
-                    <p className="text-xs text-slate-300 leading-relaxed">
+                    <p className="text-xs text-[#d4c6f3] leading-relaxed mb-4">
                       {fac.description}
                     </p>
                   </div>
+                  <div className="w-14 h-1 bg-white/20 rounded-full mx-auto mt-2" />
                 </div>
               </div>
             ))}
@@ -505,7 +587,7 @@ export default function Home({ onOpenAdmissionModal }) {
         </div>
       </section>
 
-      {/* 6. LATEST ANNOUNCEMENTS & EVENTS SECTION - SoftDeals Dark Style */}
+      {/* 6. LATEST ANNOUNCEMENTS & EVENTS SECTION - Theme Box Style */}
       <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -515,19 +597,19 @@ export default function Home({ onOpenAdmissionModal }) {
             <div className="lg:col-span-7">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider block">Official Bulletin</span>
+                  <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-wider block">Official Bulletin</span>
                   <h3 className="text-2xl font-serif font-black text-white">Latest Announcements</h3>
                 </div>
 
                 {/* Filter Pills */}
-                <div className="flex items-center gap-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
+                <div className="flex items-center gap-1.5 bg-[#140b30]/90 p-1.5 rounded-full border border-[#3e276b] text-xs font-semibold">
                   {['All', 'Admissions', 'Examinations'].map((cat) => (
                     <button
                       key={cat}
                       onClick={() => setActiveNoticeCategory(cat)}
-                      className={`px-3 py-1 rounded-lg transition-colors ${activeNoticeCategory === cat
-                        ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 font-bold'
-                        : 'text-slate-400 hover:text-white'
+                      className={`px-3 py-1 rounded-full transition-all ${activeNoticeCategory === cat
+                        ? 'bg-gradient-to-r from-[#6366f1] to-[#ec4899] text-white shadow-md font-bold'
+                        : 'text-[#a99ac7] hover:text-white'
                         }`}
                     >
                       {cat}
@@ -537,22 +619,22 @@ export default function Home({ onOpenAdmissionModal }) {
               </div>
 
               {/* Notices List */}
-              <div className="space-y-3.5">
+              <div className="space-y-4">
                 {filteredNotices.slice(0, 4).map((notice) => (
                   <div
                     key={notice.id}
-                    className="theme-box p-4 sm:p-5 rounded-2xl hover:scale-[1.01] transition-all"
+                    className="theme-box p-5 hover:scale-[1.01] transition-all"
                   >
-                    <div className="flex items-start justify-between gap-3 mb-1.5">
+                    <div className="flex items-start justify-between gap-3 mb-2">
                       <div className="flex items-center gap-2">
-                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${notice.urgent
-                          ? 'bg-red-500/15 text-red-300 border border-red-500/30'
-                          : 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/30'
+                        <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider ${notice.urgent
+                          ? 'bg-red-500/20 text-red-300 border border-red-500/40'
+                          : 'bg-purple-500/20 text-fuchsia-300 border border-purple-500/40'
                           }`}>
                           {notice.category}
                         </span>
-                        <span className="text-[11px] text-slate-400 flex items-center gap-1">
-                          <Calendar className="w-3 h-3 text-cyan-400" /> {notice.date}
+                        <span className="text-[11px] text-[#a99ac7] flex items-center gap-1 font-mono">
+                          <Calendar className="w-3 h-3 text-purple-400" /> {notice.date}
                         </span>
                       </div>
 
@@ -562,16 +644,16 @@ export default function Home({ onOpenAdmissionModal }) {
                           e.preventDefault();
                           alert(`Downloading official notice circular: "${notice.title}".\nPDF verification authenticated.`);
                         }}
-                        className="inline-flex items-center gap-1 text-[11px] font-bold text-cyan-400 hover:text-cyan-300 bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 px-2.5 py-1 rounded-lg transition-colors"
+                        className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] px-3 py-1 rounded-full shadow-sm hover:shadow-purple-950/80 transition-all"
                       >
-                        <Download className="w-3 h-3 text-cyan-400" /> Notice PDF
+                        <Download className="w-3 h-3 text-white" /> Notice PDF
                       </a>
                     </div>
 
-                    <h4 className="text-sm sm:text-base font-bold text-white hover:text-cyan-300 transition-colors">
+                    <h4 className="text-sm sm:text-base font-bold text-white hover:text-fuchsia-300 transition-colors">
                       {notice.title}
                     </h4>
-                    <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                    <p className="text-xs text-[#d4c6f3] mt-1.5 leading-relaxed">
                       {notice.summary}
                     </p>
                   </div>
@@ -583,7 +665,7 @@ export default function Home({ onOpenAdmissionModal }) {
             <div className="lg:col-span-5 flex flex-col">
               <div className="mb-6 flex items-center justify-between">
                 <div>
-                  <span className="text-xs font-bold text-teal-400 uppercase tracking-wider block">Mark Your Calendar</span>
+                  <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-wider block">Mark Your Calendar</span>
                   <h3 className="text-2xl font-serif font-black text-white">Upcoming Events</h3>
                 </div>
 
@@ -591,18 +673,18 @@ export default function Home({ onOpenAdmissionModal }) {
                 <button
                   type="button"
                   onClick={() => setIsEventsPaused((prev) => !prev)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 hover:bg-slate-850 border border-slate-800 text-[11px] text-cyan-400 font-semibold transition-all shadow-sm"
+                  className="theme-pill px-3 py-1.5"
                   title={isEventsPaused ? "Click to resume auto-scroll" : "Click to pause auto-scroll (or hover on any card)"}
                 >
                   {isEventsPaused ? (
                     <>
-                      <Play className="w-2.5 h-2.5 text-amber-400 fill-amber-400" />
+                      <Play className="w-3 h-3 text-amber-400 fill-amber-400" />
                       <span className="text-amber-300">Paused</span>
                     </>
                   ) : (
                     <>
-                      <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                      <span>Auto-Scroll</span>
+                      <span className="w-2 h-2 rounded-full bg-fuchsia-400 animate-pulse" />
+                      <span className="text-white">Auto-Scroll</span>
                     </>
                   )}
                 </button>
@@ -610,11 +692,11 @@ export default function Home({ onOpenAdmissionModal }) {
 
               {/* Scrolling Events Box with Fade Masks */}
               <div
-                className="relative h-[480px] sm:h-[510px] overflow-hidden rounded-2xl group border border-slate-800/80 bg-slate-950/40 p-2 shadow-xl"
+                className="theme-box p-3 relative h-[490px] sm:h-[520px] overflow-hidden group shadow-2xl"
               >
                 {/* Top and Bottom Gradient Fade Masks */}
-                <div className="absolute top-0 inset-x-0 h-8 bg-gradient-to-b from-slate-950 via-slate-950/80 to-transparent z-10 pointer-events-none rounded-t-2xl" />
-                <div className="absolute bottom-0 inset-x-0 h-8 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-10 pointer-events-none rounded-b-2xl" />
+                <div className="absolute top-0 inset-x-0 h-10 bg-gradient-to-b from-[#130b2e] via-[#130b2e]/80 to-transparent z-10 pointer-events-none" />
+                <div className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-[#130b2e] via-[#130b2e]/80 to-transparent z-10 pointer-events-none" />
 
                 {/* Hardware-Accelerated CSS Infinite Vertical Scroller */}
                 <div
@@ -629,31 +711,34 @@ export default function Home({ onOpenAdmissionModal }) {
                   {(events.length > 0 ? [...events, ...events] : []).map((event, idx) => (
                     <div
                       key={`${event.id}-${idx}`}
-                      className="bg-slate-900/80 hover:bg-slate-850 rounded-2xl overflow-hidden border border-slate-800/90 hover:border-cyan-500/50 shadow-lg hover:shadow-cyan-500/10 transition-all flex flex-col sm:flex-row group/card"
+                      className="theme-box p-4 rounded-[26px] flex flex-col sm:flex-row group/card hover:scale-[1.01] transition-all duration-300 shadow-xl"
                     >
-                      <div className="sm:w-36 h-28 sm:h-auto overflow-hidden shrink-0 relative">
+                      <div className="sm:w-36 h-28 sm:h-auto overflow-hidden rounded-2xl shrink-0 relative border border-[#3e276b] mb-3 sm:mb-0">
                         <img
                           src={event.image}
                           alt={event.title}
                           className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500"
                         />
                       </div>
-                      <div className="p-4 flex flex-col justify-between flex-1">
+                      <div className="sm:pl-4 flex flex-col justify-between flex-1">
                         <div>
-                          <div className="flex items-center justify-between text-[11px] text-cyan-400 font-bold mb-1">
-                            <span>{event.badge}</span>
-                            <span className="text-slate-400 font-normal">{event.time}</span>
+                          <div className="flex items-center justify-between text-xs font-mono font-semibold text-[#a78bfa] mb-1">
+                            <span className="text-fuchsia-400 font-bold">{event.badge}</span>
+                            <span className="flex items-center gap-1 text-[#b8a7db]">
+                              <Clock className="w-3 h-3 text-[#a78bfa]" />
+                              {event.time}
+                            </span>
                           </div>
-                          <h4 className="text-sm font-bold text-white line-clamp-1 group-hover/card:text-cyan-300 transition-colors">
+                          <h4 className="text-sm sm:text-base font-bold text-white line-clamp-1 group-hover/card:text-fuchsia-300 transition-colors">
                             {event.title}
                           </h4>
-                          <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">
+                          <p className="text-[12px] text-[#d4c6f3] line-clamp-2 mt-1 leading-relaxed">
                             {event.description}
                           </p>
                         </div>
-                        <div className="mt-2 text-[10px] font-semibold text-slate-400 flex items-center justify-between pt-2 border-t border-slate-800">
+                        <div className="mt-3 text-[11px] font-semibold text-[#b8a7db] flex items-center justify-between pt-2 border-t border-[#341f5e]/70">
                           <span>📍 {event.venue}</span>
-                          <span className="text-cyan-300 font-bold">{event.date}</span>
+                          <span className="text-fuchsia-300 font-mono font-bold">{event.date}</span>
                         </div>
                       </div>
                     </div>
@@ -672,13 +757,14 @@ export default function Home({ onOpenAdmissionModal }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold uppercase tracking-widest text-fuchsia-300 bg-purple-950/80 border border-purple-500/30 px-3.5 py-1 rounded-full inline-flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-fuchsia-400" />
               Voices of Trust
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif font-black text-white mt-3 mb-3">
               What Our Parents Say
             </h2>
-            <p className="text-slate-400 text-sm">
+            <p className="text-[#d4c6f3] text-sm">
               Discover why generations of families place their heartfelt trust in our educational values.
             </p>
           </div>
@@ -690,28 +776,34 @@ export default function Home({ onOpenAdmissionModal }) {
                 className="theme-box p-7 sm:p-8 flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300"
               >
                 <div>
-                  {/* Rating Stars */}
-                  <div className="flex items-center gap-1 text-amber-400 mb-4">
-                    {[...Array(t.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
-                    ))}
+                  <div className="flex items-center justify-between mb-4">
+                    {/* Rating Stars */}
+                    <div className="flex items-center gap-1 text-amber-400">
+                      {[...Array(t.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-current text-amber-400" />
+                      ))}
+                    </div>
+                    <span className="theme-pill text-[10px]">Verified Parent</span>
                   </div>
 
-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed italic mb-6">
+                  <p className="text-[#d4c6f3] text-xs sm:text-sm leading-relaxed italic mb-6">
                     "{t.comment}"
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3 pt-4 border-t border-slate-800">
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="w-11 h-11 rounded-full object-cover border-2 border-cyan-400"
-                  />
-                  <div>
-                    <div className="text-sm font-bold text-white">{t.name}</div>
-                    <div className="text-[11px] text-cyan-400 font-medium">{t.role}</div>
+                <div>
+                  <div className="flex items-center gap-3 pt-4 border-t border-[#341f5e]/80">
+                    <img
+                      src={t.avatar}
+                      alt={t.name}
+                      className="w-11 h-11 rounded-full object-cover border-2 border-purple-400/80 shadow-md"
+                    />
+                    <div>
+                      <div className="text-sm font-bold text-white">{t.name}</div>
+                      <div className="text-[11px] text-fuchsia-300 font-medium">{t.role}</div>
+                    </div>
                   </div>
+                  <div className="w-14 h-1 bg-white/20 rounded-full mx-auto mt-4" />
                 </div>
               </div>
             ))}
@@ -720,18 +812,18 @@ export default function Home({ onOpenAdmissionModal }) {
         </div>
       </section>
 
-      {/* 8. PHOTO GALLERY PREVIEW - SoftDeals Dark Style */}
+      {/* 8. PHOTO GALLERY PREVIEW - Theme Box Style */}
       <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10">
             <div>
-              <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider block">Life at St. Xavier's</span>
+              <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-wider block">Life at St. Xavier's</span>
               <h2 className="text-3xl font-serif font-black text-white">Campus Gallery Snapshot</h2>
             </div>
             <Link
               to="/gallery"
-              className="mt-3 sm:mt-0 inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300 uppercase tracking-wider transition-colors"
+              className="mt-3 sm:mt-0 inline-flex items-center gap-1.5 text-xs font-bold text-fuchsia-400 hover:text-fuchsia-300 uppercase tracking-wider transition-colors"
             >
               Explore All Photos & Videos <ArrowRight className="w-4 h-4" />
             </Link>
@@ -742,18 +834,18 @@ export default function Home({ onOpenAdmissionModal }) {
               <div
                 key={item.id}
                 onClick={() => openLightboxAt(index)}
-                className="group relative h-48 sm:h-60 rounded-2xl overflow-hidden cursor-pointer shadow-lg border border-slate-800 hover:border-cyan-500/50 transition-all"
+                className="group relative theme-box p-0 h-48 sm:h-60 rounded-[26px] overflow-hidden cursor-pointer shadow-xl border border-[#442c75]/80 hover:border-purple-400/80 hover:scale-[1.02] transition-all duration-300"
               >
                 <img
                   src={item.url}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4 text-white">
-                  <span className="text-[10px] font-bold text-cyan-300 uppercase tracking-wider">{item.category}</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#130b2e]/95 via-[#130b2e]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-5 text-white">
+                  <span className="text-[10px] font-mono font-bold text-fuchsia-300 uppercase tracking-wider">{item.category}</span>
                   <div className="text-xs sm:text-sm font-bold line-clamp-1 text-white">{item.title}</div>
-                  <div className="flex items-center gap-1 text-[11px] text-cyan-300 mt-1">
-                    <Eye className="w-3.5 h-3.5 text-cyan-400" /> Click to enlarge
+                  <div className="flex items-center gap-1 text-[11px] text-purple-200 mt-1">
+                    <Eye className="w-3.5 h-3.5 text-purple-300" /> Click to view full image
                   </div>
                 </div>
               </div>

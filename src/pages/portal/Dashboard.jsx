@@ -136,17 +136,17 @@ export default function Dashboard() {
     <div className="w-full bg-slate-950 text-slate-100 min-h-screen print:bg-white print:text-slate-900">
       
       {/* Top Portal Bar (Screen only) */}
-      <header className="bg-slate-950/90 backdrop-blur-md text-white border-b border-slate-800 sticky top-0 z-30 no-print">
+      <header className="bg-[#080414]/90 backdrop-blur-md text-white border-b border-[#341f5e]/80 sticky top-0 z-30 no-print">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           
           <div className="flex items-center gap-3">
             <Link to="/" className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-lg bg-slate-900 border border-cyan-400/40 flex items-center justify-center">
-                <GraduationCap className="w-5 h-5 text-cyan-400" />
+              <div className="w-9 h-9 rounded-lg bg-[#180e38] border border-purple-500/50 flex items-center justify-center">
+                <GraduationCap className="w-5 h-5 text-fuchsia-400" />
               </div>
               <div className="hidden sm:block">
                 <span className="font-serif font-bold text-sm block leading-none">ST. XAVIER'S</span>
-                <span className="text-[9px] text-cyan-400 tracking-wider uppercase font-medium">Portal Dashboard</span>
+                <span className="text-[9px] text-fuchsia-400 tracking-wider uppercase font-medium">Portal Dashboard</span>
               </div>
             </Link>
 
@@ -163,11 +163,11 @@ export default function Dashboard() {
               <img
                 src={student.avatar}
                 alt={user?.name}
-                className="w-8 h-8 rounded-full object-cover border-2 border-cyan-400/60"
+                className="w-8 h-8 rounded-full object-cover border-2 border-purple-400/80"
               />
               <div className="hidden md:block">
                 <div className="text-xs font-bold text-white">{user?.name}</div>
-                <div className="text-[10px] text-cyan-300">{user?.role === 'parent' ? 'Parent Portal' : user?.role === 'admin' ? 'Staff Portal' : `Class ${student.grade}-${student.section}`}</div>
+                <div className="text-[10px] text-fuchsia-300">{user?.role === 'parent' ? 'Parent Portal' : user?.role === 'admin' ? 'Staff Portal' : `Class ${student.grade}-${student.section}`}</div>
               </div>
             </div>
 
@@ -206,11 +206,11 @@ export default function Dashboard() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                   active
-                    ? 'bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 text-white shadow-lg shadow-cyan-950/60'
+                    ? 'bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] text-white shadow-lg shadow-purple-950/60'
                     : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
-                } ${tab.highlight && !active ? 'text-cyan-300 bg-cyan-500/10 border border-cyan-500/20' : ''}`}
+                } ${tab.highlight && !active ? 'text-fuchsia-300 bg-purple-950/80 border border-purple-500/40' : ''}`}
               >
-                <Icon className={`w-3.5 h-3.5 ${active ? 'text-white' : 'text-cyan-400'}`} />
+                <Icon className={`w-3.5 h-3.5 ${active ? 'text-white' : 'text-fuchsia-400'}`} />
                 <span>{tab.label}</span>
               </button>
             );
@@ -227,15 +227,15 @@ export default function Dashboard() {
                 <img
                   src={student.avatar}
                   alt={student.name}
-                  className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border-4 border-cyan-400/60 shadow-xl shrink-0"
+                  className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border-4 border-purple-400/80 shadow-xl shrink-0"
                 />
 
                 <div className="flex-1 text-center md:text-left space-y-2">
                   <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
-                    <span className="bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                    <span className="bg-purple-950/80 text-fuchsia-300 border border-purple-500/40 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                       Student Scholar
                     </span>
-                    <span className="text-xs text-cyan-400 font-mono">
+                    <span className="text-xs text-fuchsia-400 font-mono">
                       ID: {student.studentId}
                     </span>
                   </div>
@@ -245,7 +245,7 @@ export default function Dashboard() {
                   </h2>
 
                   <p className="text-xs sm:text-sm text-slate-300">
-                    Grade <strong className="text-white">{student.grade} - Section {student.section}</strong> • Roll Number: <strong className="text-white">{student.rollNo}</strong> • House: <strong className="text-cyan-400">{student.house}</strong>
+                    Grade <strong className="text-white">{student.grade} - Section {student.section}</strong> • Roll Number: <strong className="text-white">{student.rollNo}</strong> • House: <strong className="text-fuchsia-400">{student.house}</strong>
                   </p>
 
                   <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs text-slate-300 pt-1">
@@ -259,15 +259,15 @@ export default function Dashboard() {
 
                 {/* Quick Score Badges */}
                 <div className="grid grid-cols-3 md:grid-cols-1 gap-2.5 shrink-0 w-full md:w-auto">
-                  <div className="bg-slate-950/70 backdrop-blur-md p-3 rounded-xl border border-slate-800 text-center">
+                  <div className="bg-[#0d0722]/90 backdrop-blur-md p-3 rounded-xl border border-slate-800 text-center">
                     <div className="text-[10px] text-slate-400 uppercase font-semibold">Attendance</div>
                     <div className="text-lg font-bold text-teal-400">{student.overallAttendance}%</div>
                   </div>
-                  <div className="bg-slate-950/70 backdrop-blur-md p-3 rounded-xl border border-slate-800 text-center">
+                  <div className="bg-[#0d0722]/90 backdrop-blur-md p-3 rounded-xl border border-slate-800 text-center">
                     <div className="text-[10px] text-slate-400 uppercase font-semibold">Term GPA</div>
-                    <div className="text-lg font-bold text-cyan-400">{student.gpa} / 4.0</div>
+                    <div className="text-lg font-bold text-fuchsia-400">{student.gpa} / 4.0</div>
                   </div>
-                  <div className="bg-slate-950/70 backdrop-blur-md p-3 rounded-xl border border-slate-800 text-center">
+                  <div className="bg-[#0d0722]/90 backdrop-blur-md p-3 rounded-xl border border-slate-800 text-center">
                     <div className="text-[10px] text-slate-400 uppercase font-semibold">Class Rank</div>
                     <div className="text-lg font-bold text-teal-300">#{student.classRank} in Class</div>
                   </div>
@@ -279,10 +279,10 @@ export default function Dashboard() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               
               {/* Transport Widget */}
-              <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-800/90 shadow-xl space-y-3">
+              <div className="theme-box p-6 shadow-xl space-y-3">
                 <div className="flex items-center justify-between text-white font-bold text-sm">
                   <span className="flex items-center gap-2">
-                    <Bus className="w-4 h-4 text-cyan-400" /> Transport Allotment
+                    <Bus className="w-4 h-4 text-fuchsia-400" /> Transport Allotment
                   </span>
                   <span className="text-[10px] bg-teal-500/20 text-teal-300 border border-teal-500/30 px-2 py-0.5 rounded font-bold">Active Fleet</span>
                 </div>
@@ -294,12 +294,12 @@ export default function Dashboard() {
               </div>
 
               {/* Next Exam Notice */}
-              <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-800/90 shadow-xl space-y-3">
+              <div className="theme-box p-6 shadow-xl space-y-3">
                 <div className="flex items-center justify-between text-white font-bold text-sm">
                   <span className="flex items-center gap-2">
-                    <Award className="w-4 h-4 text-cyan-400" /> Upcoming Assessment
+                    <Award className="w-4 h-4 text-fuchsia-400" /> Upcoming Assessment
                   </span>
-                  <span className="text-[10px] bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-2 py-0.5 rounded font-bold">Term Final</span>
+                  <span className="text-[10px] bg-purple-950/80 text-fuchsia-300 border border-purple-500/40 px-2 py-0.5 rounded font-bold">Term Final</span>
                 </div>
                 <div className="text-xs text-slate-300">
                   <div className="font-semibold text-white">Annual Board Practicals</div>
@@ -309,10 +309,10 @@ export default function Dashboard() {
               </div>
 
               {/* Teacher Remarks Snapshot */}
-              <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-800/90 shadow-xl space-y-3">
+              <div className="theme-box p-6 shadow-xl space-y-3">
                 <div className="flex items-center justify-between text-white font-bold text-sm">
                   <span className="flex items-center gap-2">
-                    <MessageSquare className="w-4 h-4 text-cyan-400" /> Mentor Remark
+                    <MessageSquare className="w-4 h-4 text-fuchsia-400" /> Mentor Remark
                   </span>
                   <span className="text-[10px] text-slate-400 font-medium">Mrs. Banerjee</span>
                 </div>
@@ -332,33 +332,33 @@ export default function Dashboard() {
             
             {/* Metric Summary */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-slate-900/60 backdrop-blur-xl p-5 rounded-2xl border border-slate-800/80 shadow-xl">
+              <div className="theme-box p-5 shadow-xl">
                 <div className="text-xs font-semibold text-slate-400 uppercase">Total Working Days</div>
                 <div className="text-2xl font-bold font-serif text-white mt-1">{attendance?.totalDays || 182}</div>
               </div>
-              <div className="bg-slate-900/60 backdrop-blur-xl p-5 rounded-2xl border border-slate-800/80 shadow-xl">
+              <div className="theme-box p-5 shadow-xl">
                 <div className="text-xs font-semibold text-slate-400 uppercase">Days Present</div>
                 <div className="text-2xl font-bold font-serif text-emerald-400 mt-1">{attendance?.presentDays || 172}</div>
               </div>
-              <div className="bg-slate-900/60 backdrop-blur-xl p-5 rounded-2xl border border-slate-800/80 shadow-xl">
+              <div className="theme-box p-5 shadow-xl">
                 <div className="text-xs font-semibold text-slate-400 uppercase">Authorized Leave</div>
                 <div className="text-2xl font-bold font-serif text-amber-400 mt-1">{attendance?.medicalLeave || 3}</div>
               </div>
-              <div className="bg-slate-900/60 backdrop-blur-xl p-5 rounded-2xl border border-slate-800/80 shadow-xl">
+              <div className="theme-box p-5 shadow-xl">
                 <div className="text-xs font-semibold text-slate-400 uppercase">Term Attendance Rate</div>
-                <div className="text-2xl font-bold font-serif text-cyan-400 mt-1">{attendance?.attendancePercentage || 94.5}%</div>
+                <div className="text-2xl font-bold font-serif text-fuchsia-400 mt-1">{attendance?.attendancePercentage || 94.5}%</div>
               </div>
             </div>
 
             {/* Monthly Breakdown Table */}
-            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl">
+            <div className="theme-box p-6 sm:p-8 shadow-2xl">
               <h3 className="text-lg font-serif font-bold text-white mb-4">
                 Monthly Attendance Breakdown (Academic Year 2025-26)
               </h3>
               
-              <div className="overflow-x-auto rounded-xl border border-slate-800/80">
+              <div className="overflow-x-auto rounded-2xl border border-[#3e276b] bg-[#0d0722]/85">
                 <table className="w-full text-left text-xs sm:text-sm">
-                  <thead className="bg-slate-950 text-slate-300 uppercase text-xs border-b border-slate-800">
+                  <thead className="bg-[#0d0722] text-[#d4c6f3] uppercase text-xs border-b border-slate-800">
                     <tr>
                       <th className="px-5 py-3">Month</th>
                       <th className="px-5 py-3">Total Working Days</th>
@@ -367,13 +367,13 @@ export default function Dashboard() {
                       <th className="px-5 py-3">CBSE Threshold Status</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800/70 text-slate-300">
+                  <tbody className="divide-y divide-[#341f5e]/60 text-slate-300">
                     {(attendance?.monthlySummary || []).map((m, idx) => (
-                      <tr key={idx} className="bg-slate-950/40 hover:bg-slate-900/60 transition-colors">
+                      <tr key={idx} className="bg-transparent hover:bg-[#180e38]/60 transition-colors">
                         <td className="px-5 py-3.5 font-bold text-white">{m.month}</td>
                         <td className="px-5 py-3.5 text-slate-400">{m.total} Days</td>
                         <td className="px-5 py-3.5 font-semibold text-emerald-400">{m.present} Days</td>
-                        <td className="px-5 py-3.5 font-mono font-bold text-cyan-400">{m.rate}</td>
+                        <td className="px-5 py-3.5 font-mono font-bold text-fuchsia-400">{m.rate}</td>
                         <td className="px-5 py-3.5">
                           <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-400 bg-emerald-500/15 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
                             <CheckCircle2 className="w-3 h-3" /> Satisfactory
@@ -387,21 +387,21 @@ export default function Dashboard() {
             </div>
 
             {/* Subject-Wise Attendance */}
-            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl">
+            <div className="theme-box p-6 sm:p-8 shadow-2xl">
               <h3 className="text-lg font-serif font-bold text-white mb-4">
                 Subject-Wise Attendance Distribution
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {(attendance?.subjectWise || []).map((sw, i) => (
-                  <div key={i} className="p-4 bg-slate-950/60 rounded-xl border border-slate-800/80 space-y-2">
+                  <div key={i} className="p-4 bg-slate-950/60 rounded-xl border border-[#3e276b] space-y-2">
                     <div className="flex justify-between items-center text-xs font-bold text-white">
                       <span>{sw.subject}</span>
-                      <span className="text-cyan-400 font-mono">{sw.percentage}% ({sw.attended}/{sw.total})</span>
+                      <span className="text-fuchsia-400 font-mono">{sw.percentage}% ({sw.attended}/{sw.total})</span>
                     </div>
                     <div className="w-full bg-slate-800/80 h-2 rounded-full overflow-hidden">
                       <div 
-                        className="bg-gradient-to-r from-cyan-500 to-teal-400 h-full rounded-full transition-all"
+                        className="bg-gradient-to-r from-[#c084fc] to-[#f472b6] h-full rounded-full transition-all"
                         style={{ width: `${sw.percentage}%` }}
                       ></div>
                     </div>
@@ -417,16 +417,16 @@ export default function Dashboard() {
         {activeTab === 'results' && (
           <div className="space-y-6 animate-fadeIn">
             
-            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
+            <div className="theme-box p-6 sm:p-8 shadow-2xl">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#3e276b]">
                 <div>
-                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">{results?.examTitle || 'Pre-Board Assessment'}</span>
+                  <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-widest">{results?.examTitle || 'Pre-Board Assessment'}</span>
                   <h3 className="text-2xl font-serif font-bold text-white mt-1">Official Term Gradebook</h3>
                 </div>
 
                 <button
                   onClick={() => setActiveTab('reportCard')}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-cyan-500/20 shrink-0 transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white shadow-xl shadow-purple-950/60 font-bold text-xs rounded-xl shadow-lg shadow-purple-500/20 shrink-0 transition-all"
                 >
                   <FileText className="w-4 h-4 text-slate-950" />
                   <span>Generate Report Card Format</span>
@@ -435,17 +435,17 @@ export default function Dashboard() {
 
               {/* Result Summary Bar */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
-                <div className="p-4 bg-slate-950/70 rounded-xl border border-slate-800/80 text-center">
+                <div className="p-4 bg-[#0d0722]/90 rounded-xl border border-[#3e276b] text-center">
                   <div className="text-xs text-slate-400 font-semibold uppercase">Overall Aggregate</div>
-                  <div className="text-2xl font-extrabold text-cyan-400 font-serif mt-0.5">{results?.overallPercentage || '92.8'}%</div>
+                  <div className="text-2xl font-extrabold text-fuchsia-400 font-serif mt-0.5">{results?.overallPercentage || '92.8'}%</div>
                   <div className="text-[11px] text-emerald-400 font-bold mt-1">Passed with Distinction</div>
                 </div>
-                <div className="p-4 bg-slate-950/70 rounded-xl border border-slate-800/80 text-center">
+                <div className="p-4 bg-[#0d0722]/90 rounded-xl border border-[#3e276b] text-center">
                   <div className="text-xs text-slate-400 font-semibold uppercase">Class Standings</div>
                   <div className="text-2xl font-extrabold text-white font-serif mt-0.5">Rank 2nd</div>
                   <div className="text-[11px] text-slate-400 font-medium mt-1">Among 42 Section Peers</div>
                 </div>
-                <div className="p-4 bg-slate-950/70 rounded-xl border border-slate-800/80 text-center">
+                <div className="p-4 bg-[#0d0722]/90 rounded-xl border border-[#3e276b] text-center">
                   <div className="text-xs text-slate-400 font-semibold uppercase">Conduct Grade</div>
                   <div className="text-2xl font-extrabold text-emerald-400 font-serif mt-0.5">Grade A+</div>
                   <div className="text-[11px] text-slate-400 font-medium mt-1">Exemplary Discipline</div>
@@ -453,9 +453,9 @@ export default function Dashboard() {
               </div>
 
               {/* Subject Scores Table */}
-              <div className="overflow-x-auto rounded-xl border border-slate-800/80">
+              <div className="overflow-x-auto rounded-2xl border border-[#3e276b] bg-[#0d0722]/85">
                 <table className="w-full text-left text-xs sm:text-sm">
-                  <thead className="bg-slate-950 text-slate-300 uppercase text-xs font-semibold border-b border-slate-800">
+                  <thead className="bg-[#0d0722] text-[#d4c6f3] uppercase text-xs font-semibold border-b border-slate-800">
                     <tr>
                       <th className="px-5 py-3">Subject Code & Name</th>
                       <th className="px-5 py-3">Max Marks</th>
@@ -464,17 +464,17 @@ export default function Dashboard() {
                       <th className="px-5 py-3">Faculty Remark</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800/70 text-slate-300">
+                  <tbody className="divide-y divide-[#341f5e]/60 text-slate-300">
                     {(results?.subjects || []).map((sub, i) => (
-                      <tr key={i} className="bg-slate-950/40 hover:bg-slate-900/60 transition-colors">
+                      <tr key={i} className="bg-transparent hover:bg-[#180e38]/60 transition-colors">
                         <td className="px-5 py-3.5 font-bold text-white">
                           <span className="text-[10px] text-slate-400 block font-mono">{sub.code}</span>
                           {sub.name}
                         </td>
                         <td className="px-5 py-3.5 font-mono text-slate-400">{sub.maxMarks}</td>
-                        <td className="px-5 py-3.5 font-mono font-bold text-cyan-300">{sub.marksObtained}</td>
+                        <td className="px-5 py-3.5 font-mono font-bold text-fuchsia-300">{sub.marksObtained}</td>
                         <td className="px-5 py-3.5">
-                          <span className="font-bold text-xs bg-cyan-950/60 text-cyan-300 border border-cyan-800/60 px-2.5 py-0.5 rounded-full">
+                          <span className="font-bold text-xs bg-[#1b103e] text-fuchsia-300 border border-[#3e276b] px-2.5 py-0.5 rounded-full">
                             {sub.grade}
                           </span>
                         </td>
@@ -494,14 +494,14 @@ export default function Dashboard() {
           <div className="space-y-6">
             
             {/* Action Bar (Screen Only) */}
-            <div className="no-print flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-900/60 backdrop-blur-xl p-4 rounded-2xl border border-slate-800/80 shadow-xl">
+            <div className="no-print flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-900/60 backdrop-blur-xl p-4 rounded-2xl border border-[#3e276b] shadow-xl">
               <div className="text-xs text-slate-300">
                 <strong className="text-white">Official Institutional Report Card:</strong> Standardized CBSE grading format suitable for printing and record archiving.
               </div>
               <div className="flex items-center gap-3">
                 <button
                   onClick={handlePrintReport}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-cyan-500/20 transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white shadow-xl shadow-purple-950/60 font-bold text-xs rounded-xl shadow-lg shadow-purple-500/20 transition-all"
                 >
                   <Printer className="w-4 h-4 text-slate-950" />
                   <span>Print Official Report Card</span>
@@ -669,10 +669,10 @@ export default function Dashboard() {
         {/* 5. HOMEWORK & ASSIGNMENTS TAB */}
         {activeTab === 'homework' && (
           <div className="space-y-6 animate-fadeIn">
-            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl">
+            <div className="theme-box p-6 sm:p-8 shadow-2xl">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Academic Tasks</span>
+                  <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-widest">Academic Tasks</span>
                   <h3 className="text-2xl font-serif font-bold text-white mt-1">Daily Homework & Projects</h3>
                 </div>
                 <span className="text-xs text-slate-400">
@@ -689,7 +689,7 @@ export default function Dashboard() {
                       className={`p-5 rounded-2xl border transition-all ${
                         isDone 
                           ? 'bg-slate-950/40 border-slate-800/60 opacity-60' 
-                          : 'bg-slate-950/70 border-slate-800/80 shadow-lg hover:border-cyan-500/50'
+                          : 'bg-[#0d0722]/90 border-[#3e276b] shadow-lg hover:border-purple-400'
                       }`}
                     >
                       <div className="flex items-start justify-between gap-4">
@@ -699,7 +699,7 @@ export default function Dashboard() {
                             className={`w-6 h-6 rounded-lg border flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
                               isDone
                                 ? 'bg-emerald-500 border-emerald-500 text-white'
-                                : 'border-slate-700 hover:border-cyan-400 bg-slate-900 text-transparent'
+                                : 'border-slate-700 hover:border-purple-400 bg-slate-900 text-transparent'
                             }`}
                           >
                             {isDone && <CheckCircle2 className="w-4 h-4" />}
@@ -707,7 +707,7 @@ export default function Dashboard() {
 
                           <div>
                             <div className="flex items-center gap-2">
-                              <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-950/70 text-cyan-300 border border-cyan-800/60 uppercase">
+                              <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-[#1b103e] text-fuchsia-300 border border-[#3e276b] uppercase">
                                 {hw.subject}
                               </span>
                               <span className="text-xs text-slate-400">• Teacher: {hw.teacher}</span>
@@ -750,8 +750,8 @@ export default function Dashboard() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               
               {/* Message Class Teacher */}
-              <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl space-y-4">
-                <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Direct Communication</span>
+              <div className="theme-box p-6 sm:p-8 shadow-2xl space-y-4">
+                <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-widest">Direct Communication</span>
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">Message Class Teacher</h3>
                 <p className="text-xs text-slate-300">
                   Send a query directly to Class Mentor Mrs. Sunanda Banerjee. Replies will appear here within 24 hours.
@@ -769,11 +769,11 @@ export default function Dashboard() {
                       value={teacherMsg}
                       onChange={(e) => setTeacherMsg(e.target.value)}
                       placeholder="Write your note regarding student progress, leave requests, or questions..."
-                      className="w-full p-3 text-xs text-white bg-slate-950/70 border border-slate-700/80 rounded-xl outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 placeholder:text-slate-500 shadow-inner"
+                      className="w-full p-3 text-xs text-white bg-[#0d0722]/90 border border-[#3e276b] rounded-xl outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder:text-slate-500 shadow-inner"
                     ></textarea>
                     <button
                       type="submit"
-                      className="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-cyan-500/20 flex items-center gap-2 transition-all"
+                      className="px-5 py-2.5 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white shadow-xl shadow-purple-950/60 font-bold text-xs rounded-xl shadow-lg shadow-purple-500/20 flex items-center gap-2 transition-all"
                     >
                       <Send className="w-3.5 h-3.5 text-slate-950" />
                       <span>Transmit Message</span>
@@ -783,7 +783,7 @@ export default function Dashboard() {
               </div>
 
               {/* Schedule PTM Meeting */}
-              <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl space-y-4">
+              <div className="theme-box p-6 sm:p-8 shadow-2xl space-y-4">
                 <span className="text-xs font-bold text-teal-400 uppercase tracking-widest">Parent-Teacher Meeting</span>
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">Reserve PTM Consultation Slot</h3>
                 <p className="text-xs text-slate-300">
@@ -791,25 +791,25 @@ export default function Dashboard() {
                 </p>
 
                 {ptmRequested ? (
-                  <div className="p-4 bg-cyan-500/15 border border-cyan-500/30 rounded-xl text-xs text-cyan-200 font-medium">
+                  <div className="p-4 bg-purple-950/80 border border-purple-500/40 rounded-xl text-xs text-fuchsia-300 font-medium">
                     ✓ PTM Slot Confirmed: Saturday, 10:30 AM - 10:45 AM (Room 204 - Science Wing). A calendar invite has been emailed to you.
                   </div>
                 ) : (
                   <div className="space-y-3">
-                    <div className="p-4 bg-slate-950/60 rounded-xl border border-slate-800/80 text-xs text-slate-300">
+                    <div className="p-4 bg-slate-950/60 rounded-xl border border-[#3e276b] text-xs text-slate-300">
                       <strong className="text-white">Available Slots:</strong>
                       <div className="grid grid-cols-2 gap-2.5 mt-3">
                         <button
                           type="button"
                           onClick={() => setPtmRequested(true)}
-                          className="p-2.5 bg-slate-900 hover:bg-cyan-950/50 hover:border-cyan-400/60 rounded-xl border border-slate-800 text-center font-bold text-cyan-300 transition-all shadow"
+                          className="p-2.5 bg-slate-900 hover:bg-[#1b103e] hover:border-purple-400/60 rounded-xl border border-slate-800 text-center font-bold text-fuchsia-300 transition-all shadow"
                         >
                           10:30 AM - 10:45 AM
                         </button>
                         <button
                           type="button"
                           onClick={() => setPtmRequested(true)}
-                          className="p-2.5 bg-slate-900 hover:bg-cyan-950/50 hover:border-cyan-400/60 rounded-xl border border-slate-800 text-center font-bold text-cyan-300 transition-all shadow"
+                          className="p-2.5 bg-slate-900 hover:bg-[#1b103e] hover:border-purple-400/60 rounded-xl border border-slate-800 text-center font-bold text-fuchsia-300 transition-all shadow"
                         >
                           11:00 AM - 11:15 AM
                         </button>
@@ -826,13 +826,13 @@ export default function Dashboard() {
         {/* 7. FEES TAB */}
         {activeTab === 'fees' && (
           <div className="space-y-6 animate-fadeIn">
-            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl">
+            <div className="theme-box p-6 sm:p-8 shadow-2xl">
               <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mb-2">Quarterly Fee Summary & Receipts</h3>
               <p className="text-xs text-slate-400 mb-6">Student ID: {student.studentId} • Academic Session 2025-26</p>
 
-              <div className="overflow-x-auto rounded-xl border border-slate-800/80">
+              <div className="overflow-x-auto rounded-2xl border border-[#3e276b] bg-[#0d0722]/85">
                 <table className="w-full text-left text-xs sm:text-sm">
-                  <thead className="bg-slate-950 text-slate-300 uppercase text-xs font-semibold border-b border-slate-800">
+                  <thead className="bg-[#0d0722] text-[#d4c6f3] uppercase text-xs font-semibold border-b border-slate-800">
                     <tr>
                       <th className="px-5 py-3">Installment Quarter</th>
                       <th className="px-5 py-3">Due Date</th>
@@ -841,17 +841,17 @@ export default function Dashboard() {
                       <th className="px-5 py-3">Receipt Document</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800/70 text-slate-300">
+                  <tbody className="divide-y divide-[#341f5e]/60 text-slate-300">
                     {[
                       { qtr: 'Quarter 1 (Apr - Jun)', due: '15 April 2025', amt: '₹ 29,000', status: 'Paid', receipt: 'REC-2025-Q1' },
                       { qtr: 'Quarter 2 (Jul - Sep)', due: '15 July 2025', amt: '₹ 29,000', status: 'Paid', receipt: 'REC-2025-Q2' },
                       { qtr: 'Quarter 3 (Oct - Dec)', due: '15 October 2025', amt: '₹ 29,000', status: 'Paid', receipt: 'REC-2025-Q3' },
                       { qtr: 'Quarter 4 (Jan - Mar)', due: '15 January 2026', amt: '₹ 29,000', status: 'Paid', receipt: 'REC-2026-Q4' }
                     ].map((f, i) => (
-                      <tr key={i} className="bg-slate-950/40 hover:bg-slate-900/60 transition-colors">
+                      <tr key={i} className="bg-transparent hover:bg-[#180e38]/60 transition-colors">
                         <td className="px-5 py-3.5 font-bold text-white">{f.qtr}</td>
                         <td className="px-5 py-3.5 text-slate-400">{f.due}</td>
-                        <td className="px-5 py-3.5 font-mono font-bold text-cyan-300">{f.amt}</td>
+                        <td className="px-5 py-3.5 font-mono font-bold text-fuchsia-300">{f.amt}</td>
                         <td className="px-5 py-3.5">
                           <span className="bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full">
                             {f.status}
@@ -860,7 +860,7 @@ export default function Dashboard() {
                         <td className="px-5 py-3.5">
                           <button
                             onClick={() => alert(`Downloading Verified Fee Receipt: ${f.receipt} (PDF).`)}
-                            className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300 transition-colors hover:underline"
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-fuchsia-400 hover:text-fuchsia-300 transition-colors hover:underline"
                           >
                             <Download className="w-3.5 h-3.5" /> {f.receipt}.pdf
                           </button>
@@ -879,8 +879,8 @@ export default function Dashboard() {
           <div className="space-y-6 animate-fadeIn">
             
             {/* Post Notice Section - Transparent Glass Theme */}
-            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl space-y-5">
-              <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Administrative Directorate</span>
+            <div className="theme-box p-6 sm:p-8 shadow-2xl space-y-5">
+              <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-widest">Administrative Directorate</span>
               <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">Publish New Official School Notice</h3>
 
               {noticePosted && (
@@ -894,7 +894,7 @@ export default function Dashboard() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
-                      Notice Headline <span className="text-cyan-400">*</span>
+                      Notice Headline <span className="text-fuchsia-400">*</span>
                     </label>
                     <input
                       type="text"
@@ -902,7 +902,7 @@ export default function Dashboard() {
                       value={noticeTitle}
                       onChange={(e) => setNoticeTitle(e.target.value)}
                       placeholder="e.g. Schedule for Annual Science Olympiad 2026"
-                      className="w-full px-4 py-2.5 text-xs text-white bg-slate-950/70 border border-slate-700/80 rounded-xl outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 placeholder:text-slate-500 transition-all shadow-inner"
+                      className="w-full px-4 py-2.5 text-xs text-white bg-[#0d0722]/90 border border-[#3e276b] rounded-xl outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder:text-slate-500 transition-all shadow-inner"
                     />
                   </div>
                   <div>
@@ -911,7 +911,7 @@ export default function Dashboard() {
                       <select
                         value={noticeCategory}
                         onChange={(e) => setNoticeCategory(e.target.value)}
-                        className="w-full px-4 py-2.5 text-xs text-white bg-slate-950/70 border border-slate-700/80 rounded-xl outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 appearance-none cursor-pointer pr-10 transition-all shadow-inner"
+                        className="w-full px-4 py-2.5 text-xs text-white bg-[#0d0722]/90 border border-[#3e276b] rounded-xl outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 appearance-none cursor-pointer pr-10 transition-all shadow-inner"
                       >
                         <option value="Academic" className="bg-slate-900 text-white py-1">Academic</option>
                         <option value="Admissions" className="bg-slate-900 text-white py-1">Admissions</option>
@@ -926,7 +926,7 @@ export default function Dashboard() {
 
                 <div>
                   <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
-                    Notice Details & Summary <span className="text-cyan-400">*</span>
+                    Notice Details & Summary <span className="text-fuchsia-400">*</span>
                   </label>
                   <textarea
                     rows="3"
@@ -934,7 +934,7 @@ export default function Dashboard() {
                     value={noticeSummary}
                     onChange={(e) => setNoticeSummary(e.target.value)}
                     placeholder="Enter announcement text to display on homepage and portal..."
-                    className="w-full px-4 py-2.5 text-xs text-white bg-slate-950/70 border border-slate-700/80 rounded-xl outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 placeholder:text-slate-500 transition-all shadow-inner resize-y"
+                    className="w-full px-4 py-2.5 text-xs text-white bg-[#0d0722]/90 border border-[#3e276b] rounded-xl outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 placeholder:text-slate-500 transition-all shadow-inner resize-y"
                   ></textarea>
                 </div>
 
@@ -954,7 +954,7 @@ export default function Dashboard() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5"
+                    className="px-6 py-2.5 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white shadow-xl shadow-purple-950/60 font-bold text-xs rounded-xl shadow-lg shadow-purple-500/20 transition-all transform hover:-translate-y-0.5"
                   >
                     Publish Notice
                   </button>
@@ -963,10 +963,10 @@ export default function Dashboard() {
             </div>
 
             {/* Received Enquiries List - Transparent Glass Theme */}
-            <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-2xl space-y-4">
+            <div className="theme-box p-6 sm:p-8 shadow-2xl space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Admissions Inbox</span>
+                  <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-widest">Admissions Inbox</span>
                   <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-1">Recent Website Enquiries</h3>
                 </div>
                 <span className="text-xs font-semibold text-slate-300 bg-slate-800/80 px-3 py-1 rounded-lg border border-slate-700/60">
@@ -976,10 +976,10 @@ export default function Dashboard() {
 
               <div className="space-y-3">
                 {enquiries.map((enq) => (
-                  <div key={enq.id} className="p-4 bg-slate-950/60 rounded-xl border border-slate-800/80 text-xs space-y-1.5 hover:border-slate-700 transition-colors">
+                  <div key={enq.id} className="p-4 bg-slate-950/60 rounded-xl border border-[#3e276b] text-xs space-y-1.5 hover:border-slate-700 transition-colors">
                     <div className="flex items-center justify-between font-bold text-white">
                       <span>{enq.name} <span className="text-slate-400 font-normal">({enq.phone})</span></span>
-                      <span className="text-cyan-300 bg-cyan-950/70 border border-cyan-800/60 px-2.5 py-0.5 rounded-full text-[10px] font-bold">
+                      <span className="text-fuchsia-300 bg-[#1b103e] border border-[#3e276b] px-2.5 py-0.5 rounded-full text-[10px] font-bold">
                         {enq.grade}
                       </span>
                     </div>
