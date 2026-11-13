@@ -221,9 +221,9 @@ export default function Home({ onOpenAdmissionModal }) {
               />
             </div>
           ))}
-          {/* Gradient Overlay for high-contrast crisp text in SoftDeals Dark Style */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/45"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/40"></div>
+          {/* High-Contrast Gradient Overlay for Crystal-Clear Text Legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#080414] via-[#080414]/90 to-[#080414]/40 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080414] via-transparent to-[#080414]/60 pointer-events-none"></div>
         </div>
 
         {/* Slide Navigation Arrows */}
@@ -245,15 +245,22 @@ export default function Home({ onOpenAdmissionModal }) {
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-20 lg:py-28 w-full">
           <div className="max-w-5xl xl:max-w-6xl">
 
+            {/* Pill Tag Indicator */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#180e38]/90 border border-purple-500/50 text-fuchsia-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-5 shadow-lg backdrop-blur-md">
+              <Sparkles className="w-4 h-4 text-fuchsia-400" />
+              <span>Admissions Open 2026-27 • CBSE Affiliated</span>
+            </div>
 
-            {/* Main Headline - Broken into Two Lines with SoftDeals Radiant Purple-Magenta Gradient */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-extrabold text-white tracking-tight leading-[1.15] mb-6 drop-shadow-md">
-              <span className="block">Building Bright Futures</span>
-              <span className="block bg-gradient-to-r from-[#c084fc] via-[#e879f9] to-[#f472b6] bg-clip-text text-transparent">Through Quality Education.</span>
+            {/* Main Headline - Crystal-Clear, High-Contrast Modern Sans Typography */}
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-black text-white tracking-tight leading-[1.12] mb-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+              <span className="block text-white">Building Bright Futures</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#f5d0fe] via-[#e879f9] to-[#f472b6] drop-shadow-[0_2px_12px_rgba(232,121,249,0.35)]">
+                Through Quality Education.
+              </span>
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl font-normal leading-relaxed mb-8 drop-shadow">
+            {/* Subtitle - Crisp, Bright, and Highly Legible */}
+            <p className="text-base sm:text-lg md:text-xl text-[#f1f5f9] max-w-2xl font-normal leading-relaxed mb-8 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
               Nurturing intellectual curiosity, leadership character, and technological innovation in students from Pre-Nursery to Grade XII.
             </p>
 
@@ -261,14 +268,14 @@ export default function Home({ onOpenAdmissionModal }) {
             <div className="flex flex-wrap items-center gap-4 mb-8">
               <button
                 onClick={onOpenAdmissionModal}
-                className="px-6 sm:px-8 py-3.5 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold text-sm sm:text-base rounded-2xl shadow-xl shadow-purple-950/60 hover:scale-[1.02] transition-all flex items-center gap-2"
+                className="px-7 sm:px-9 py-4 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold text-sm sm:text-base rounded-2xl shadow-xl shadow-purple-950/80 hover:scale-[1.02] transition-all flex items-center gap-2.5"
               >
                 <Sparkles className="w-4 h-4 text-pink-200" />
                 <span>Admission Enquiry 2026-27</span>
               </button>
               <Link
                 to="/academics"
-                className="px-6 sm:px-8 py-3.5 bg-[#180e38]/85 hover:bg-[#22134e] text-purple-100 hover:text-white font-bold text-sm sm:text-base rounded-2xl border border-[#442c75]/80 backdrop-blur-md transition-all shadow-md hover:-translate-y-0.5"
+                className="px-7 sm:px-9 py-4 bg-[#180e38]/90 hover:bg-[#241354] text-purple-100 hover:text-white font-bold text-sm sm:text-base rounded-2xl border border-purple-500/50 backdrop-blur-md transition-all shadow-lg hover:-translate-y-0.5"
               >
                 Explore Academics & Curriculum
               </Link>
