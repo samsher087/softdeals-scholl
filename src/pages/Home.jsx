@@ -43,6 +43,7 @@ export default function Home({ onOpenAdmissionModal }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isEventsPaused, setIsEventsPaused] = useState(false);
   const [isNoticesPaused, setIsNoticesPaused] = useState(false);
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   const heroSlides = [
     {
@@ -90,6 +91,14 @@ export default function Home({ onOpenAdmissionModal }) {
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevTestimonial = () => {
+    setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const nextTestimonial = () => {
+    setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
   };
 
   useEffect(() => {
@@ -182,6 +191,7 @@ export default function Home({ onOpenAdmissionModal }) {
     {
       name: 'Dr. Vikram Malhotra',
       role: 'Cardiologist & Parent of Aryan (Grade 10)',
+      grade: 'Grade 10',
       comment: "Enrolling our son at Umeed Global was the best decision we made. The teachers nurture not only academic precision but moral integrity and confidence. Aryan has flourished in both his STEM projects and debating.",
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
@@ -189,16 +199,34 @@ export default function Home({ onOpenAdmissionModal }) {
     {
       name: 'Mrs. Ananya Sengupta',
       role: 'Architect & Parent of Riya (Grade 6)',
+      grade: 'Grade 6',
       comment: "The infrastructure is truly world-class. From the clean and monitored swimming pools to the safety in transportation, everything reflects pure professionalism. The management's transparency is commendable.",
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80'
     },
     {
       name: 'Mr. Rajesh & Priya Kulkarni',
-      role: 'Parents of Kabir (Grade 2)',
+      role: 'Senior Tech Lead & Parents of Kabir (Grade 2)',
+      grade: 'Grade 2',
       comment: "The primary wing has created a warm, encouraging atmosphere for our child. He looks forward to school every single morning! The experiential learning pedagogy has made mathematics and reading an absolute joy.",
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    },
+    {
+      name: 'Col. Rohit Sharma (Retd.)',
+      role: 'Defense Veteran & Parent of Advait (Grade 8)',
+      grade: 'Grade 8',
+      comment: "The leadership skills, discipline, and compassionate mentorship at Umeed Global are extraordinary. The teachers go above and beyond to recognize and foster every child's unique individual strengths.",
+      rating: 5,
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80'
+    },
+    {
+      name: 'Dr. Meenakshi Sundaram',
+      role: 'University Dean & Parent of Ananya (Grade 11)',
+      grade: 'Grade 11',
+      comment: "The transition to senior secondary board preparation has been remarkably smooth. The balanced focus on competitive entrance guidance and emotional well-being gives parents complete peace of mind.",
+      rating: 5,
+      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80'
     }
   ];
 
@@ -712,11 +740,11 @@ export default function Home({ onOpenAdmissionModal }) {
         </div>
       </section>
 
-      {/* 7. PARENT TESTIMONIALS - SoftDeals Dark Style */}
-      <section className="py-16 sm:py-24">
+      {/* 7. PARENT TESTIMONIALS - 3D Coverflow Deck Style matching screenshot */}
+      <section className="py-16 sm:py-24 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-fuchsia-300 bg-purple-950/80 border border-purple-500/30 px-3.5 py-1 rounded-full inline-flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5 text-fuchsia-400" />
               Voices of Trust
@@ -729,44 +757,124 @@ export default function Home({ onOpenAdmissionModal }) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t, idx) => (
-              <div
-                key={idx}
-                className="theme-box p-7 sm:p-8 flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    {/* Rating Stars */}
-                    <div className="flex items-center gap-1 text-amber-400">
-                      {[...Array(t.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-current text-amber-400" />
-                      ))}
-                    </div>
-                    <span className="theme-pill text-[10px]">Verified Parent</span>
-                  </div>
+          {/* 3D Stacked Card Carousel */}
+          <div className="relative w-full max-w-5xl mx-auto h-[380px] sm:h-[400px] flex items-center justify-center overflow-visible">
+            {testimonials.map((t, idx) => {
+              // Calculate signed offset relative to activeTestimonial (-2, -1, 0, 1, 2)
+              let diff = idx - activeTestimonial;
+              if (diff > testimonials.length / 2) diff -= testimonials.length;
+              if (diff < -testimonials.length / 2) diff += testimonials.length;
 
-                  <p className="text-[#d4c6f3] text-xs sm:text-sm leading-relaxed italic mb-6">
-                    "{t.comment}"
-                  </p>
-                </div>
+              const isActive = diff === 0;
+              const isVisible = Math.abs(diff) <= 2;
 
-                <div>
-                  <div className="flex items-center gap-3 pt-4 border-t border-[#341f5e]/80">
-                    <img
-                      src={t.avatar}
-                      alt={t.name}
-                      className="w-11 h-11 rounded-full object-cover border-2 border-purple-400/80 shadow-md"
-                    />
+              if (!isVisible) return null;
+
+              return (
+                <motion.div
+                  key={idx}
+                  animate={{
+                    x: `${diff * 42}%`,
+                    scale: isActive ? 1 : Math.max(0.74, 1 - Math.abs(diff) * 0.13),
+                    opacity: isActive ? 1 : Math.max(0.2, 0.58 - (Math.abs(diff) - 1) * 0.3),
+                    zIndex: 30 - Math.abs(diff) * 10,
+                    filter: isActive ? 'blur(0px)' : `blur(${Math.min(3, Math.abs(diff) * 1.5)}px)`,
+                  }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 280,
+                    damping: 30
+                  }}
+                  onClick={() => setActiveTestimonial(idx)}
+                  className={`absolute w-[86%] sm:w-[460px] md:w-[510px] cursor-pointer select-none ${
+                    isActive ? 'pointer-events-auto' : 'pointer-events-auto hover:opacity-80'
+                  }`}
+                >
+                  <div className={`theme-box p-6 sm:p-8 rounded-[28px] shadow-2xl flex flex-col justify-between transition-all duration-300 min-h-[250px] sm:min-h-[260px] ${
+                    isActive
+                      ? 'border-purple-400/90 shadow-[0_0_35px_rgba(168,85,247,0.35)]'
+                      : 'border-[#3a2266]/70'
+                  }`}>
+                    {/* Top: Testimonial Quote */}
                     <div>
-                      <div className="text-sm font-bold text-white">{t.name}</div>
-                      <div className="text-[11px] text-fuchsia-300 font-medium">{t.role}</div>
+                      <p className="text-sm sm:text-base text-purple-100 font-normal leading-relaxed italic line-clamp-4 sm:line-clamp-5">
+                        "{t.comment}"
+                      </p>
+                    </div>
+
+                    {/* Bottom: Subtle Divider Line & Author Info (Matches Screenshot) */}
+                    <div>
+                      <div className="w-full border-t border-[#341f5e]/80 my-4" />
+                      <div className="flex items-center gap-3.5">
+                        <div className="relative shrink-0">
+                          <img
+                            src={t.avatar}
+                            alt={t.name}
+                            className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-purple-400/80 shadow-md"
+                          />
+                          <div className="absolute -bottom-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-tr from-purple-600 to-fuchsia-500 border border-slate-900 flex items-center justify-center text-[9px] sm:text-[10px] text-white font-bold">
+                            ✓
+                          </div>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="text-sm sm:text-base font-bold text-white truncate">
+                            {t.name}
+                          </div>
+                          <div className="flex items-center gap-2 mt-0.5 flex-wrap">
+                            <div className="flex items-center gap-0.5 text-amber-400">
+                              {[...Array(t.rating)].map((_, i) => (
+                                <Star key={i} className="w-3.5 h-3.5 fill-current text-amber-400" />
+                              ))}
+                            </div>
+                            <span className="text-xs text-[#a99ac7]">•</span>
+                            <span className="text-xs text-fuchsia-300 font-medium">
+                              Verified Parent ({t.grade})
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="w-14 h-1 bg-white/20 rounded-full mx-auto mt-4" />
-                </div>
-              </div>
-            ))}
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Navigation Controls: Circular chevrons < and > + dots (matching screenshot) */}
+          <div className="flex items-center justify-center gap-4 mt-8 z-20 relative">
+            <button
+              type="button"
+              onClick={prevTestimonial}
+              aria-label="Previous testimonial"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#140b32]/90 hover:bg-purple-600 border border-purple-500/40 hover:border-purple-300 text-purple-200 hover:text-white flex items-center justify-center transition-all duration-300 shadow-xl hover:scale-110 active:scale-95"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            {/* Pagination Dots */}
+            <div className="flex items-center gap-2 px-1">
+              {testimonials.map((_, dotIdx) => (
+                <button
+                  key={dotIdx}
+                  onClick={() => setActiveTestimonial(dotIdx)}
+                  aria-label={`Go to slide ${dotIdx + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    dotIdx === activeTestimonial
+                      ? 'w-6 bg-gradient-to-r from-purple-500 to-fuchsia-500'
+                      : 'w-2 bg-purple-900/80 hover:bg-purple-600'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              type="button"
+              onClick={nextTestimonial}
+              aria-label="Next testimonial"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#140b32]/90 hover:bg-purple-600 border border-purple-500/40 hover:border-purple-300 text-purple-200 hover:text-white flex items-center justify-center transition-all duration-300 shadow-xl hover:scale-110 active:scale-95"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
 
         </div>
