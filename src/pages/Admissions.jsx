@@ -10,7 +10,9 @@ import {
   ShieldCheck, 
   Calendar, 
   ChevronRight, 
-  Send 
+  Send,
+  Clock,
+  Check
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { api } from '../services/api';
@@ -32,22 +34,34 @@ export default function Admissions({ onOpenAdmissionModal }) {
     {
       num: '01',
       title: 'Online Enquiry & Registration',
-      desc: 'Submit the digital enquiry form or obtain the prospectus from our admissions desk. Receive your unique applicant ID.'
+      desc: 'Submit the digital enquiry form or obtain the prospectus from our admissions desk. Receive your unique applicant ID.',
+      tag: 'Stage 01',
+      pills: ['Digital Form', 'Unique ID', 'Instant Token'],
+      action: 'Start Registration'
     },
     {
       num: '02',
       title: 'Campus Tour & Orientation',
-      desc: 'Parents and applicant are invited for a guided campus walkthrough, facility inspection, and discussion with our academic coordinators.'
+      desc: 'Parents and applicant are invited for a guided campus walkthrough, facility inspection, and discussion with our academic coordinators.',
+      tag: 'Stage 02',
+      pills: ['Guided Walk', 'Inspect Labs', 'Faculty Meet'],
+      action: 'Schedule Tour'
     },
     {
       num: '03',
       title: 'Assessment & Interaction',
-      desc: 'Age-appropriate foundational assessment (Grades 1 to 11) to understand student learning styles and aptitude. Friendly informal interaction for Pre-Primary.'
+      desc: 'Age-appropriate foundational assessment (Grades 1 to 11) to understand student learning styles and aptitude. Friendly informal interaction for Pre-Primary.',
+      tag: 'Stage 03',
+      pills: ['Foundational', 'No Pressure', 'Aptitude Review'],
+      action: 'Assessment Info'
     },
     {
       num: '04',
       title: 'Enrollment & Welcome Kit',
-      desc: 'Verification of required certificates, fee deposit confirmation, issuance of school ID, uniform allotment, and class assignment.'
+      desc: 'Verification of required certificates, fee deposit confirmation, issuance of school ID, uniform allotment, and class assignment.',
+      tag: 'Stage 04',
+      pills: ['Document Check', 'ID Issued', 'Kit Allotment'],
+      action: 'Enroll Student'
     }
   ];
 
@@ -119,35 +133,89 @@ export default function Admissions({ onOpenAdmissionModal }) {
         </div>
       </section>
 
-      {/* 4-Step Process Section */}
-      <section className="py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 4-Step Process Section - Styled like reference card theme */}
+      <section className="py-16 sm:py-24 relative overflow-hidden">
+        {/* Background ambient glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-purple-700/10 rounded-full blur-[140px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-bold text-cyan-300 uppercase tracking-widest bg-cyan-500/15 px-3 py-1 rounded-full border border-cyan-400/30">
-              Step-by-Step
+            <span className="text-xs font-bold text-fuchsia-300 uppercase tracking-widest bg-purple-950/80 px-3.5 py-1 rounded-full border border-purple-500/30 inline-flex items-center gap-1.5 mb-2">
+              <Sparkles className="w-3.5 h-3.5 text-fuchsia-400" /> Step-by-Step Admissions
             </span>
-            <h2 className="text-3xl font-serif font-bold text-white mt-2">
+            <h2 className="text-3xl sm:text-4xl font-serif font-black text-white mt-1">
               The 4-Stage Admission Journey
             </h2>
+            <p className="text-xs sm:text-sm text-slate-300 mt-2">
+              Transparent, student-centric onboarding crafted for your convenience at every milestone.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((st, i) => (
               <div 
                 key={i} 
-                className="bg-slate-900/80 backdrop-blur-xl hover:bg-slate-900 rounded-2xl p-6 border border-slate-800/90 hover:border-cyan-500/40 shadow-xl transition-all relative flex flex-col justify-between"
+                className="group relative bg-[#130b2e]/92 backdrop-blur-2xl rounded-[30px] p-6 sm:p-7 border border-[#442c75]/80 hover:border-purple-400/80 shadow-[0_15px_40px_-10px_rgba(76,29,149,0.35)] hover:shadow-[0_22px_50px_-8px_rgba(168,85,247,0.45)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden"
               >
+                {/* Subtle Top Inner Edge Highlight Rim (Exact from reference) */}
+                <div className="absolute inset-x-6 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-purple-400/50 to-transparent pointer-events-none" />
+
                 <div>
-                  <div className="text-3xl font-extrabold font-serif text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-teal-300 mb-3">
+                  {/* Top Status & Stage Badge (like 🕒 04:44) */}
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#a78bfa] tracking-wider">
+                      <Clock className="w-3.5 h-3.5 text-[#a78bfa] stroke-[2.2]" />
+                      <span>{st.tag}</span>
+                    </span>
+                    <span className="text-[10px] uppercase font-mono font-bold px-2 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
+                      Step {st.num}
+                    </span>
+                  </div>
+
+                  {/* Gradient Stage Number */}
+                  <div className="text-3xl sm:text-4xl font-serif font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] mb-2.5">
                     {st.num}
                   </div>
-                  <h3 className="text-base font-bold text-white mb-2">
+
+                  {/* Step Title */}
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-2.5 tracking-tight group-hover:text-purple-200 transition-colors">
                     {st.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+
+                  {/* Description Paragraph */}
+                  <p className="text-xs sm:text-[13px] text-[#d4c6f3] leading-relaxed mb-5">
                     {st.desc}
                   </p>
+                </div>
+
+                <div>
+                  {/* Capsule Pills Row (like Respect privacy, No screenshots) */}
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {st.pills.map((pill, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2.5 py-1 rounded-full bg-[#180e38]/80 border border-[#3e276b] text-[10px] font-semibold text-[#b8a7db]"
+                      >
+                        {pill}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Gradient Action Button (like "I agree" button) */}
+                  <button
+                    type="button"
+                    onClick={onOpenAdmissionModal}
+                    className="w-full py-2.5 px-3 rounded-2xl bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold text-xs shadow-[0_8px_20px_rgba(168,85,247,0.35)] hover:shadow-[0_10px_25px_rgba(217,70,239,0.5)] transition-all flex items-center justify-center gap-1.5 hover:scale-[1.01]"
+                  >
+                    <span className="w-4 h-4 rounded-full border border-white/90 flex items-center justify-center shrink-0">
+                      <Check className="w-2.5 h-2.5 stroke-[3] text-white" />
+                    </span>
+                    <span>{st.action}</span>
+                  </button>
+
+                  {/* App Home Bar Indicator */}
+                  <div className="w-16 h-1 bg-white/20 rounded-full mx-auto mt-4" />
                 </div>
               </div>
             ))}
