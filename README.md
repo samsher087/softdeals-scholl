@@ -1,4 +1,4 @@
-# St. Xavier's International School — Modern & Smart School Web Platform
+# Umeed Global International School — Modern & Smart School Web Platform
 
 **Designed & Developed by SOFTDEALS – Digital Solutions**
 
@@ -6,7 +6,7 @@
 
 ## 🏛️ Project Overview
 
-**St. Xavier's International School** is a modern, premium, professional, and fully responsive institutional web platform designed for prestigious educational institutions. It is crafted to build profound trust and confidence among prospective and current parents, students, educators, and board members.
+**Umeed Global International School** is a modern, premium, professional, and fully responsive institutional web platform designed for prestigious educational institutions. It is crafted to build profound trust and confidence among prospective and current parents, students, educators, and board members.
 
 The application adheres to modern UI/UX design standards: a pristine white background harmonized with deep navy blue, vibrant sky blue, and subtle golden accents, with high-definition educational imagery, interactive modals, dynamic bulletin tickers, a masonry-style media gallery, and a **Role-Based Student Information System (SIS)** with authentic report card generation.
 

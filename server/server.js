@@ -65,7 +65,7 @@ const authenticateToken = (req, res, next) => {
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'online',
-    institution: "St. Xavier's International School",
+    institution: "Umeed Global International School",
     developer: 'SOFTDEALS – Digital Solutions',
     timestamp: new Date().toISOString()
   });

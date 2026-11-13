@@ -1,4 +1,4 @@
-// Initial realistic data for St. Xavier's International School
+// Initial realistic data for Umeed Global International School
 // Developed for SOFTDEALS – Digital Solutions
 
 export const initialNotices = [
@@ -60,7 +60,7 @@ export const initialEvents = [
     title: 'Annual Day & Cultural Extravaganza "SPANDAN 2026"',
     date: 'March 28, 2026',
     time: '5:00 PM - 9:00 PM',
-    venue: 'St. Xavier\'s Grand Auditorium',
+    venue: 'Umeed Global Grand Auditorium',
     badge: 'Flagship Event',
     description: 'An evening celebrating classical dance, orchestral harmony, theatrical drama, and student excellence awards.',
     image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80'
@@ -196,7 +196,7 @@ export const initialGallery = [
     category: 'Sports Activities',
     type: 'image',
     url: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80',
-    description: 'St. Xavier\'s under-17 basketball team clinching the Regional Gold Medal for the third consecutive year.',
+    description: 'Umeed Global under-17 basketball team clinching the Regional Gold Medal for the third consecutive year.',
     date: '2026-01-29'
   },
   {
@@ -245,10 +245,10 @@ export const mockStudentUser = {
   house: 'Blue Sapphire',
   fatherName: 'Dr. Rajeshwar Sharma',
   motherName: 'Mrs. Sunita Sharma',
-  parentPhone: '+91 98765 43210',
+  parentPhone: '+91-9818572692',
   address: '42, Oakwood Boulevard, South City Phase II, New Delhi - 110048',
   busRoute: 'Route 12 (South Extension & GK II - Bus DL-1PB-4509)',
-  emergencyContact: '+91 98765 43211',
+  emergencyContact: '+91-9818572692',
   overallAttendance: 94.6,
   gpa: 3.92,
   classRank: 2
@@ -264,7 +264,7 @@ export const mockParentUser = {
   wardGrade: 'Grade 10 - Section A',
   wardStudentId: 'STX-2024-1014',
   avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80',
-  phone: '+91 98765 43210'
+  phone: '+91-9818572692'
 };
 
 export const mockAdminUser = {
