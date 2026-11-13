@@ -36,14 +36,14 @@ function MainLayout({ onOpenAdmissionModal, children }) {
   const isLogin = location.pathname === '/portal/login';
 
   return (
-    <div className="flex flex-col min-h-screen relative bg-slate-950 text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
-      {/* Whole Website Background Theme - SoftDeals Dark Tech Atmosphere */}
+    <div className="flex flex-col min-h-screen relative bg-slate-950 text-slate-100 selection:bg-fuchsia-500/30 selection:text-fuchsia-200">
+      {/* Whole Website Background Theme - Mystical Violet Atmosphere */}
       <div className="site-bg-backdrop" aria-hidden="true"></div>
       <div className="site-bg-tint" aria-hidden="true"></div>
       
-      {/* SoftDeals Ambient Glow Orbs */}
-      <div className="fixed top-1/4 left-10 w-[500px] h-[500px] bg-gradient-to-tr from-brand-600/15 via-cyan-500/10 to-teal-400/10 rounded-full blur-3xl pointer-events-none -z-1" aria-hidden="true"></div>
-      <div className="fixed bottom-1/4 right-10 w-[500px] h-[500px] bg-gradient-to-bl from-blue-600/15 via-cyan-500/10 to-teal-500/10 rounded-full blur-3xl pointer-events-none -z-1" aria-hidden="true"></div>
+      {/* Mystical Violet Ambient Glow Orbs */}
+      <div className="fixed top-1/4 left-10 w-[550px] h-[550px] bg-gradient-to-tr from-purple-700/20 via-fuchsia-600/15 to-pink-600/10 rounded-full blur-[130px] pointer-events-none -z-1" aria-hidden="true"></div>
+      <div className="fixed bottom-1/4 right-10 w-[550px] h-[550px] bg-gradient-to-bl from-indigo-700/20 via-purple-600/15 to-pink-500/10 rounded-full blur-[130px] pointer-events-none -z-1" aria-hidden="true"></div>
 
       {!isDashboard && !isLogin && (
         <Navbar onOpenAdmissionModal={onOpenAdmissionModal} />

@@ -253,9 +253,25 @@ export default function Home({ onOpenAdmissionModal }) {
             </h1>
 
             {/* Subtitle */}
-
+            <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl font-normal leading-relaxed mb-8 drop-shadow">
+              Nurturing intellectual curiosity, leadership character, and technological innovation in students from Pre-Nursery to Grade XII.
+            </p>
 
             {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4 mb-8">
+              <button
+                onClick={onOpenAdmissionModal}
+                className="px-6 sm:px-8 py-3.5 bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-white font-bold text-sm sm:text-base rounded-2xl shadow-lg shadow-purple-950/60 transition-all transform hover:-translate-y-0.5"
+              >
+                Admission Enquiry 2026-27
+              </button>
+              <Link
+                to="/academics"
+                className="px-6 sm:px-8 py-3.5 bg-slate-900/80 hover:bg-slate-850 text-white font-bold text-sm sm:text-base rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all shadow-md"
+              >
+                Explore Academics & Curriculum
+              </Link>
+            </div>
 
 
             {/* Quick Trust Highlights */}

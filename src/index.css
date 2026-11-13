@@ -4,8 +4,8 @@
 
 @layer base {
   body {
-    background-color: #030712;
-    color: #f1f5f9;
+    background-color: #080414;
+    color: #f3f0fa;
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
@@ -20,14 +20,14 @@
   }
 }
 
-/* SoftDeals Theme Ambient Glow Backgrounds */
+/* Mystical Purple & Magenta Ambient Glow Backgrounds */
 .site-bg-backdrop {
   position: fixed;
   inset: 0;
-  background-color: #030712;
+  background-color: #080414;
   background-image: 
-    radial-gradient(ellipse 80% 80% at 50% -20%, rgba(6, 182, 212, 0.14), rgba(255, 255, 255, 0)),
-    radial-gradient(ellipse 60% 60% at 90% 70%, rgba(29, 94, 247, 0.08), rgba(255, 255, 255, 0));
+    radial-gradient(ellipse 80% 80% at 50% -20%, rgba(139, 92, 246, 0.18), rgba(255, 255, 255, 0)),
+    radial-gradient(ellipse 60% 60% at 90% 70%, rgba(217, 70, 239, 0.12), rgba(255, 255, 255, 0));
   z-index: -2;
   pointer-events: none;
 }
@@ -36,29 +36,29 @@
   position: fixed;
   inset: 0;
   background: 
-    radial-gradient(circle at 15% 25%, rgba(6, 182, 212, 0.04) 0%, transparent 45%),
-    radial-gradient(circle at 85% 75%, rgba(20, 184, 166, 0.04) 0%, transparent 45%);
+    radial-gradient(circle at 15% 25%, rgba(99, 102, 241, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(236, 72, 153, 0.06) 0%, transparent 45%);
   z-index: -1;
   pointer-events: none;
 }
 
-/* Custom Scrollbar - SoftDeals Dark Style */
+/* Custom Scrollbar - Deep Violet Style */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #030712;
+  background: #080414;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #341f5e;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #06b6d4;
+  background: #a855f7;
 }
 
 /* Hide scrollbar utility */
@@ -89,55 +89,57 @@
   animation-play-state: paused !important;
 }
 
-/* Glassmorphism helpers - SoftDeals Style */
+/* Glassmorphism helpers - Deep Violet Glass */
 .glass-nav {
-  background: rgba(3, 7, 18, 0.85);
+  background: rgba(13, 7, 30, 0.90);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(51, 65, 85, 0.6);
+  border-bottom: 1px solid rgba(68, 44, 117, 0.65);
 }
 
 .glass-card {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(51, 65, 85, 0.8);
+  background: rgba(19, 11, 46, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(68, 44, 117, 0.7);
 }
 
 .glass-dark {
-  background: rgba(3, 7, 18, 0.85);
+  background: rgba(13, 7, 30, 0.92);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(68, 44, 117, 0.5);
 }
 
-/* SoftDeals Signature Cyan-Sky-Teal Tech Gradient */
+/* SoftDeals Signature Radiant Purple-Fuchsia Gradient */
 .gold-gradient-text,
 .softdeals-gradient-text {
-  background: linear-gradient(135deg, #22d3ee 0%, #38bdf8 50%, #2dd4bf 100%);
+  background: linear-gradient(135deg, #c084fc 0%, #e879f9 50%, #f472b6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .softdeals-btn-primary {
-  background: linear-gradient(to right, #1d5ef7 0%, #0891b2 50%, #14b8a6 100%);
+  background: linear-gradient(to right, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
   color: #ffffff;
+  box-shadow: 0 8px 25px -4px rgba(168, 85, 247, 0.4);
   transition: all 0.3s ease;
 }
 
 .softdeals-btn-primary:hover {
-  background: linear-gradient(to right, #327cff 0%, #06b6d4 50%, #2dd4bf 100%);
+  background: linear-gradient(to right, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+  box-shadow: 0 10px 30px -4px rgba(217, 70, 239, 0.55);
   transform: translateY(-1px);
 }
 
 .navy-gradient {
-  background: linear-gradient(135deg, #0a192f 0%, #1e3a8a 100%);
+  background: linear-gradient(135deg, #130b2e 0%, #2e1065 100%);
 }
 
 .hero-overlay {
   background: linear-gradient(to right,
-      rgba(10, 25, 47, 0.94) 0%,
-      rgba(10, 25, 47, 0.82) 50%,
-      rgba(15, 23, 42, 0.45) 100%);
+      rgba(8, 4, 20, 0.96) 0%,
+      rgba(14, 7, 32, 0.88) 50%,
+      rgba(19, 11, 46, 0.50) 100%);
 }
 
 /* Print Styles for Official Report Card & Prospectus */
