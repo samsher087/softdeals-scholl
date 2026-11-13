@@ -5,7 +5,7 @@ export default function WhatsAppButton() {
   const [showTooltip, setShowTooltip] = useState(true);
   const phoneNumber = '919876543210';
   const defaultMessage = encodeURIComponent(
-    "Hello Admissions Desk! I am interested in admission for the 2026-27 academic session at St. Xavier's International School. Please share the details."
+    "Hello Admissions Desk! I am interested in admission for the 2026-27 academic session at Umeed Global International School. Please share the details."
   );
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${defaultMessage}`;
 

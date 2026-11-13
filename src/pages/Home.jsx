@@ -180,7 +180,7 @@ export default function Home({ onOpenAdmissionModal }) {
     {
       name: 'Dr. Vikram Malhotra',
       role: 'Cardiologist & Parent of Aryan (Grade 10)',
-      comment: "Enrolling our son at St. Xavier's was the best decision we made. The teachers nurture not only academic precision but moral integrity and confidence. Aryan has flourished in both his STEM projects and debating.",
+      comment: "Enrolling our son at Umeed Global was the best decision we made. The teachers nurture not only academic precision but moral integrity and confidence. Aryan has flourished in both his STEM projects and debating.",
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
     },
@@ -453,7 +453,7 @@ export default function Home({ onOpenAdmissionModal }) {
               </p>
 
               <p className="text-[#d4c6f3] text-sm sm:text-base leading-relaxed">
-                At St. Xavier's International School, we consider education a sacred journey of transformation. Our mission extends far beyond textbooks and examinations—we inspire young minds to question with curiosity, innovate with courage, and serve society with unshakeable moral integrity.
+                At Umeed Global International School, we consider education a sacred journey of transformation. Our mission extends far beyond textbooks and examinations—we inspire young minds to question with curiosity, innovate with courage, and serve society with unshakeable moral integrity.
               </p>
 
               <p className="text-[#d4c6f3] text-sm sm:text-base leading-relaxed">
@@ -463,7 +463,7 @@ export default function Home({ onOpenAdmissionModal }) {
               <div className="pt-4 border-t border-[#341f5e]/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <div className="font-serif font-bold text-white text-base">Dr. Eleanor Vance</div>
-                  <div className="text-xs text-fuchsia-400">Principal, St. Xavier's International School</div>
+                  <div className="text-xs text-fuchsia-400">Principal, Umeed Global International School</div>
                 </div>
 
                 <Link
@@ -527,7 +527,7 @@ export default function Home({ onOpenAdmissionModal }) {
                   </div>
 
                   <div>
-                    <span className="theme-pill text-[10px]">St. Xavier's Distinction</span>
+                    <span className="theme-pill text-[10px]">Umeed Global Distinction</span>
                     <div className="w-14 h-1 bg-white/20 rounded-full mx-auto mt-4" />
                   </div>
                 </div>
@@ -825,7 +825,7 @@ export default function Home({ onOpenAdmissionModal }) {
 
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10">
             <div>
-              <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-wider block">Life at St. Xavier's</span>
+              <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-wider block">Life at Umeed Global</span>
               <h2 className="text-3xl font-serif font-black text-white">Campus Gallery Snapshot</h2>
             </div>
             <Link
@@ -879,7 +879,7 @@ export default function Home({ onOpenAdmissionModal }) {
             </h2>
 
             <p className="text-[#d4c6f3] text-sm sm:text-base max-w-2xl mx-auto mb-8">
-              Schedule a personal campus walkthrough, interact with our academic coordinators, and discover the St. Xavier's advantage.
+              Schedule a personal campus walkthrough, interact with our academic coordinators, and discover the Umeed Global advantage.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">

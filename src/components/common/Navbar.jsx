@@ -87,8 +87,8 @@ export default function Navbar({ onOpenAdmissionModal }) {
             <a href="tel:+919876543210" className="hover:text-fuchsia-300 transition-colors flex items-center gap-1.5 whitespace-nowrap">
               <Phone className="w-3.5 h-3.5 text-fuchsia-400 shrink-0" /> +91 98765 43210
             </a>
-            <a href="mailto:admissions@stxavierschool.edu" className="hover:text-fuchsia-300 transition-colors flex items-center gap-1.5 whitespace-nowrap">
-              <Mail className="w-3.5 h-3.5 text-fuchsia-400 shrink-0" /> admissions@stxavierschool.edu
+            <a href="mailto:admissions@umeedglobal.edu" className="hover:text-fuchsia-300 transition-colors flex items-center gap-1.5 whitespace-nowrap">
+              <Mail className="w-3.5 h-3.5 text-fuchsia-400 shrink-0" /> admissions@umeedglobal.edu
             </a>
             <div className="flex items-center gap-1.5 text-[#a99ac7] whitespace-nowrap">
               <Clock className="w-3.5 h-3.5 text-fuchsia-400 shrink-0" /> Mon - Sat: 8:00 AM - 3:30 PM
@@ -115,7 +115,7 @@ export default function Navbar({ onOpenAdmissionModal }) {
               </div>
               <div className="flex flex-col whitespace-nowrap">
                 <span className="font-serif font-black text-base sm:text-xl text-white tracking-tight leading-none group-hover:text-fuchsia-300 transition-colors">
-                  ST. XAVIER'S
+                  UMEED GLOBAL
                 </span>
                 <span className="text-[9px] sm:text-[11px] font-bold text-[#b8a7db] uppercase tracking-widest mt-0.5">
                   International School

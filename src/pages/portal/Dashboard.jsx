@@ -117,7 +117,7 @@ export default function Dashboard() {
 
   const student = studentProfile || {
     name: user?.name || 'Aryan Sharma',
-    studentId: 'STX-2024-1014',
+    studentId: 'UGS-2024-1014',
     rollNo: 14,
     grade: '10',
     section: 'A',
@@ -145,7 +145,7 @@ export default function Dashboard() {
                 <GraduationCap className="w-5 h-5 text-fuchsia-400" />
               </div>
               <div className="hidden sm:block">
-                <span className="font-serif font-bold text-sm block leading-none">ST. XAVIER'S</span>
+                <span className="font-serif font-bold text-sm block leading-none">UMEED GLOBAL</span>
                 <span className="text-[9px] text-fuchsia-400 tracking-wider uppercase font-medium">Portal Dashboard</span>
               </div>
             </Link>
@@ -520,13 +520,13 @@ export default function Dashboard() {
                   </div>
                   <div className="text-left">
                     <h1 className="text-2xl font-serif font-bold text-navy-950 tracking-tight">
-                      ST. XAVIER'S INTERNATIONAL SCHOOL
+                      UMEED GLOBAL INTERNATIONAL SCHOOL
                     </h1>
                     <p className="text-xs text-slate-600 font-semibold">
                       Affiliated to the Central Board of Secondary Education (CBSE), New Delhi • Affiliation No: 2130894
                     </p>
                     <p className="text-[11px] text-slate-500">
-                      Sector 14, Institutional Area, Knowledge Park II, New Delhi NCR • Email: controller@stxavierschool.edu
+                      Sector 14, Institutional Area, Knowledge Park II, New Delhi NCR • Email: controller@umeedglobal.edu
                     </p>
                   </div>
                 </div>

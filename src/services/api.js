@@ -1,4 +1,4 @@
-// Client API service for St. Xavier's International School
+// Client API service for Umeed Global International School
 // Developed for SOFTDEALS – Digital Solutions
 
 import {

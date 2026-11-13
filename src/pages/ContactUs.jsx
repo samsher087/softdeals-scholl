@@ -60,7 +60,7 @@ export default function ContactUs() {
             Admissions Desk & Support
           </span>
           <h1 className="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight mt-3">
-            Contact St. Xavier's International School
+            Contact Umeed Global International School
           </h1>
           <p className="mt-3 text-sm sm:text-base text-[#d4c6f3] max-w-2xl mx-auto">
             Get in touch with our administrative office, admissions counselors, or schedule an in-person campus walkthrough.
@@ -124,9 +124,9 @@ export default function ContactUs() {
                   <div>
                     <strong className="block text-white text-sm">Official Email Correspondence</strong>
                     <div className="text-xs space-y-1 mt-0.5 text-[#a99ac7]">
-                      <div>Admissions: <a href="mailto:admissions@stxavierschool.edu" className="text-fuchsia-300 hover:underline">admissions@stxavierschool.edu</a></div>
-                      <div>General Enquiries: <a href="mailto:info@stxavierschool.edu" className="text-fuchsia-300 hover:underline">info@stxavierschool.edu</a></div>
-                      <div>Principal’s Secretariat: <a href="mailto:principal@stxavierschool.edu" className="text-fuchsia-300 hover:underline">principal@stxavierschool.edu</a></div>
+                      <div>Admissions: <a href="mailto:admissions@umeedglobal.edu" className="text-fuchsia-300 hover:underline">admissions@umeedglobal.edu</a></div>
+                      <div>General Enquiries: <a href="mailto:info@umeedglobal.edu" className="text-fuchsia-300 hover:underline">info@umeedglobal.edu</a></div>
+                      <div>Principal’s Secretariat: <a href="mailto:principal@umeedglobal.edu" className="text-fuchsia-300 hover:underline">principal@umeedglobal.edu</a></div>
                     </div>
                   </div>
                 </div>
@@ -164,7 +164,7 @@ export default function ContactUs() {
             {/* Social Media Links */}
             <div className="theme-box p-6 text-white shadow-xl">
               <h4 className="text-xs font-bold uppercase tracking-wider text-fuchsia-400 mb-3">
-                Follow St. Xavier's Online
+                Follow Umeed Global Online
               </h4>
               <div className="flex items-center gap-3">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-2xl bg-[#180e38] hover:bg-[#251552] border border-[#3e276b] hover:border-purple-400/80 text-purple-200 hover:text-white transition-all shadow-md">
@@ -329,7 +329,7 @@ export default function ContactUs() {
               </div>
               <div className="rounded-2xl overflow-hidden h-72 w-full border border-[#3e276b]">
                 <iframe
-                  title="St. Xavier's International School Campus Map"
+                  title="Umeed Global International School Campus Map"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14013.978253198083!2d77.3621453472097!3d28.584948777121703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce566270c5383%3A0x6b6c0e5a953a8f1!2sKnowledge%20Park%20II%2C%20Greater%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                   width="100%"
                   height="100%"

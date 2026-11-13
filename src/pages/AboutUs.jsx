@@ -83,7 +83,7 @@ export default function AboutUs({ onOpenAdmissionModal }) {
             Legacy of 28 Years
           </span>
           <h1 className="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight">
-            About St. Xavier's International School
+            About Umeed Global International School
           </h1>
           <p className="mt-4 text-sm sm:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed">
             Where tradition meets modern innovation. Dedicated to shaping empathetic thinkers, visionary innovators, and principled global citizens.
@@ -104,7 +104,7 @@ export default function AboutUs({ onOpenAdmissionModal }) {
                 Twenty-Eight Years of Nurturing Tomorrow’s Global Leaders
               </h2>
               <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-                Established in 1998 under the aegis of the Xavier Educational Trust, St. Xavier's International School has grown from a humble beginning into one of India’s premier CBSE-affiliated co-educational day-cum-boarding institutions.
+                Established in 1998 under the aegis of the Umeed Educational Trust, Umeed Global International School has grown from a humble beginning into one of India’s premier CBSE-affiliated co-educational day-cum-boarding institutions.
               </p>
               <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
                 Spread across 25 verdant acres, the school provides an idyllic learning environment where cutting-edge technology and ancient values coexist. We believe that true education does not merely train students to earn a living; it teaches them how to live meaningful, purposeful lives with honor and empathy.
@@ -279,7 +279,7 @@ export default function AboutUs({ onOpenAdmissionModal }) {
                 "Education is the ignite switch for human potential."
               </h3>
               <p className="text-[#d4c6f3] text-sm leading-relaxed">
-                When we planted the seeds of St. Xavier's International School nearly three decades ago, our vision was unambiguous: to create an institution that neither compromises on scholastic superiority nor dilutes human character.
+                When we planted the seeds of Umeed Global International School nearly three decades ago, our vision was unambiguous: to create an institution that neither compromises on scholastic superiority nor dilutes human character.
               </p>
               <p className="text-[#a99ac7] text-sm leading-relaxed">
                 Today, as artificial intelligence and automation reshape our global society, the greatest gift we can bestow upon our children is the capacity to think critically, adapt fluidly, and remain deeply grounded in moral integrity. I welcome you to join our family.
@@ -297,7 +297,7 @@ export default function AboutUs({ onOpenAdmissionModal }) {
                 "Every child is an ocean of undiscovered brilliance."
               </h3>
               <p className="text-[#d4c6f3] text-sm leading-relaxed">
-                At St. Xavier's, we believe that education is an art of discovery rather than an exercise in rote compliance. Our classrooms are vibrant incubation centers where learners are encouraged to formulate hypotheses, experiment fearlessly, and embrace mistakes as valuable stepping stones.
+                At Umeed Global, we believe that education is an art of discovery rather than an exercise in rote compliance. Our classrooms are vibrant incubation centers where learners are encouraged to formulate hypotheses, experiment fearlessly, and embrace mistakes as valuable stepping stones.
               </p>
               <p className="text-[#a99ac7] text-sm leading-relaxed">
                 Our faculty members act as facilitators, mentors, and guides. We pride ourselves on creating an emotionally safe, intellectually invigorating atmosphere where every student feels seen, heard, and valued.
@@ -359,7 +359,7 @@ export default function AboutUs({ onOpenAdmissionModal }) {
                     </p>
                   </div>
                   <div>
-                    <span className="theme-pill text-[10px]">St. Xavier's Core Value</span>
+                    <span className="theme-pill text-[10px]">Umeed Global Core Value</span>
                     <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mt-4" />
                   </div>
                 </div>

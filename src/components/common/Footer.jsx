@@ -47,7 +47,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="font-serif font-black text-xl text-white tracking-tight group-hover:text-fuchsia-300 transition-colors">
-                  ST. XAVIER'S
+                  UMEED GLOBAL
                 </span>
                 <span className="text-xs font-bold text-[#b8a7db] uppercase tracking-widest">
                   International School
@@ -221,7 +221,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-purple-400 shrink-0" />
-                <a href="mailto:info@stxavierschool.edu" className="hover:text-fuchsia-300 transition-colors">info@stxavierschool.edu</a>
+                <a href="mailto:info@umeedglobal.edu" className="hover:text-fuchsia-300 transition-colors">info@umeedglobal.edu</a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-fuchsia-400 shrink-0" />
@@ -264,7 +264,7 @@ export default function Footer() {
         {/* Bottom Bar & SOFTDEALS Attribution */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-[#a99ac7] gap-4">
           <div className="text-center md:text-left">
-            © {new Date().getFullYear()} St. Xavier's International School. All Rights Reserved.
+            © {new Date().getFullYear()} Umeed Global International School. All Rights Reserved.
           </div>
 
           {/* Distinctive SOFTDEALS – Digital Solutions Credit */}

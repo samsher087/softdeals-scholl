@@ -193,7 +193,7 @@ export default function Academics({ onOpenAdmissionModal }) {
                 The 5-3-3-4 Curricular Framework
               </h2>
               <p className="text-[#d4c6f3] text-xs sm:text-sm leading-relaxed mb-6">
-                St. Xavier's International School strictly adheres to the National Curriculum Framework (NCF) formulated under the National Education Policy (NEP 2020). Our progressive roadmap ensures conceptual clarity, experiential skill application, and holistic student well-being.
+                Umeed Global International School strictly adheres to the National Curriculum Framework (NCF) formulated under the National Education Policy (NEP 2020). Our progressive roadmap ensures conceptual clarity, experiential skill application, and holistic student well-being.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-[#341f5e]/80">
@@ -304,7 +304,7 @@ export default function Academics({ onOpenAdmissionModal }) {
                 </div>
 
                 <button
-                  onClick={() => alert("Downloading Official St. Xavier's Academic Calendar 2026-27 (PDF).")}
+                  onClick={() => alert("Downloading Official Umeed Global Academic Calendar 2026-27 (PDF).")}
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold text-xs rounded-2xl shadow-lg shadow-purple-950/60 transition-all shrink-0"
                 >
                   <Download className="w-4 h-4 text-white" />

@@ -97,7 +97,7 @@ export default function Login() {
           </div>
           <div className="text-left">
             <span className="font-serif font-black text-xl text-white block leading-none tracking-tight">
-              ST. XAVIER'S
+              UMEED GLOBAL
             </span>
             <span className="text-[10px] text-fuchsia-400 font-semibold uppercase tracking-widest">
               Student Information System
@@ -256,7 +256,7 @@ export default function Login() {
                 href="#reset" 
                 onClick={(e) => { 
                   e.preventDefault(); 
-                  alert("Please contact the IT Helpdesk at itdesk@stxavierschool.edu for password resets."); 
+                  alert("Please contact the IT Helpdesk at itdesk@umeedglobal.edu for password resets."); 
                 }} 
                 className="text-[#c084fc] hover:text-[#e879f9] transition-colors font-medium"
               >

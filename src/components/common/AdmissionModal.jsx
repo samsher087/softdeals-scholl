@@ -111,7 +111,7 @@ export default function AdmissionModal({ isOpen, onClose }) {
               <div>
                 <h4 className="text-xl font-bold text-white">Application Registered Successfully!</h4>
                 <p className="text-sm text-[#d4c6f3] mt-1">
-                  Thank you for your interest in <span className="font-semibold text-fuchsia-300">St. Xavier's International School</span>.
+                  Thank you for your interest in <span className="font-semibold text-fuchsia-300">Umeed Global International School</span>.
                 </p>
                 <div className="mt-3 inline-block bg-[#0d0722] px-5 py-2.5 rounded-2xl border border-[#3e276b]">
                   <span className="text-[10px] text-[#a99ac7] block uppercase tracking-wider font-semibold">Enquiry Reference ID</span>

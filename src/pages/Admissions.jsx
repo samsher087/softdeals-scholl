@@ -355,7 +355,7 @@ export default function Admissions({ onOpenAdmissionModal }) {
                 <span className="theme-pill">🧾 Quarterly Installments</span>
                 <span className="theme-pill">🛡️ 100% Refundable Caution</span>
               </div>
-              <span className="text-xs text-[#a99ac7] font-mono">STX-FEE-2026 // VERIFIED</span>
+              <span className="text-xs text-[#a99ac7] font-mono">UGS-FEE-2026 // VERIFIED</span>
             </div>
 
             {/* White Home Bar Indicator */}
@@ -639,7 +639,7 @@ export default function Admissions({ onOpenAdmissionModal }) {
                 {/* Privacy reminder note */}
                 <div className="flex items-center gap-2 text-xs text-[#9d8ac7] pt-1">
                   <Check className="w-3.5 h-3.5 text-fuchsia-400" />
-                  <span>All information submitted is strictly confidential and encrypted under St. Xavier's Privacy Policy.</span>
+                  <span>All information submitted is strictly confidential and encrypted under Umeed Global Privacy Policy.</span>
                 </div>
 
                 {/* Primary Button styled like "I agree" */}

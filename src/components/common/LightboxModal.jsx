@@ -115,7 +115,7 @@ export default function LightboxModal({
           </span>
           <span>•</span>
           <span className="flex items-center gap-1">
-            <Tag className="w-3 h-3 text-skyAccent-400" /> St. Xavier's Archives
+            <Tag className="w-3 h-3 text-skyAccent-400" /> Umeed Global Archives
           </span>
         </div>
       </div>
