@@ -345,7 +345,7 @@ export default function Home({ onOpenAdmissionModal }) {
       {/* 2. PRINCIPAL'S WELCOME MESSAGE - SoftDeals Dark Style */}
       <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 sm:p-12 shadow-2xl border border-slate-800/90 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="theme-box p-8 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
             {/* Principal Photograph & Badge */}
             <div className="lg:col-span-5 relative">
@@ -433,7 +433,7 @@ export default function Home({ onOpenAdmissionModal }) {
               return (
                 <div
                   key={index}
-                  className="group bg-slate-900/80 hover:bg-slate-850 backdrop-blur-xl rounded-3xl p-7 border border-slate-800/90 hover:border-cyan-500/50 shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 transform hover:-translate-y-1.5"
+                  className="group theme-box p-7 hover:-translate-y-1.5 transition-all duration-300"
                 >
                   <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 bg-slate-800/90 text-cyan-400 border border-slate-700/80 group-hover:border-cyan-400 group-hover:scale-110 transition-all shadow-sm">
                     <Icon className="w-6 h-6" />
@@ -478,21 +478,22 @@ export default function Home({ onOpenAdmissionModal }) {
             {facilities.map((fac, idx) => (
               <div
                 key={idx}
-                className="group relative rounded-3xl overflow-hidden bg-slate-900/90 backdrop-blur-xl border border-slate-800/90 shadow-xl hover:shadow-cyan-500/10 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between"
+                className="group theme-box hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
               >
-                <div className="h-48 overflow-hidden bg-slate-800">
+                <div className="h-48 overflow-hidden bg-slate-800 relative">
                   <img
                     src={fac.image}
                     alt={fac.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 brightness-95 group-hover:brightness-100"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#130b2e] via-transparent to-transparent pointer-events-none" />
                 </div>
                 <div className="p-5 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-cyan-300 transition-colors">
+                    <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-purple-300 transition-colors">
                       {fac.name}
                     </h3>
-                    <p className="text-xs text-slate-400 leading-relaxed">
+                    <p className="text-xs text-slate-300 leading-relaxed">
                       {fac.description}
                     </p>
                   </div>
@@ -540,7 +541,7 @@ export default function Home({ onOpenAdmissionModal }) {
                 {filteredNotices.slice(0, 4).map((notice) => (
                   <div
                     key={notice.id}
-                    className="bg-slate-900/75 hover:bg-slate-850 rounded-2xl p-4 sm:p-5 border border-slate-800/90 hover:border-cyan-500/40 shadow-lg transition-all relative"
+                    className="theme-box p-4 sm:p-5 rounded-2xl hover:scale-[1.01] transition-all"
                   >
                     <div className="flex items-start justify-between gap-3 mb-1.5">
                       <div className="flex items-center gap-2">
@@ -686,7 +687,7 @@ export default function Home({ onOpenAdmissionModal }) {
             {testimonials.map((t, idx) => (
               <div
                 key={idx}
-                className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-7 border border-slate-800/90 hover:border-cyan-500/50 shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 relative flex flex-col justify-between"
+                className="theme-box p-7 sm:p-8 flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300"
               >
                 <div>
                   {/* Rating Stars */}
@@ -765,37 +766,40 @@ export default function Home({ onOpenAdmissionModal }) {
       {/* 9. ADMISSION CALL TO ACTION BANNER - SoftDeals Dark Style */}
       <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white rounded-3xl p-10 sm:p-14 shadow-2xl relative overflow-hidden border border-cyan-500/30 text-center">
-            {/* Ambient Cyan Glow Orbs */}
-            <div className="absolute top-0 right-10 w-72 h-72 bg-brand-600/15 rounded-full blur-3xl pointer-events-none"></div>
-            <div className="absolute bottom-0 left-10 w-72 h-72 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="theme-box p-10 sm:p-14 text-center">
+            {/* Ambient Purple Glow Orbs */}
+            <div className="absolute top-0 right-10 w-72 h-72 bg-purple-600/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute bottom-0 left-10 w-72 h-72 bg-fuchsia-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-400" /> Admissions Open 2026-27
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-purple-950/80 border border-purple-500/30 text-fuchsia-300 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-fuchsia-400" /> Admissions Open 2026-27
             </span>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black mb-4 text-white">
               Give Your Child the Foundation They Deserve
             </h2>
 
-            <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8">
+            <p className="text-[#d4c6f3] text-sm sm:text-base max-w-2xl mx-auto mb-8">
               Schedule a personal campus walkthrough, interact with our academic coordinators, and discover the St. Xavier's advantage.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
               <button
                 onClick={onOpenAdmissionModal}
-                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-600 via-cyan-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-white font-bold rounded-2xl shadow-xl shadow-cyan-950/60 hover:scale-[1.02] transition-all"
+                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold rounded-2xl shadow-xl shadow-purple-950/60 hover:scale-[1.02] transition-all"
               >
                 Apply Online Now
               </button>
               <Link
                 to="/contact"
-                className="w-full sm:w-auto px-8 py-4 bg-slate-900/80 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold rounded-2xl border border-slate-700/80 backdrop-blur-md transition-all hover:-translate-y-0.5"
+                className="w-full sm:w-auto px-8 py-4 bg-[#180e38]/80 hover:bg-[#22134e] text-slate-200 hover:text-white font-semibold rounded-2xl border border-[#3e276b] backdrop-blur-md transition-all hover:-translate-y-0.5"
               >
                 Contact Admissions Office
               </Link>
             </div>
+
+            {/* Bottom Home Bar */}
+            <div className="w-24 h-1 bg-white/20 rounded-full mx-auto mt-8" />
           </div>
         </div>
       </section>

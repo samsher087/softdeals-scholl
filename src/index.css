@@ -98,10 +98,73 @@
 }
 
 .glass-card {
-  background: rgba(19, 11, 46, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(68, 44, 117, 0.7);
+  position: relative;
+  background: rgba(19, 11, 46, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(68, 44, 117, 0.8);
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(192, 132, 252, 0.45), transparent);
+  pointer-events: none;
+}
+
+/* Signature Theme Box (Exact Reference Screenshot Style) */
+.theme-box {
+  position: relative;
+  background: rgba(19, 11, 46, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(68, 44, 117, 0.85);
+  border-radius: 32px;
+  box-shadow: 0 20px 50px -15px rgba(76, 29, 149, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.theme-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 28px;
+  right: 28px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(192, 132, 252, 0.55), transparent);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.theme-box:hover {
+  border-color: rgba(192, 132, 252, 0.7);
+  box-shadow: 0 25px 60px -12px rgba(168, 85, 247, 0.5);
+}
+
+.theme-pill {
+  border-radius: 9999px;
+  padding: 6px 14px;
+  background: rgba(24, 14, 56, 0.8);
+  border: 1px solid #3e276b;
+  color: #b8a7db;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.theme-pill:hover {
+  border-color: rgba(192, 132, 252, 0.6);
+  color: #ffffff;
 }
 
 .glass-dark {
