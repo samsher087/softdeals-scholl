@@ -204,7 +204,7 @@ export default function Home({ onOpenAdmissionModal }) {
     <div className="w-full">
 
       {/* 1. HERO SECTION WITH SLIDING SCHOOL IMAGES */}
-      <section className="relative min-h-[660px] lg:min-h-[740px] flex items-center bg-slate-950 overflow-hidden group">
+      <section className="relative min-h-[520px] sm:min-h-[600px] lg:min-h-[680px] flex flex-col justify-end bg-slate-950 overflow-hidden group">
         {/* Sliding Background School Images */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           {heroSlides.map((slide, index) => (
@@ -221,9 +221,8 @@ export default function Home({ onOpenAdmissionModal }) {
               />
             </div>
           ))}
-          {/* High-Contrast Gradient Overlay for Crystal-Clear Text Legibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#080414] via-[#080414]/90 to-[#080414]/40 pointer-events-none"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#080414] via-transparent to-[#080414]/60 pointer-events-none"></div>
+          {/* Subtle bottom gradient to dock stats boxes cleanly */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080414] via-[#080414]/40 to-transparent pointer-events-none"></div>
         </div>
 
         {/* Slide Navigation Arrows */}
@@ -242,7 +241,7 @@ export default function Home({ onOpenAdmissionModal }) {
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-16 lg:py-24 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pb-8 sm:pb-12 w-full">
           <div className="max-w-6xl mx-auto">
 
             {/* Quick Trust Highlights - Exactly matching user screenshot */}
