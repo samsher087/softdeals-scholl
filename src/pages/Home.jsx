@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -41,6 +42,7 @@ export default function Home({ onOpenAdmissionModal }) {
   const [activeNoticeCategory, setActiveNoticeCategory] = useState('All');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isEventsPaused, setIsEventsPaused] = useState(false);
+  const [isNoticesPaused, setIsNoticesPaused] = useState(false);
 
   const heroSlides = [
     {
@@ -370,7 +372,7 @@ export default function Home({ onOpenAdmissionModal }) {
       </section>
 
       {/* 4. WHY CHOOSE OUR SCHOOL - Theme Box Style */}
-      <section className="py-16 sm:py-24">
+      <section className="py-16 sm:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -389,38 +391,49 @@ export default function Home({ onOpenAdmissionModal }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whyChooseUs.map((item, index) => {
               const Icon = item.icon;
+              const isFirstThree = index < 3;
               return (
-                <div
+                <motion.div
                   key={index}
-                  className="group theme-box p-8 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                  initial={{ opacity: 0, x: isFirstThree ? -120 : 120 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.15 }}
+                  transition={{
+                    duration: 0.75,
+                    delay: isFirstThree ? index * 0.15 : (index - 3) * 0.15 + 0.1,
+                    ease: [0.22, 1, 0.36, 1]
+                  }}
+                  className="h-full"
                 >
-                  <div>
-                    <div className="flex items-center justify-between gap-2 mb-4">
-                      <span className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#a78bfa] tracking-wider">
-                        <Clock className="w-3.5 h-3.5 text-[#a78bfa]" />
-                        <span>Pillar {index + 1}</span>
-                      </span>
-                      <span className="text-[10px] uppercase font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
-                        Excellence
-                      </span>
+                  <div className="group theme-box p-8 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full">
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-4">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#a78bfa] tracking-wider">
+                          <Clock className="w-3.5 h-3.5 text-[#a78bfa]" />
+                          <span>Pillar {index + 1}</span>
+                        </span>
+                        <span className="text-[10px] uppercase font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
+                          Excellence
+                        </span>
+                      </div>
+
+                      <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 bg-[#190f38] text-purple-300 border border-purple-500/40 group-hover:border-purple-400 group-hover:scale-105 transition-all shadow-md">
+                        <Icon className="w-6 h-6 text-purple-300" />
+                      </div>
+                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-fuchsia-300 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-[#d4c6f3] text-xs sm:text-sm leading-relaxed mb-4">
+                        {item.desc}
+                      </p>
                     </div>
 
-                    <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 bg-[#190f38] text-purple-300 border border-purple-500/40 group-hover:border-purple-400 group-hover:scale-105 transition-all shadow-md">
-                      <Icon className="w-6 h-6 text-purple-300" />
+                    <div>
+                      <span className="theme-pill text-[10px]">Umeed Global Distinction</span>
+                      <div className="w-14 h-1 bg-white/20 rounded-full mx-auto mt-4" />
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-fuchsia-300 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-[#d4c6f3] text-xs sm:text-sm leading-relaxed mb-4">
-                      {item.desc}
-                    </p>
                   </div>
-
-                  <div>
-                    <span className="theme-pill text-[10px]">Umeed Global Distinction</span>
-                    <div className="w-14 h-1 bg-white/20 rounded-full mx-auto mt-4" />
-                  </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -453,31 +466,41 @@ export default function Home({ onOpenAdmissionModal }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {facilities.map((fac, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="group theme-box hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                initial={{ opacity: 0, x: 120 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.15 }}
+                transition={{
+                  duration: 0.75,
+                  delay: idx * 0.12,
+                  ease: [0.22, 1, 0.36, 1]
+                }}
+                className="h-full"
               >
-                <div className="h-48 overflow-hidden bg-[#180e38] relative">
-                  <img
-                    src={fac.image}
-                    alt={fac.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 brightness-95 group-hover:brightness-100"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#130b2e] via-transparent to-transparent pointer-events-none" />
-                </div>
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <span className="theme-pill text-[10px] mb-2.5">Campus Wing</span>
-                    <h3 className="text-base font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
-                      {fac.name}
-                    </h3>
-                    <p className="text-xs text-[#d4c6f3] leading-relaxed mb-4">
-                      {fac.description}
-                    </p>
+                <div className="group theme-box hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden h-full">
+                  <div className="h-48 overflow-hidden bg-[#180e38] relative">
+                    <img
+                      src={fac.image}
+                      alt={fac.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 brightness-95 group-hover:brightness-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#130b2e] via-transparent to-transparent pointer-events-none" />
                   </div>
-                  <div className="w-14 h-1 bg-white/20 rounded-full mx-auto mt-2" />
+                  <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                      <span className="theme-pill text-[10px] mb-2.5">Campus Wing</span>
+                      <h3 className="text-base font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
+                        {fac.name}
+                      </h3>
+                      <p className="text-xs text-[#d4c6f3] leading-relaxed mb-4">
+                        {fac.description}
+                      </p>
+                    </div>
+                    <div className="w-14 h-1 bg-white/20 rounded-full mx-auto mt-2" />
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -488,79 +511,119 @@ export default function Home({ onOpenAdmissionModal }) {
       <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
 
             {/* Notices & Circulars (7 Cols) */}
-            <div className="lg:col-span-7">
-              <div className="flex items-center justify-between mb-6">
+            <div className="lg:col-span-7 flex flex-col">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-6 min-h-[58px]">
                 <div>
                   <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-wider block">Official Bulletin</span>
                   <h3 className="text-2xl font-serif font-black text-white">Latest Announcements</h3>
                 </div>
 
-                {/* Filter Pills */}
-                <div className="flex items-center gap-1.5 bg-[#140b30]/90 p-1.5 rounded-full border border-[#3e276b] text-xs font-semibold">
-                  {['All', 'Admissions', 'Examinations'].map((cat) => (
-                    <button
-                      key={cat}
-                      onClick={() => setActiveNoticeCategory(cat)}
-                      className={`px-3 py-1 rounded-full transition-all ${activeNoticeCategory === cat
-                        ? 'bg-gradient-to-r from-[#6366f1] to-[#ec4899] text-white shadow-md font-bold'
-                        : 'text-[#a99ac7] hover:text-white'
-                        }`}
-                    >
-                      {cat}
-                    </button>
-                  ))}
+                <div className="flex items-center gap-2 sm:gap-3">
+                  {/* Filter Pills */}
+                  <div className="flex items-center gap-1.5 bg-[#140b30]/90 p-1.5 rounded-full border border-[#3e276b] text-xs font-semibold">
+                    {['All', 'Admissions', 'Examinations'].map((cat) => (
+                      <button
+                        key={cat}
+                        onClick={() => setActiveNoticeCategory(cat)}
+                        className={`px-3 py-1 rounded-full transition-all ${activeNoticeCategory === cat
+                          ? 'bg-gradient-to-r from-[#6366f1] to-[#ec4899] text-white shadow-md font-bold'
+                          : 'text-[#a99ac7] hover:text-white'
+                          }`}
+                      >
+                        {cat}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Auto-scroll toggle pill */}
+                  <button
+                    type="button"
+                    onClick={() => setIsNoticesPaused((prev) => !prev)}
+                    className="theme-pill px-3 py-1.5"
+                    title={isNoticesPaused ? "Click to resume auto-scroll" : "Click to pause auto-scroll (or hover on any notice)"}
+                  >
+                    {isNoticesPaused ? (
+                      <>
+                        <Play className="w-3 h-3 text-amber-400 fill-amber-400" />
+                        <span className="text-amber-300">Paused</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="w-2 h-2 rounded-full bg-fuchsia-400 animate-pulse" />
+                        <span className="text-white">Auto-Scroll</span>
+                      </>
+                    )}
+                  </button>
                 </div>
               </div>
 
-              {/* Notices List */}
-              <div className="space-y-4">
-                {filteredNotices.slice(0, 4).map((notice) => (
-                  <div
-                    key={notice.id}
-                    className="theme-box p-5 hover:scale-[1.01] transition-all"
-                  >
-                    <div className="flex items-start justify-between gap-3 mb-2">
-                      <div className="flex items-center gap-2">
-                        <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider ${notice.urgent
-                          ? 'bg-red-500/20 text-red-300 border border-red-500/40'
-                          : 'bg-purple-500/20 text-fuchsia-300 border border-purple-500/40'
-                          }`}>
-                          {notice.category}
-                        </span>
-                        <span className="text-[11px] text-[#a99ac7] flex items-center gap-1 font-mono">
-                          <Calendar className="w-3 h-3 text-purple-400" /> {notice.date}
-                        </span>
+              {/* Scrolling Notices Box with Fade Masks */}
+              <div
+                className="theme-box p-3 relative h-[495px] overflow-hidden group shadow-2xl"
+              >
+                {/* Top and Bottom Gradient Fade Masks */}
+                <div className="absolute top-0 inset-x-0 h-10 bg-gradient-to-b from-[#130b2e] via-[#130b2e]/80 to-transparent z-10 pointer-events-none" />
+                <div className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-[#130b2e] via-[#130b2e]/80 to-transparent z-10 pointer-events-none" />
+
+                {/* Hardware-Accelerated CSS Infinite Vertical Scroller */}
+                <div
+                  className="animate-scroll-up space-y-3.5 py-2 cursor-pointer"
+                  style={{
+                    animationPlayState: isNoticesPaused ? 'paused' : 'running',
+                    animationDuration: '30s'
+                  }}
+                  onMouseEnter={() => setIsNoticesPaused(true)}
+                  onMouseLeave={() => setIsNoticesPaused(false)}
+                >
+                  {/* Duplicated list for seamless upward loop */}
+                  {(filteredNotices.length > 0 ? [...filteredNotices, ...filteredNotices] : []).map((notice, idx) => (
+                    <div
+                      key={`${notice.id}-${idx}`}
+                      className="theme-box p-4 rounded-[22px] hover:scale-[1.01] transition-all shadow-lg"
+                    >
+                      <div className="flex items-start justify-between gap-3 mb-2">
+                        <div className="flex items-center gap-2">
+                          <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider ${notice.urgent
+                            ? 'bg-red-500/20 text-red-300 border border-red-500/40'
+                            : 'bg-purple-500/20 text-fuchsia-300 border border-purple-500/40'
+                            }`}>
+                            {notice.category}
+                          </span>
+                          <span className="text-[11px] text-[#a99ac7] flex items-center gap-1 font-mono">
+                            <Calendar className="w-3 h-3 text-purple-400" /> {notice.date}
+                          </span>
+                        </div>
+
+                        <a
+                          href={notice.fileUrl}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            alert(`Downloading official notice circular: "${notice.title}".\nPDF verification authenticated.`);
+                          }}
+                          className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] px-3 py-1 rounded-full shadow-sm hover:shadow-purple-950/80 transition-all shrink-0"
+                        >
+                          <Download className="w-3 h-3 text-white" /> Notice PDF
+                        </a>
                       </div>
 
-                      <a
-                        href={notice.fileUrl}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          alert(`Downloading official notice circular: "${notice.title}".\nPDF verification authenticated.`);
-                        }}
-                        className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] px-3 py-1 rounded-full shadow-sm hover:shadow-purple-950/80 transition-all"
-                      >
-                        <Download className="w-3 h-3 text-white" /> Notice PDF
-                      </a>
+                      <h4 className="text-sm sm:text-base font-bold text-white hover:text-fuchsia-300 transition-colors line-clamp-1 mb-1">
+                        {notice.title}
+                      </h4>
+                      <p className="text-xs text-[#d4c6f3] leading-relaxed line-clamp-2">
+                        {notice.summary}
+                      </p>
                     </div>
-
-                    <h4 className="text-sm sm:text-base font-bold text-white hover:text-fuchsia-300 transition-colors">
-                      {notice.title}
-                    </h4>
-                    <p className="text-xs text-[#d4c6f3] mt-1.5 leading-relaxed">
-                      {notice.summary}
-                    </p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* Upcoming School Events (5 Cols) - Upward Auto-Scrolling */}
             <div className="lg:col-span-5 flex flex-col">
-              <div className="mb-6 flex items-center justify-between">
+              <div className="mb-6 flex items-center justify-between min-h-[58px]">
                 <div>
                   <span className="text-xs font-bold text-fuchsia-400 uppercase tracking-wider block">Mark Your Calendar</span>
                   <h3 className="text-2xl font-serif font-black text-white">Upcoming Events</h3>
@@ -589,7 +652,7 @@ export default function Home({ onOpenAdmissionModal }) {
 
               {/* Scrolling Events Box with Fade Masks */}
               <div
-                className="theme-box p-3 relative h-[490px] sm:h-[520px] overflow-hidden group shadow-2xl"
+                className="theme-box p-3 relative h-[495px] overflow-hidden group shadow-2xl"
               >
                 {/* Top and Bottom Gradient Fade Masks */}
                 <div className="absolute top-0 inset-x-0 h-10 bg-gradient-to-b from-[#130b2e] via-[#130b2e]/80 to-transparent z-10 pointer-events-none" />
@@ -634,7 +697,7 @@ export default function Home({ onOpenAdmissionModal }) {
                           </p>
                         </div>
                         <div className="mt-3 text-[11px] font-semibold text-[#b8a7db] flex items-center justify-between pt-2 border-t border-[#341f5e]/70">
-                          <span>📍 {event.venue}</span>
+                          <span>📍 {event.venue?.replace(/St\. Xavier's/gi, "Umeed Global")}</span>
                           <span className="text-fuchsia-300 font-mono font-bold">{event.date}</span>
                         </div>
                       </div>
