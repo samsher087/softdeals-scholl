@@ -242,172 +242,63 @@ export default function Home({ onOpenAdmissionModal }) {
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-20 lg:py-28 w-full">
-          <div className="max-w-5xl xl:max-w-6xl">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-16 lg:py-24 w-full">
+          <div className="max-w-6xl mx-auto">
 
-            {/* Pill Tag Indicator */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#180e38]/90 border border-purple-500/50 text-fuchsia-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-5 shadow-lg backdrop-blur-md">
-              <Sparkles className="w-4 h-4 text-fuchsia-400" />
-              <span>Admissions Open 2026-27 • CBSE Affiliated</span>
-            </div>
-
-            {/* Main Headline - Crystal-Clear, High-Contrast Modern Sans Typography */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-black text-white tracking-tight leading-[1.12] mb-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
-              <span className="block text-white">Building Bright Futures</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#f5d0fe] via-[#e879f9] to-[#f472b6] drop-shadow-[0_2px_12px_rgba(232,121,249,0.35)]">
-                Through Quality Education.
-              </span>
-            </h1>
-
-            {/* Subtitle - Crisp, Bright, and Highly Legible */}
-            <p className="text-base sm:text-lg md:text-xl text-[#f1f5f9] max-w-2xl font-normal leading-relaxed mb-8 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
-              Nurturing intellectual curiosity, leadership character, and technological innovation in students from Pre-Nursery to Grade XII.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 mb-8">
-              <button
-                onClick={onOpenAdmissionModal}
-                className="px-7 sm:px-9 py-4 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899] hover:from-[#5457ea] hover:via-[#7c3aed] hover:to-[#db2777] text-white font-bold text-sm sm:text-base rounded-2xl shadow-xl shadow-purple-950/80 hover:scale-[1.02] transition-all flex items-center gap-2.5"
-              >
-                <Sparkles className="w-4 h-4 text-pink-200" />
-                <span>Admission Enquiry 2026-27</span>
-              </button>
-              <Link
-                to="/academics"
-                className="px-7 sm:px-9 py-4 bg-[#180e38]/90 hover:bg-[#241354] text-purple-100 hover:text-white font-bold text-sm sm:text-base rounded-2xl border border-purple-500/50 backdrop-blur-md transition-all shadow-lg hover:-translate-y-0.5"
-              >
-                Explore Academics & Curriculum
-              </Link>
-            </div>
-
-
-            {/* Quick Trust Highlights - Exact Reference Cyber Modal Style */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-8 mt-8 border-t border-[#341f5e]/80">
-              <div className="theme-box p-5 flex flex-col justify-between hover:-translate-y-1 transition-all">
-                <div>
-                  <div className="flex items-center justify-between text-xs font-mono font-semibold text-[#a78bfa] mb-2">
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-[#a78bfa]" /> 2026 Cohort
-                    </span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
-                      Enrolled
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3 my-2">
-                    <div className="w-10 h-10 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
-                      <Users className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-xl sm:text-2xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c084fc] to-[#f472b6]">
-                        2,850+
-                      </div>
-                      <div className="text-xs font-bold text-white">Total Students</div>
-                    </div>
-                  </div>
-                  <div className="text-[11px] text-[#d4c6f3] mt-1">
-                    Nurtured Across All Grades
-                  </div>
+            {/* Quick Trust Highlights - Exactly matching user screenshot */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="theme-box p-4 sm:p-5 flex items-center gap-3.5 hover:-translate-y-1 transition-all">
+                <div className="w-11 h-11 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
+                  <Users className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mt-4" />
+                  <div className="text-xl sm:text-2xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c084fc] to-[#f472b6]">
+                    2,850+
+                  </div>
+                  <div className="text-xs sm:text-sm font-bold text-white whitespace-nowrap">Total Students</div>
                 </div>
               </div>
 
-              <div className="theme-box p-5 flex flex-col justify-between hover:-translate-y-1 transition-all">
-                <div>
-                  <div className="flex items-center justify-between text-xs font-mono font-semibold text-[#a78bfa] mb-2">
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-[#a78bfa]" /> 1:15 Ratio
-                    </span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
-                      Certified
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3 my-2">
-                    <div className="w-10 h-10 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
-                      <GraduationCap className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-xl sm:text-2xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c084fc] to-[#f472b6]">
-                        120+
-                      </div>
-                      <div className="text-xs font-bold text-white">Qualified Educators</div>
-                    </div>
-                  </div>
-                  <div className="text-[11px] text-[#d4c6f3] mt-1">
-                    Certified & Experienced Faculty
-                  </div>
+              <div className="theme-box p-4 sm:p-5 flex items-center gap-3.5 hover:-translate-y-1 transition-all">
+                <div className="w-11 h-11 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
+                  <GraduationCap className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mt-4" />
+                  <div className="text-xl sm:text-2xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c084fc] to-[#f472b6]">
+                    120+
+                  </div>
+                  <div className="text-xs sm:text-sm font-bold text-white whitespace-nowrap">Qualified Educators</div>
                 </div>
               </div>
 
-              <div className="theme-box p-5 flex flex-col justify-between hover:-translate-y-1 transition-all">
-                <div>
-                  <div className="flex items-center justify-between text-xs font-mono font-semibold text-[#a78bfa] mb-2">
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-[#a78bfa]" /> Est. 1998
-                    </span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
-                      Heritage
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3 my-2">
-                    <div className="w-10 h-10 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
-                      <Award className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-xl sm:text-2xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c084fc] to-[#f472b6]">
-                        28+
-                      </div>
-                      <div className="text-xs font-bold text-white">Years of Excellence</div>
-                    </div>
-                  </div>
-                  <div className="text-[11px] text-[#d4c6f3] mt-1">
-                    Established in 1998
-                  </div>
+              <div className="theme-box p-4 sm:p-5 flex items-center gap-3.5 hover:-translate-y-1 transition-all">
+                <div className="w-11 h-11 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
+                  <Award className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mt-4" />
+                  <div className="text-xl sm:text-2xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c084fc] to-[#f472b6]">
+                    28+
+                  </div>
+                  <div className="text-xs sm:text-sm font-bold text-white whitespace-nowrap">Years of Excellence</div>
                 </div>
               </div>
 
-              <div className="theme-box p-5 flex flex-col justify-between hover:-translate-y-1 transition-all">
-                <div>
-                  <div className="flex items-center justify-between text-xs font-mono font-semibold text-[#a78bfa] mb-2">
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-[#a78bfa]" /> Top Tier
-                    </span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#1b103e] border border-[#3e276b] text-fuchsia-300">
-                      CBSE
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3 my-2">
-                    <div className="w-10 h-10 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
-                      <Trophy className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-xl sm:text-2xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c084fc] to-[#f472b6]">
-                        100%
-                      </div>
-                      <div className="text-xs font-bold text-white">Board Pass Rate</div>
-                    </div>
-                  </div>
-                  <div className="text-[11px] text-[#d4c6f3] mt-1">
-                    Consistently Ranked in Top Tier
-                  </div>
+              <div className="theme-box p-4 sm:p-5 flex items-center gap-3.5 hover:-translate-y-1 transition-all">
+                <div className="w-11 h-11 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
+                  <Trophy className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mt-4" />
+                  <div className="text-xl sm:text-2xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c084fc] to-[#f472b6]">
+                    100%
+                  </div>
+                  <div className="text-xs sm:text-sm font-bold text-white whitespace-nowrap">Board Pass Rate</div>
                 </div>
               </div>
             </div>
 
           </div>
-
         </div>
+
       </section>
 
       {/* 2. PRINCIPAL'S WELCOME MESSAGE - SoftDeals Dark Style */}
