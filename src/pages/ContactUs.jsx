@@ -8,7 +8,8 @@ import {
   CheckCircle2, 
   MessageCircle, 
   ShieldCheck, 
-  Sparkles 
+  Sparkles,
+  Check
 } from 'lucide-react';
 import { FacebookIcon, InstagramIcon, YoutubeIcon, LinkedinIcon, TwitterXIcon } from '../components/common/SocialIcons';
 import confetti from 'canvas-confetti';
