@@ -252,7 +252,7 @@ export default function Home({ onOpenAdmissionModal }) {
             </div>
           ))}
           {/* Subtle bottom gradient to dock stats boxes cleanly */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#080414] via-[#080414]/40 to-transparent pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080414]/75 via-[#080414]/20 to-transparent pointer-events-none"></div>
         </div>
 
         {/* Slide Navigation Arrows */}
@@ -274,10 +274,10 @@ export default function Home({ onOpenAdmissionModal }) {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pb-8 sm:pb-12 w-full">
           <div className="max-w-6xl mx-auto">
 
-            {/* Quick Trust Highlights - Exactly matching user screenshot */}
+            {/* Quick Trust Highlights - Translucent frosted glass over background slider */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="theme-box p-4 sm:p-5 flex items-center gap-3.5 hover:-translate-y-1 transition-all">
-                <div className="w-11 h-11 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
+              <div className="theme-box theme-box-translucent p-4 sm:p-5 flex items-center gap-3.5 hover:-translate-y-1 transition-all">
+                <div className="w-11 h-11 rounded-2xl bg-[#190f38]/60 border border-purple-500/35 flex items-center justify-center shrink-0 shadow-md text-purple-300">
                   <Users className="w-5 h-5" />
                 </div>
                 <div>
@@ -288,8 +288,8 @@ export default function Home({ onOpenAdmissionModal }) {
                 </div>
               </div>
 
-              <div className="theme-box p-4 sm:p-5 flex items-center gap-3.5 hover:-translate-y-1 transition-all">
-                <div className="w-11 h-11 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
+              <div className="theme-box theme-box-translucent p-4 sm:p-5 flex items-center gap-3.5 hover:-translate-y-1 transition-all">
+                <div className="w-11 h-11 rounded-2xl bg-[#190f38]/60 border border-purple-500/35 flex items-center justify-center shrink-0 shadow-md text-purple-300">
                   <GraduationCap className="w-5 h-5" />
                 </div>
                 <div>
@@ -300,8 +300,8 @@ export default function Home({ onOpenAdmissionModal }) {
                 </div>
               </div>
 
-              <div className="theme-box p-4 sm:p-5 flex items-center gap-3.5 hover:-translate-y-1 transition-all">
-                <div className="w-11 h-11 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
+              <div className="theme-box theme-box-translucent p-4 sm:p-5 flex items-center gap-3.5 hover:-translate-y-1 transition-all">
+                <div className="w-11 h-11 rounded-2xl bg-[#190f38]/60 border border-purple-500/35 flex items-center justify-center shrink-0 shadow-md text-purple-300">
                   <Award className="w-5 h-5" />
                 </div>
                 <div>
@@ -312,8 +312,8 @@ export default function Home({ onOpenAdmissionModal }) {
                 </div>
               </div>
 
-              <div className="theme-box p-4 sm:p-5 flex items-center gap-3.5 hover:-translate-y-1 transition-all">
-                <div className="w-11 h-11 rounded-2xl bg-[#190f38] border border-purple-500/40 flex items-center justify-center shrink-0 shadow-md text-purple-300">
+              <div className="theme-box theme-box-translucent p-4 sm:p-5 flex items-center gap-3.5 hover:-translate-y-1 transition-all">
+                <div className="w-11 h-11 rounded-2xl bg-[#190f38]/60 border border-purple-500/35 flex items-center justify-center shrink-0 shadow-md text-purple-300">
                   <Trophy className="w-5 h-5" />
                 </div>
                 <div>
